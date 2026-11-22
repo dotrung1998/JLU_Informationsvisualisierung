@@ -1,0 +1,53 @@
+{
+  "00_Materialien/Handout_Informationsvisualisierung.pdf": {
+    "anhang": "90 Anhänge/Handout Informationsvisualisierung.pdf",
+    "eingelesen": "2026-11-23 00:40",
+    "hash": "83cc64168be1500d66063ccbdeb899efb71d5b822d61303eb87c41f3d901b2c5",
+    "text": true,
+    "v": 1,
+    "ziel": "10 Kurs/Handout Portfolio und Abschlussseminar (Quelle).md"
+  },
+  "00_Materialien/InfoVis_Uebungen_Kapitel_01-05.pdf": {
+    "anhang": "90 Anhänge/Übungsaufgaben Kapitel 01–05.pdf",
+    "eingelesen": "2026-11-23 00:40",
+    "hash": "75f6167c4da6ccdb4797dcb5117f1a54be545ed47063436c23341295a30b209e",
+    "text": true,
+    "v": 1,
+    "ziel": "10 Kurs/Übungsaufgaben Kapitel 01–05 (Quelle).md"
+  },
+  "00_Materialien/Informationsvisualisierung_Gesamt_Kapitel_00-08.pdf": {
+    "anhang": "90 Anhänge/Vorlesungsfolien Gesamt Kapitel 00–08.pdf",
+    "eingelesen": "2026-11-23 00:40",
+    "hash": "0bc1215f00cd42be56020d1b69df3352da0210b911bb7983bb0141fe7ad0a03a",
+    "text": true,
+    "v": 1,
+    "ziel": "10 Kurs/Vorlesungsfolien Gesamt Kapitel 00–08 (Quelle).md"
+  },
+  "00_Materialien/Kapitel_05_Graphen_und_Netzwerke_Arbeitsfassung_2026-11-19_v1.7.1.pdf": {
+    "anhang": "90 Anhänge/Kapitel 05 Graphen und Netzwerke Arbeitsfassung 2026-11-19 v1.7.1.pdf",
+    "eingelesen": "2026-11-23 00:40",
+    "hash": "57aa32e91a228c3a0c0dd4e1651242521c50252f775b92cea25966a79be6e3f8",
+    "text": true,
+    "v": 1,
+    "ziel": "10 Kurs/Kapitel 05 Graphen und Netzwerke Arbeitsfassung 2026-11-19 v1.7.1 (Quelle).md"
+  },
+  "00_Materialien/Projektion_InfoVis_2026-10-12.pdf": {
+    "anhang": "90 Anhänge/Projektion InfoVis 2026-10-12.pdf",
+    "eingelesen": "2026-11-23 00:40",
+    "hash": "2abe93847b42e4698391313e33030d59b9e6a65862d868df6c29b9a5ed1d6849",
+    "text": true,
+    "v": 1,
+    "ziel": "10 Kurs/Projektion InfoVis 2026-10-12 (Quelle).md"
+  },
+  "Abgabe/Visual 3. Semester": {
+    "anhang_dir": "90 Anhänge/Abgaben/Einstiegsseite",
+    "eingelesen": "2026-11-23 00:40",
+    "hash": "e26992c9655e0d0d53fd8abeab0e2a2a44a6604167fc6afa291c102b59eec4eb",
+    "ohne_text": [
+      "skizze-a-bibliothek.jpg",
+      "skizze-b-meine-woche.jpg"
+    ],
+    "v": 1,
+    "ziel": "40 Portfolio/Abgaben/Einstiegsseite (Quelle).md"
+  }
+}

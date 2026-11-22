@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Optionaler lokaler Tageslauf. Wird NICHT installiert: der geplante Lauf ist
+  GitHub Actions (.github/workflows/tageslauf.yml). Wer diesen Agent stattdessen
+  installieren will, muss den Cron im Workflow entfernen — zwei Scheduler am selben
+  Tag erzeugen zwei Discord-Berichte (Wissen/00 Start/Entscheidungen.md).
+-->
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.infovis.daily</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen/_tools/daily_guard.sh</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartInterval</key>
+	<integer>1800</integer>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>8</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+	</dict>
+	<key>StandardOutPath</key>
+	<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen/_tools/launchd.out.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen/_tools/launchd.err.log</string>
+</dict>
+</plist>

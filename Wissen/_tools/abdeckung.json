@@ -1,0 +1,77 @@
+{
+  "stand": "2026-11-23 00:40",
+  "dateien": [
+    {
+      "pfad": "00_Materialien/Handout_Informationsvisualisierung.pdf",
+      "status": "notiz",
+      "ziel": "10 Kurs/Handout Portfolio und Abschlussseminar (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "00_Materialien/InfoVis_Uebungen_Kapitel_01-05.pdf",
+      "status": "notiz",
+      "ziel": "10 Kurs/Übungsaufgaben Kapitel 01–05 (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "00_Materialien/Informationsvisualisierung_Gesamt_Kapitel_00-08.pdf",
+      "status": "notiz",
+      "ziel": "10 Kurs/Vorlesungsfolien Gesamt Kapitel 00–08 (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "00_Materialien/Kapitel_05_Graphen_und_Netzwerke_Arbeitsfassung_2026-11-19_v1.7.1.pdf",
+      "status": "notiz",
+      "ziel": "10 Kurs/Kapitel 05 Graphen und Netzwerke Arbeitsfassung 2026-11-19 v1.7.1 (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "00_Materialien/Projektion_InfoVis_2026-10-12.pdf",
+      "status": "notiz",
+      "ziel": "10 Kurs/Projektion InfoVis 2026-10-12 (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "00_Materialien/archive_filelist.csv",
+      "status": "ausgeschlossen",
+      "ziel": "",
+      "grund": "Download-Liste des Lernportals (Name, Größe, Uploader, Downloadzahl, Datum, Pfad) — Metadaten zu den fünf PDFs, kein fachlicher Inhalt"
+    },
+    {
+      "pfad": "Visual 3. Semester/Do_Trung_8229831_Einstiegsseite.tex",
+      "status": "notiz",
+      "ziel": "40 Portfolio/Abgaben/Einstiegsseite (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "Visual 3. Semester/informationsvisualisierung_einstiegsseite.tex",
+      "status": "notiz",
+      "ziel": "40 Portfolio/Abgaben/Einstiegsseite (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "Visual 3. Semester/skizze-a-bibliothek.jpg",
+      "status": "manuell",
+      "ziel": "40 Portfolio/Einstiegsseite.md",
+      "grund": "Handskizze A (fotografiert, kariertes Papier): vier Strich-Kreis-Diagramme für 08:00/12:00/16:00/20:00 Uhr, je Mo–So, Achse 0–100; Maximum Mi 16:00 mit 96 markiert; Werte entsprechen dem fiktiven Bibliotheksdatensatz im Handout S. 3; beschrieben in [[Einstiegsseite]]"
+    },
+    {
+      "pfad": "Visual 3. Semester/skizze-b-meine-woche.jpg",
+      "status": "manuell",
+      "ziel": "40 Portfolio/Einstiegsseite.md",
+      "grund": "Handskizze B (fotografiert, kariertes Papier): zwei Zeitspuren je Tag (B = Bibliothek, O = Online-Literatur) über ein Stundenraster 6–24 Uhr; durchgezogen = gemessen, gestrichelt = geschätzt; 0 = keine Nutzung, ? = unbekannt; Legende am unteren Rand; beschrieben in [[Einstiegsseite]]"
+    }
+  ],
+  "unbekannt": [],
+  "ohne_text": [],
+  "ordner_mit_dateien": [
+    "Visual 3. Semester"
+  ],
+  "wochen_ohne_frist": [],
+  "zaehlung": {
+    "notiz": 7,
+    "manuell": 2,
+    "ausgeschlossen": 1,
+    "unbekannt": 0
+  }
+}

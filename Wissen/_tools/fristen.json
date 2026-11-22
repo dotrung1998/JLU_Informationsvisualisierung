@@ -1,0 +1,23 @@
+[
+  {
+    "id": "PORTFOLIO",
+    "datum": "2027-03-31",
+    "titel": "Vollständiges Portfolio + Programmcode in Stud.IP abgeben",
+    "wer": "person",
+    "detail": "5–10 Seiten je Person, Deckblatt mit Gruppennummer und Matrikelnummern, gemeinsamer Gruppenteil, persönliche Schlussseite; Quelle: Handout S. 1"
+  },
+  {
+    "id": "BLOCKSEMINAR1",
+    "datum": "2027-04-09",
+    "titel": "Blockseminar Tag 1: Präsentation des Gruppenteils",
+    "wer": "team",
+    "detail": "höchstens fünf Folien einschließlich Titelfolie; Quelle: Handout S. 3"
+  },
+  {
+    "id": "BLOCKSEMINAR2",
+    "datum": "2027-04-10",
+    "titel": "Blockseminar Tag 2",
+    "wer": "team",
+    "detail": "zweitägiges Blockseminar, 9. und 10.04.2027; Quelle: Handout S. 1"
+  }
+]

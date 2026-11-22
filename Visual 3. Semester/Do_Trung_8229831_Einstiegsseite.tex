@@ -1,0 +1,87 @@
+\documentclass[a4paper,10pt]{article}
+
+% Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{titlesec}
+
+% Maximale Raumnutzung
+\geometry{a4paper, left=1.2cm, right=1.2cm, top=1.2cm, bottom=1.2cm}
+
+% Ultra-kompakte Abstände
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlist[itemize]{nosep, leftmargin=*, topsep=0pt, parsep=0pt}
+\setlist[enumerate]{nosep, leftmargin=*, topsep=0pt, parsep=0pt}
+
+% Kompakte Überschriften
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\titlespacing*{\subsection}{0pt}{2pt}{1pt}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+% ---------- Eigene Angaben ----------
+\newcommand{\Name}{Trung Do}
+\newcommand{\Matrikel}{8229831}
+\newcommand{\Wortzahl}{119}   % nach jeder Textänderung neu zählen!
+
+% Dateinamen der beiden Fotos (im selben Ordner wie diese .tex-Datei)
+\newcommand{\BildA}{skizze-a-bibliothek.jpg}
+\newcommand{\BildB}{skizze-b-meine-woche.jpg}
+
+% Ein Bild oder (falls Datei fehlt) ein roter Platzhalter
+% Aufruf: \Skizze{Dateiname}{Höhe}{Beschriftung}
+\newcommand{\Skizze}[3]{%
+  \par\noindent\textbf{#3}\par\smallskip
+  \begin{center}
+  \IfFileExists{#1}{%
+    \includegraphics[width=\linewidth,height=#2,keepaspectratio]{#1}%
+  }{%
+    \fbox{\parbox[c][#2][c]{0.96\linewidth}{\centering
+      \textcolor{red}{\textbf{PLATZHALTER}}\\[2mm]
+      Foto bzw. Scan hochladen und so benennen:\\[1mm]
+      \texttt{#1}%
+    }}%
+  }
+  \end{center}}
+
+\begin{document}
+\fontsize{9}{10.5}\selectfont
+\pagestyle{empty}
+
+% Titelbereich
+\begin{center}
+\textbf{\large Informationsvisualisierung} \\
+\small Einstiegsseite -- Handskizze und Erwartungen, WiSe 2026/27 \\
+\textbf{\Name} | Matrikelnummer: \Matrikel
+\end{center}
+\vspace{-3mm}
+\noindent\rule{\textwidth}{0.3pt}
+
+% Teil A: zwei Handskizzen auf derselben Seite
+\section*{Teil A: Handskizze}
+\Skizze{\BildA}{0.27\textheight}{A\enspace Fiktive Bibliotheksdaten}
+\Skizze{\BildB}{0.27\textheight}{B\enspace Meine Bibliotheks- und Online-Literaturnutzung (typische Arbeitswoche)}
+
+\vspace{1mm}
+\noindent\rule{\textwidth}{0.3pt}
+
+% Teil B
+\section*{Teil B: Darstellungsabsicht, Begründung und Erwartungen}
+Ich möchte zeigen, wann die Bibliothek besonders voll ist und wie sich meine eigene Literaturarbeit dazu verhält. Oben stehen die fiktiven Bibliotheksdaten als vier Strich-Kreis-Diagramme, weil sich so jeder Einzelwert direkt ablesen lässt und keine Farbfläche nötig ist. Unten zeige ich für jeden Tag zwei Zeitspuren, die meine Bibliotheksnutzung (B) und meine Online-Literatur (O) trennen und Überschneidungen sichtbar lassen. Geschätzte Zeiten sind gestrichelt gezeichnet, und ein Fragezeichen markiert Angaben, die ich nicht rekonstruieren konnte. Am Mittwoch war ich nicht in der Bibliothek, weil ich zu Hause geschrieben habe, und am Sonntag habe ich bewusst beides nicht genutzt, um zu pausieren. Im Modul hoffe ich zu lernen, wie ich passende Diagrammtypen auswähle, Kernaussagen klar darstelle und meine Gestaltungsentscheidungen nachvollziehbar begründe.%
+\footnote{Datenquelle Skizze A: Handout \emph{Informationsvisualisierung -- Portfolio Übungen und Abschlussseminar}, S.~3 (fiktive Bibliotheksdaten). KI-Hilfe: Perplexity AI unterstützte beim LaTeX-Code. Zeichnung und Text stammen von mir.}
+
+\medskip
+\textit{Wortzahl: \Wortzahl/120}
+
+\end{document}

@@ -1,0 +1,163 @@
+% =====================================================================
+% Einstiegsseite -- Informationsvisualisierung (WiSe 2026/27)
+% BEISPIEL-LÖSUNG ZUM NACHZEICHNEN
+% ACHTUNG: Alle Nutzungsdaten in Teil B sind ERFUNDEN. Vor der Abgabe
+% durch deine echte Woche ersetzen (siehe Marken ">>> ÄNDERN").
+% Liegt eine Datei handskizze.jpg neben dieser .tex-Datei, wird automatisch
+% dein Foto statt der Beispielzeichnung eingesetzt.
+% =====================================================================
+\documentclass[a4paper,10pt]{article}
+
+% Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{tikz}
+
+% Maximale Raumnutzung
+\geometry{a4paper, left=1.2cm, right=1.2cm, top=1.2cm, bottom=1.2cm}
+
+% Ultra-kompakte Abstände
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlist[itemize]{nosep, leftmargin=*, topsep=0pt, parsep=0pt}
+\setlist[enumerate]{nosep, leftmargin=*, topsep=0pt, parsep=0pt}
+
+% Kompakte Überschriften
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\titlespacing*{\subsection}{0pt}{2pt}{1pt}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+% ---------- >>> ÄNDERN: eigene Angaben ----------
+\newcommand{\Name}{Trung Do}
+\newcommand{\Matrikel}{8229831}
+\newcommand{\Wortzahl}{119}   % nach jeder Textänderung neu zählen!
+
+% ---------- Zeichenbefehle ----------
+\tikzset{est/.style={dash pattern=on 4pt off 2.5pt}}   % gestrichelt = geschätzt
+
+% TEIL A: ein Strich-Kreis-Diagramm pro Uhrzeit
+% Aufruf: \panel{x}{y}{Uhrzeit}{Wert Mo,...,Wert So}   (1 Einheit = 1 cm)
+\newcommand{\panel}[4]{%
+  \begin{scope}[shift={(#1,#2)}]
+    \node[anchor=south west,font=\footnotesize\bfseries] at (0,1.30) {#3 Uhr};
+    \foreach \g in {0,50,100}{
+      \draw[gray!45,dash pattern=on 1.5pt off 2pt] (0,{\g*0.011}) -- (7.6,{\g*0.011});
+      \node[font=\tiny,anchor=east] at (-0.05,{\g*0.011}) {\g};}
+    \foreach \v [count=\i from 0] in {#4}{
+      \draw[thick] ({0.6+\i*1.05},0) -- ({0.6+\i*1.05},{\v*0.011});
+      \draw[thick,fill=white] ({0.6+\i*1.05},{\v*0.011}) circle (1.6pt);
+      \node[font=\tiny,anchor=south] at ({0.6+\i*1.05},{\v*0.011+0.05}) {\v};}
+    \foreach \d [count=\i from 0] in {Mo,Di,Mi,Do,Fr,Sa,So}{
+      \node[font=\scriptsize,anchor=north] at ({0.6+\i*1.05},-0.02) {\d};}
+  \end{scope}}
+
+% TEIL B: Zeitspuren. x = 1,2 + (Stunde-6)*0,88 ; Tag = Zeile ; B oben, O darunter
+% \ivB{Tag 0-6}{Start}{Ende}{solid|est}   Bibliothek  (schwarz)
+% \ivO{Tag 0-6}{Start}{Ende}{solid|est}   Online      (grau)
+\newcommand{\ivB}[4]{\draw[line width=3.2pt,black,#4]
+  ({1.2+(#2-6)*0.88},{-(#1)*1.05}) -- ({1.2+(#3-6)*0.88},{-(#1)*1.05});}
+\newcommand{\ivO}[4]{\draw[line width=3.2pt,gray!55,#4]
+  ({1.2+(#2-6)*0.88},{-(#1)*1.05-0.42}) -- ({1.2+(#3-6)*0.88},{-(#1)*1.05-0.42});}
+% \zero{Tag}{Spur 0=B 1=O}: Nullwert    \unk{Tag}{Spur}{Start}{Ende}: unbekannt
+\newcommand{\zero}[2]{\node[font=\scriptsize\bfseries] at (1.45,{-(#1)*1.05-(#2)*0.42}) {0};}
+\newcommand{\unk}[4]{%
+  \draw[gray,dotted,line width=1.2pt]
+    ({1.2+(#3-6)*0.88},{-(#1)*1.05-(#2)*0.42}) -- ({1.2+(#4-6)*0.88},{-(#1)*1.05-(#2)*0.42});
+  \node[font=\scriptsize\bfseries,fill=white,inner sep=1pt] at
+    ({1.2+((#3+#4)/2-6)*0.88},{-(#1)*1.05-(#2)*0.42}) {?};}
+
+% ---------- Teil A: fiktive Bibliotheksdaten (aus dem Handout) ----------
+\newcommand{\TeilAZeichnung}{%
+\begin{tikzpicture}
+  \node[anchor=west,font=\small\bfseries] at (0,4.95)
+    {A\enspace Fiktive Bibliothek: belegte Arbeitsplätze (von 100) zu vier Uhrzeiten};
+  \panel{0.9}{2.9}{08:00}{24,31,18,26,20,12,0}
+  \panel{9.9}{2.9}{12:00}{58,67,64,71,53,39,28}
+  \panel{0.9}{0.3}{16:00}{81,89,96,84,62,46,35}
+  \panel{9.9}{0.3}{20:00}{36,42,55,48,17,23,11}
+  % Hervorhebung des Maximums (Mi 16:00 = 96)
+  \draw[thick] (3.6,{0.3+96*0.011}) circle (3.4pt);
+  \node[font=\tiny\bfseries,anchor=west] at (4.1,{0.3+96*0.011+0.3}) {Maximum};
+\end{tikzpicture}}
+
+% ---------- Teil B: meine Woche (BEISPIELDATEN, erfunden) ----------
+\newcommand{\TeilBZeichnung}{%
+\begin{tikzpicture}
+  \node[anchor=west,font=\small\bfseries] at (0,0.95)
+    {B\enspace Meine Woche (Beispiel): Bibliothek (B) und Online-Literatur (O)};
+  % Stundenraster
+  \foreach \h in {6,9,12,15,18,21,24}{
+    \draw[gray!35] ({1.2+(\h-6)*0.88},0.45) -- ({1.2+(\h-6)*0.88},-7.05);
+    \node[font=\tiny,anchor=south] at ({1.2+(\h-6)*0.88},0.42) {\h};}
+  % Tage und Spurbeschriftung
+  \foreach \d [count=\i from 0] in {Mo,Di,Mi,Do,Fr,Sa,So}{
+    \node[font=\scriptsize\bfseries,anchor=east] at (0.5,{-\i*1.05-0.21}) {\d};
+    \node[font=\tiny,anchor=east] at (1.1,{-\i*1.05}) {B};
+    \node[font=\tiny,anchor=east] at (1.1,{-\i*1.05-0.42}) {O};
+    \draw[gray!25] (1.2,{-\i*1.05-0.72}) -- (17.04,{-\i*1.05-0.72});}
+  % >>> ÄNDERN: deine echten Zeiten (Tag 0=Mo ... 6=So; Stunden als Dezimalzahl, 12.5 = 12:30)
+  \ivB{0}{9}{13}{solid}     \ivO{0}{19}{20.5}{solid}                       % Mo
+  \ivB{1}{10}{12.5}{solid}  \ivO{1}{14}{17}{est}                           % Di
+  \zero{2}{0}               \ivO{2}{9}{12}{solid} \ivO{2}{20}{21.5}{est}   % Mi (0 = nicht in der Bibliothek)
+  \ivB{3}{9.5}{15.5}{solid} \ivO{3}{16}{18}{est}                           % Do
+  \ivB{4}{10}{11.5}{solid}  \ivO{4}{11}{13}{solid}                         % Fr (Überlappung 11:00-11:30)
+  \zero{5}{0}               \ivO{5}{15}{17}{est}  \unk{5}{1}{8}{12}        % Sa (? = Vormittag unbekannt)
+  \zero{6}{0}               \zero{6}{1}                                    % So (beides 0 = Pause)
+  % Legende
+  \draw[line width=3.2pt,black] (1.2,-7.65) -- (1.9,-7.65);
+  \node[font=\tiny,anchor=west] at (2.0,-7.65) {B Bibliothek};
+  \draw[line width=3.2pt,gray!55] (4.3,-7.65) -- (5.0,-7.65);
+  \node[font=\tiny,anchor=west] at (5.1,-7.65) {O Online-Literatur};
+  \draw[line width=3.2pt,black,est] (8.3,-7.65) -- (9.0,-7.65);
+  \node[font=\tiny,anchor=west] at (9.1,-7.65) {gestrichelt = geschätzt};
+  \node[font=\tiny,anchor=west] at (12.2,-7.65) {0 = keine Nutzung \quad ? = unbekannt};
+\end{tikzpicture}}
+
+\begin{document}
+\fontsize{9}{10.5}\selectfont
+\pagestyle{empty}
+
+% Titelbereich
+\begin{center}
+\textbf{\large Informationsvisualisierung} \\
+\small Einstiegsseite -- Handskizze und Erwartungen, WiSe 2026/27 \\
+\textbf{Trung Do} | Matrikelnummer: 8229831
+\end{center}
+\vspace{-3mm}
+\noindent\rule{\textwidth}{0.3pt}
+
+% Teil A
+\section*{Teil A -- Handskizze}
+\begin{center}
+\IfFileExists{handskizze.jpg}{%
+  \includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{handskizze.jpg}%
+}{%
+  \TeilAZeichnung\par\medskip
+  \TeilBZeichnung
+}
+\end{center}
+
+\vspace{1mm}
+\noindent\rule{\textwidth}{0.3pt}
+
+% Teil B
+\section*{Teil B -- Darstellungsabsicht, Begründung und Erwartungen}
+Ich möchte zeigen, wann die Bibliothek besonders voll ist und wie sich meine eigene Literaturarbeit dazu verhält. Oben stehen die fiktiven Bibliotheksdaten als vier Strich-Kreis-Diagramme, weil sich so jeder Einzelwert direkt ablesen lässt und keine Farbfläche nötig ist. Unten zeige ich für jeden Tag zwei Zeitspuren, die meine Bibliotheksnutzung (B) und meine Online-Literatur (O) trennen und Überschneidungen sichtbar lassen. Geschätzte Zeiten sind gestrichelt gezeichnet, und ein Fragezeichen markiert Angaben, die ich nicht rekonstruieren konnte. Am Mittwoch war ich nicht in der Bibliothek, weil ich zu Hause geschrieben habe, und am Sonntag habe ich bewusst beides nicht genutzt, um zu pausieren. Im Modul hoffe ich zu lernen, wie ich passende Diagrammtypen auswähle, Kernaussagen klar darstelle und meine Gestaltungsentscheidungen nachvollziehbar begründe.%
+\footnote{Datenquelle Teil A: Handout \emph{Informationsvisualisierung -- Portfolio Übungen und Abschlussseminar}, S.~3 (fiktive Bibliotheksdaten). KI-Hilfe: KI-Hilfe: Perflexity AI unterstützte beim LaTeX-Code. Zeichnung und Text stammen von mir..}
+
+\medskip
+\textit{Wortzahl: \Wortzahl/120}
+
+\end{document}

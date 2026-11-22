@@ -1,0 +1,36 @@
+{
+  "ausgeschlossen": [
+    {
+      "muster": "*.DS_Store",
+      "grund": "macOS-Metadatei mit Fensterpositionen, kein fachlicher Inhalt"
+    },
+    {
+      "muster": "archive_filelist.csv",
+      "grund": "Download-Liste des Lernportals (Name, Größe, Uploader, Downloadzahl, Datum, Pfad) — Metadaten zu den fünf PDFs, kein fachlicher Inhalt"
+    },
+    {
+      "muster": ".gitignore",
+      "grund": "Git-Konfiguration für dieses Projekt, kein Kursmaterial"
+    },
+    {
+      "muster": "AGENTS.md",
+      "grund": "Arbeitsanweisung für dieses Projekt, kein Kursmaterial"
+    },
+    {
+      "muster": "README.md",
+      "grund": "Projektbeschreibung, kein Kursmaterial"
+    }
+  ],
+  "manuell": [
+    {
+      "pfad": "Visual 3. Semester/skizze-a-bibliothek.jpg",
+      "notiz": "40 Portfolio/Einstiegsseite.md",
+      "grund": "Handskizze A (fotografiert, kariertes Papier): vier Strich-Kreis-Diagramme für 08:00/12:00/16:00/20:00 Uhr, je Mo–So, Achse 0–100; Maximum Mi 16:00 mit 96 markiert; Werte entsprechen dem fiktiven Bibliotheksdatensatz im Handout S. 3; beschrieben in [[Einstiegsseite]]"
+    },
+    {
+      "pfad": "Visual 3. Semester/skizze-b-meine-woche.jpg",
+      "notiz": "40 Portfolio/Einstiegsseite.md",
+      "grund": "Handskizze B (fotografiert, kariertes Papier): zwei Zeitspuren je Tag (B = Bibliothek, O = Online-Literatur) über ein Stundenraster 6–24 Uhr; durchgezogen = gemessen, gestrichelt = geschätzt; 0 = keine Nutzung, ? = unbekannt; Legende am unteren Rand; beschrieben in [[Einstiegsseite]]"
+    }
+  ]
+}
