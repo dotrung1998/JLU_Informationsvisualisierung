@@ -1,5 +1,8 @@
 #!/bin/sh
-# Lokale Sperre: keine Commit-Nachricht mit Co-authored-by oder Bot-Trailern.
+# Lokale Sperre vor jedem Commit: bricht ab, wenn die Nachricht eine
+# Co-Authored-By- oder Tool-Trailer-Zeile, einen Bot-/Werkzeugnamen oder das
+# Roboter-Emoji enthält oder git user.name/user.email nicht der erlaubten
+# Person entspricht. Die Regeln stehen nur in author_guard.py.
 set -eu
 root=$(git rev-parse --show-toplevel)
 exec python3 "$root/Wissen_Informationsvisualisierung/_tools/author_guard.py" --message-file "$1" --config

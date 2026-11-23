@@ -2,8 +2,13 @@
 """Erzwingt den erlaubten Commit-Autor und verbietet Bot-/Co-Author-Trailer.
 
 Erlaubt ist genau ein Autor (Standard: Trung Do <dotrung1998@gmail.com>),
-änderbar über AUTHOR_NAME / AUTHOR_EMAIL. Verboten sind Co-authored-by-Zeilen,
-Bot-Adressen und Tool-Hinweise wie "generated with", "codebuff" oder "buffy".
+änderbar über AUTHOR_NAME / AUTHOR_EMAIL. Verboten sind Co-Authored-By- und
+verwandte Trailer-Zeilen, Bot-Adressen sowie Bot- und Werkzeugnamen in der
+Commit-Nachricht (z. B. "generated with", "codebuff", "claude", "copilot").
+
+Der Hook `.githooks/commit-msg` ruft dieses Skript mit --message-file auf und
+bricht den Commit bei einem Treffer ab. Dieselben Regeln prüfen die Commits im
+Workflow `.github/workflows/author-guard.yml`.
 
 Verwendung:
     python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --commit HEAD
@@ -23,12 +28,30 @@ import sys
 ALLOWED_NAME = os.environ.get("AUTHOR_NAME", "Trung Do")
 ALLOWED_EMAIL = os.environ.get("AUTHOR_EMAIL", "dotrung1998@gmail.com")
 FORBIDDEN_NAMES = {"projektplanung", "buffy", "codebuff", "claude"}
-FORBIDDEN_MESSAGE = re.compile(
-    r"(?im)^\s*(co-authored-by|co-authored by)\s*:"
-    r"|noreply@anthropic\.com"
-    r"|codebuff"
-    r"|buffy"
-    r"|generated with"
+
+# Trailer-Zeilen, die einen zweiten Autor oder ein Werkzeug ausweisen.
+TRAILER = re.compile(
+    r"(?i)^[ \t>#*_-]*("
+    r"co-authored-by|co-authored\s+by|coauthored-by|co-author|"
+    r"generated\s+(?:with|by)|generated-by|"
+    r"assisted\s+by|assisted-by|"
+    r"written\s+by\s+(?:ai|an?\s+ai|a\s+bot)|"
+    r"ai[-\s]assisted|ai[-\s]generated|"
+    r"made\s+with|created\s+with|powered\s+by"
+    r")\s*:"
+)
+
+# Bot- und Werkzeugnamen, Bot-Adressen und das Roboter-Emoji.
+BOT_TOOL = re.compile(
+    r"(?i)\b(?:codebuff|buffy|claude|anthropic|chatgpt|openai|copilot|codex|aider)\b"
+    r"|\[\s*bot\s*\]"
+    r"|noreply@(?:anthropic|openai)\.com"
+    r"|\U0001F916"
+)
+
+RULES = (
+    ("Trailer-Zeile (Co-Authored-By o. Ä.)", TRAILER),
+    ("Bot-/Werkzeug-Hinweis", BOT_TOOL),
 )
 ZERO = re.compile(r"^0+$")
 
@@ -38,10 +61,15 @@ def git(*args: str) -> subprocess.CompletedProcess:
 
 
 def check_message(label: str, message: str) -> list[str]:
-    if not FORBIDDEN_MESSAGE.search(message):
-        return []
-    line = next((ln.strip() for ln in message.splitlines() if FORBIDDEN_MESSAGE.search(ln)), "")
-    return [f"{label}: verbotener Trailer/Text: {line!r}"]
+    errors: list[str] = []
+    seen: set[str] = set()
+    for line in message.splitlines():
+        text = line.strip()
+        hits = [rule for rule, pattern in RULES if pattern.search(line)]
+        if hits and text not in seen:
+            seen.add(text)
+            errors.append(f"{label}: {' / '.join(hits)}: {text!r}")
+    return errors
 
 
 def check_commit(sha: str) -> list[str]:
@@ -115,6 +143,7 @@ def main() -> int:
         print("author_guard: FEHLGESCHLAGEN", file=sys.stderr)
         for error in errors:
             print(f" - {error}", file=sys.stderr)
+        print("Regel: AGENTS.md, Abschnitt \"Harte Regeln\".", file=sys.stderr)
         return 1
     print("author_guard: ok")
     return 0

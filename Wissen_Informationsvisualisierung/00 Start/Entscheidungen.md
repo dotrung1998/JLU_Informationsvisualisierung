@@ -1,6 +1,6 @@
 ---
 titel: Entscheidungen
-stand: 2026-11-22
+stand: 2026-11-23
 ---
 
 # Entscheidungen
@@ -129,3 +129,24 @@ zuzuordnen ist.
 **Verworfen.** Den alten Ordnernamen behalten und nur in den Notizen umbenennen (die
 Dateipfade würden auseinanderlaufen); eine zweite Kopie oder einen Symlink anlegen (zwei
 Stände, die gepflegt werden müssten).
+
+## 2026-11-23 — Commit-Sperre prüft Trailer und Bot-/Werkzeugnamen
+
+**Entscheidung.** `author_guard.py` ist die einzige Quelle der Regeln und prüft jede
+Commit-Nachricht auf Co-Authored-By- und verwandte Trailer-Zeilen (`generated with/by`,
+`assisted by`, `AI-assisted`, `made with`, `powered by`), auf Bot- und Werkzeugnamen
+(`codebuff`, `buffy`, `claude`, `anthropic`, `chatgpt`, `openai`, `copilot`, `codex`,
+`aider`), auf `[bot]`, auf `noreply@anthropic.com` bzw. `noreply@openai.com` und auf das
+Roboter-Emoji. Der Hook `.githooks/commit-msg` ruft das Skript mit `--message-file` und
+`--config` auf und bricht den Commit bei einem Treffer mit Exit-Code 1 ab; derselbe Aufruf
+prüft die Commits im Workflow `author-guard.yml`.
+
+**Grund.** Die Regel „keine Bot- oder Werkzeug-Attribution in Commits“ aus `AGENTS.md` war
+bisher nur eine Absprache. Der Hook macht sie lokal durchsetzbar, der Workflow deckt
+Commits ab, die am Hook vorbei entstehen. Das einzelne Wort „Bot“ bleibt erlaubt, weil
+`discord_notify.py` einen Discord-Bot anspricht und Commit-Texte dazu sonst fälschlich
+scheitern würden.
+
+**Verworfen.** Die Regeln zusätzlich im Hook duplizieren (zwei Listen, die auseinanderlaufen);
+nur den Workflow prüfen (der Commit wäre schon geschrieben); jedes Vorkommen von „bot“
+sperren (false positives beim Discord-Bot).
