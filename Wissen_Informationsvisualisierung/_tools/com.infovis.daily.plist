@@ -4,7 +4,7 @@
   Optionaler lokaler Tageslauf. Wird NICHT installiert: der geplante Lauf ist
   GitHub Actions (.github/workflows/tageslauf.yml). Wer diesen Agent stattdessen
   installieren will, muss den Cron im Workflow entfernen — zwei Scheduler am selben
-  Tag erzeugen zwei Discord-Berichte (Wissen/00 Start/Entscheidungen.md).
+  Tag erzeugen zwei Discord-Berichte (Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md).
 -->
 <plist version="1.0">
 <dict>
@@ -13,7 +13,7 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/bin/bash</string>
-		<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen/_tools/daily_guard.sh</string>
+		<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen_Informationsvisualisierung/_tools/daily_guard.sh</string>
 	</array>
 	<key>WorkingDirectory</key>
 	<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung</string>
@@ -29,8 +29,8 @@
 		<integer>0</integer>
 	</dict>
 	<key>StandardOutPath</key>
-	<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen/_tools/launchd.out.log</string>
+	<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen_Informationsvisualisierung/_tools/launchd.out.log</string>
 	<key>StandardErrorPath</key>
-	<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen/_tools/launchd.err.log</string>
+	<string>/Applications/Vorlesung_mit_Übung_07-BDS-15__07-MDS-06__07-MDA-11_Informationsvisualisierung/Wissen_Informationsvisualisierung/_tools/launchd.err.log</string>
 </dict>
 </plist>

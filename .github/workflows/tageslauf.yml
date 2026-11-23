@@ -51,7 +51,7 @@ jobs:
           if [ -z "$DISCORD_WEBHOOK" ]; then
             echo "::warning::Secret DISCORD_WEBHOOK fehlt – der Bericht wird nicht gesendet."
           fi
-          bash Wissen/_tools/daily.sh
+          bash Wissen_Informationsvisualisierung/_tools/daily.sh
 
       - name: Änderungen committen und zurückschreiben
         run: |
@@ -66,7 +66,7 @@ jobs:
             -m "Tageslauf $(date +%Y-%m-%d): Quellen eingelesen, Board fortgeschrieben" \
             -m "- ingest.py und board_sync.py ausgeführt, Status- und Board-Blöcke aktualisiert"
           # Autor/Trailer des eigenen Commits prüfen, bevor er das Repo verlässt.
-          python3 Wissen/_tools/author_guard.py --commit HEAD
+          python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --commit HEAD
           # Neueste Commits von main einbeziehen, damit der Push nicht abgewiesen wird.
           git pull --rebase origin main || {
             echo "::warning::git pull --rebase fehlgeschlagen – zweiter Versuch in 5 s."
@@ -77,7 +77,7 @@ jobs:
 
       - name: Discord-Versand prüfen
         run: |
-          last=$(grep '^Discord:' Wissen/_tools/daily.log | tail -1 || true)
+          last=$(grep '^Discord:' Wissen_Informationsvisualisierung/_tools/daily.log | tail -1 || true)
           case "$last" in
             "Discord: gesendet"*) echo "Bestätigt: $last" ;;
             *)

@@ -32,7 +32,7 @@ Kette: AUFGABE → RECHNUNG → PRÄSENTATION → GRUPPENTEIL → PORTFOLIO → 
 
 
 ## Done
-- [x] **VAULT · Gedächtnis und Automatik eingerichtet** #auto — Struktur und Werkzeuge wie im Schwesterprojekt; Beleg: `Wissen/_tools/ingest.py` · → [[Start]]
+- [x] **VAULT · Gedächtnis und Automatik eingerichtet** #auto — Struktur und Werkzeuge wie im Schwesterprojekt; Beleg: `Wissen_Informationsvisualisierung/_tools/ingest.py` · → [[Start]]
 - [x] **MATERIAL · Kursmaterial eingelesen** #auto — fünf PDFs in `00_Materialien/`, automatische Notizen in `10 Kurs/` · → [[Ingest Log]]
 
 

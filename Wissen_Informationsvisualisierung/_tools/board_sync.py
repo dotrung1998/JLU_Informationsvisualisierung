@@ -9,8 +9,8 @@ Regeln:
   Ohne Änderung wird keine Datei geschrieben.
 
 Aufruf:
-    python3 Wissen/_tools/board_sync.py
-    python3 Wissen/_tools/board_sync.py --check
+    python3 Wissen_Informationsvisualisierung/_tools/board_sync.py
+    python3 Wissen_Informationsvisualisierung/_tools/board_sync.py --check
 """
 
 from __future__ import annotations

@@ -8,14 +8,14 @@ Prüfungsvorleistung: Präsentation einer Übungsaufgabe U01–U14.
 Dieses Projekt ist ein **eigenes Repository** (`dotrung1998/JLU_Informationsvisualisierung`)
 und unabhängig vom Schwesterprojekt `../Projektplanung` (Seminar Projektplanung Data
 Analytics). Nichts zwischen den beiden Projekten hin- und herkopieren, außer den Werkzeugen
-in `Wissen/_tools/`, die bewusst gleich gehalten sind.
+in `Wissen_Informationsvisualisierung/_tools/`, die bewusst gleich gehalten sind.
 
 ## Zuerst lesen
 
-0. `Wissen/00 Start/Điểm vào (VI).md` — Kurzorientierung auf Vietnamesisch.
-1. `Wissen/00 Start/Start.md` — Einstieg, aktueller Stand, Landkarte.
-2. `Wissen/00 Start/Status.md` — Fristen, nächste Aktion je Person.
-3. `Wissen/00 Start/Offene Entscheidungen.md` — was nur die Lehrenden bzw. die Person
+0. `Wissen_Informationsvisualisierung/00 Start/Điểm vào (VI).md` — Kurzorientierung auf Vietnamesisch.
+1. `Wissen_Informationsvisualisierung/00 Start/Start.md` — Einstieg, aktueller Stand, Landkarte.
+2. `Wissen_Informationsvisualisierung/00 Start/Status.md` — Fristen, nächste Aktion je Person.
+3. `Wissen_Informationsvisualisierung/00 Start/Offene Entscheidungen.md` — was nur die Lehrenden bzw. die Person
    entscheiden kann.
 
 ## Ordner
@@ -27,27 +27,27 @@ in `Wissen/_tools/`, die bewusst gleich gehalten sind.
 | `Prüfungsvorleistung/` | **Ablage.** Eigene Lösung der Übungsaufgabe, Video, Zustimmungs-PDF. |
 | `e-Portfolio/Portfolio/` | **Ablage.** Gesamtportfolio (PDF). |
 | `e-Portfolio/Programmcode/` | **Ablage.** Programmcode, den Ergebnissen zugeordnet. |
-| `Wissen/` | **Gedächtnis.** Obsidian-Vault mit Start, Kurs, Vorlesungen, Gruppe, Portfolio, Plan. |
-| `Wissen/_tools/` | `ingest.py`, `board_sync.py`, `daily.sh`, `daily_guard.sh`, `discord_notify.py`, `author_guard.py`. |
+| `Wissen_Informationsvisualisierung/` | **Gedächtnis.** Obsidian-Vault mit Start, Kurs, Vorlesungen, Gruppe, Portfolio, Plan. |
+| `Wissen_Informationsvisualisierung/_tools/` | `ingest.py`, `board_sync.py`, `daily.sh`, `daily_guard.sh`, `discord_notify.py`, `author_guard.py`. |
 
 ## Pflichtschritte am Anfang jeder Sitzung
 
 ```bash
-python3 Wissen/_tools/ingest.py        # neue/geänderte Quellen einlesen
-python3 Wissen/_tools/board_sync.py    # Board und Fristen fortschreiben
-cat "Wissen/00 Start/Neu seit letztem Lauf.md"
+python3 Wissen_Informationsvisualisierung/_tools/ingest.py        # neue/geänderte Quellen einlesen
+python3 Wissen_Informationsvisualisierung/_tools/board_sync.py    # Board und Fristen fortschreiben
+cat "Wissen_Informationsvisualisierung/00 Start/Neu seit letztem Lauf.md"
 ```
 
 Danach `Start.md` und `Status.md` lesen und erst dann arbeiten.
 
 ## Pflichtschritte am Ende jeder Sitzung, in der etwas passiert ist
 
-1. `Wissen/00 Start/Status.md` — Fristen, nächste Aktion, Stand je Person.
-2. `Wissen/00 Start/Entscheidungen.md` — **jede** Entscheidung mit Datum, Grund und
+1. `Wissen_Informationsvisualisierung/00 Start/Status.md` — Fristen, nächste Aktion, Stand je Person.
+2. `Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md` — **jede** Entscheidung mit Datum, Grund und
    verworfener Alternative anhängen. Nie rückwirkend umschreiben, nur ergänzen.
 3. Wenn neue Unterlagen dazukommen: Datei in `00_Materialien/` (Kursmaterial) oder in den
    passenden Abgabeordner legen, `ingest.py` laufen lassen, betroffene Notizen fortschreiben.
-4. `Wissen/00 Start/Start.md` — nur den Abschnitt „Aktueller Stand“ fortschreiben.
+4. `Wissen_Informationsvisualisierung/00 Start/Start.md` — nur den Abschnitt „Aktueller Stand“ fortschreiben.
 5. Board: erledigte Karten abhaken; wer eine Karte nach `Doing` zieht, lässt sie dort.
 
 ## Harte Regeln
@@ -76,16 +76,16 @@ Danach `Start.md` und `Status.md` lesen und erst dann arbeiten.
 
 ## Automatik
 
-`Wissen/_tools/daily.sh` ruft `ingest.py`, `board_sync.py` und `discord_notify.py`. Der
+`Wissen_Informationsvisualisierung/_tools/daily.sh` ruft `ingest.py`, `board_sync.py` und `discord_notify.py`. Der
 geplante Lauf ist **GitHub Actions** (`.github/workflows/tageslauf.yml`, 08:00
 Europe/Berlin). Ein lokaler LaunchAgent liegt nur als Datei bei und wird nicht installiert;
 zwei Scheduler am selben Tag würden zwei Discord-Berichte erzeugen.
 
 Das Skript schreibt nur:
 
-- `Wissen/…(Quelle).md`, `Wissen/90 Anhänge/`, `Wissen/40 Portfolio/Abgaben/`
-- `Wissen/10 Kurs/Abgaben (auto).md`
-- `Wissen/00 Start/Ingest Log.md`, `Neu seit letztem Lauf.md`
+- `Wissen_Informationsvisualisierung/…(Quelle).md`, `Wissen_Informationsvisualisierung/90 Anhänge/`, `Wissen_Informationsvisualisierung/40 Portfolio/Abgaben/`
+- `Wissen_Informationsvisualisierung/10 Kurs/Abgaben (auto).md`
+- `Wissen_Informationsvisualisierung/00 Start/Ingest Log.md`, `Neu seit letztem Lauf.md`
 - den Block zwischen `<!-- AUTO:START -->` und `<!-- AUTO:END -->` in `Status.md`
 - Statusvermerke am Zeilenende der Board-Karten
 - optional einen kurzen Discord-Bericht; der Webhook liegt unter

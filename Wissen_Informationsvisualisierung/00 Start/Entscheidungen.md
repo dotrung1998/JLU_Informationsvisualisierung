@@ -110,3 +110,22 @@ Regel „keine Zahl ohne Beleg“ verlangt, dass beide Fassungen sichtbar bleibe
 **Verworfen.** Widersprüche stillschweigend zu einer Fassung zusammenziehen (Belegstelle
 wäre nicht mehr nachvollziehbar); Quellen nur verlinken (die Dateien würden beim Aufräumen
 des Download-Ordners verloren gehen).
+
+## 2026-11-22 — Vault-Ordner heißt `Wissen_Informationsvisualisierung/`
+
+**Entscheidung.** Der Obsidian-Vault liegt ab jetzt in
+`Wissen_Informationsvisualisierung/` statt in `Wissen/`. Alle Pfade im Repository wurden
+mitgezogen: `AGENTS.md`, `.gitignore`, die Git-Hooks in `.githooks/`, die Workflows in
+`.github/workflows/`, `README.md` im Vault sowie die Aufruf- und Hinweistexte in
+`ingest.py`, `board_sync.py`, `author_guard.py`, `discord_notify.py` und
+`com.infovis.daily.plist`. Die Skripte selbst bleiben ortsunabhängig, weil sie ihren
+Wurzelordner aus `Path(__file__)` ableiten. Der ältere Eintrag oben bleibt wörtlich stehen;
+sein Pfad `Wissen/` gilt nicht mehr.
+
+**Grund.** Vorgabe der bearbeitenden Person in der Sitzung vom 22.11.2026: der Ordnername
+soll den Kurs tragen, damit der Vault beim Arbeiten neben anderen Vaults eindeutig
+zuzuordnen ist.
+
+**Verworfen.** Den alten Ordnernamen behalten und nur in den Notizen umbenennen (die
+Dateipfade würden auseinanderlaufen); eine zweite Kopie oder einen Symlink anlegen (zwei
+Stände, die gepflegt werden müssten).

@@ -34,9 +34,9 @@ jobs:
           PR_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           if [ "$EVENT" = "pull_request" ]; then
-            python3 Wissen/_tools/author_guard.py --range "origin/$BASE_REF..$PR_SHA"
+            python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --range "origin/$BASE_REF..$PR_SHA"
           elif [ "$EVENT" = "push" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
-            python3 Wissen/_tools/author_guard.py --range "$BEFORE..$SHA"
+            python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --range "$BEFORE..$SHA"
           else
-            python3 Wissen/_tools/author_guard.py --commit HEAD
+            python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --commit HEAD
           fi

@@ -6,10 +6,10 @@ Erlaubt ist genau ein Autor (Standard: Trung Do <dotrung1998@gmail.com>),
 Bot-Adressen und Tool-Hinweise wie "generated with", "codebuff" oder "buffy".
 
 Verwendung:
-    python3 Wissen/_tools/author_guard.py --commit HEAD
-    python3 Wissen/_tools/author_guard.py --range origin/main..HEAD
-    python3 Wissen/_tools/author_guard.py --config
-    python3 Wissen/_tools/author_guard.py --message-file .git/COMMIT_EDITMSG --config
+    python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --commit HEAD
+    python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --range origin/main..HEAD
+    python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --config
+    python3 Wissen_Informationsvisualisierung/_tools/author_guard.py --message-file .git/COMMIT_EDITMSG --config
 """
 
 from __future__ import annotations

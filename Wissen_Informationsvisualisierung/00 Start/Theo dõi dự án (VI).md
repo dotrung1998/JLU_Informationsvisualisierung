@@ -108,8 +108,8 @@ Cấu trúc giống folder `Projektplanung`, chỉ khác nội dung:
 Visual 3. Semester/    Einstiegsseite (bản nộp)
 Prüfungsvorleistung/   nơi để bài tập + video
 e-Portfolio/           Portfolio/ và Programmcode/ (bản cuối)
-Wissen/                bộ nhớ Obsidian (các trang .md)
-Wissen/_tools/         ingest.py, board_sync.py, daily.sh, discord_notify.py
+Wissen_Informationsvisualisierung/                bộ nhớ Obsidian (các trang .md)
+Wissen_Informationsvisualisierung/_tools/         ingest.py, board_sync.py, daily.sh, discord_notify.py
 ```
 
 Mỗi ngày 08:00 (giờ Berlin) GitHub Actions chạy:
@@ -124,8 +124,8 @@ Không có file mới → không ghi gì. Ghi chú tự viết tay **không bao 
 Lệnh thủ công (trong folder này):
 
 ```bash
-python3 Wissen/_tools/daily.sh
-cat "Wissen/00 Start/Neu seit letztem Lauf.md"
+python3 Wissen_Informationsvisualisierung/_tools/daily.sh
+cat "Wissen_Informationsvisualisierung/00 Start/Neu seit letztem Lauf.md"
 ```
 
 ## 7. Việc cần làm ngay

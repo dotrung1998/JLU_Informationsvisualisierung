@@ -42,6 +42,9 @@ gemeinsame Gruppenteil muss in allen Portfolios der Gruppe identisch sein.
 - 22.11.2026: Gedächtnis und Automatik eingerichtet — dieser Vault, `ingest.py`,
   `board_sync.py`, GitHub Actions und Discord-Bericht, nach dem Muster des
   Schwesterprojekts `../Projektplanung` ([[Entscheidungen]]).
+- 22.11.2026: Vault-Ordner von `Wissen/` in `Wissen_Informationsvisualisierung/`
+  umbenannt; Skripte, Hooks, Workflows und `AGENTS.md` folgen dem neuen Pfad
+  ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 

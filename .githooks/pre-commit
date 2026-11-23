@@ -2,4 +2,4 @@
 # Lokale Sperre: kein Commit mit fremdem Autor oder Bot-/Tool-Konfiguration.
 set -eu
 root=$(git rev-parse --show-toplevel)
-exec python3 "$root/Wissen/_tools/author_guard.py" --config
+exec python3 "$root/Wissen_Informationsvisualisierung/_tools/author_guard.py" --config

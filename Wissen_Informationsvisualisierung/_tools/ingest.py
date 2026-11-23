@@ -24,9 +24,9 @@ Geschrieben werden ausschliesslich:
 Handgeschriebene Notizen bleiben unangetastet.
 
 Aufruf:
-    python3 Wissen/_tools/ingest.py            # einlesen und Abdeckung pruefen
-    python3 Wissen/_tools/ingest.py --check    # nur berichten
-    python3 Wissen/_tools/ingest.py --force    # alles neu rendern
+    python3 Wissen_Informationsvisualisierung/_tools/ingest.py            # einlesen und Abdeckung pruefen
+    python3 Wissen_Informationsvisualisierung/_tools/ingest.py --check    # nur berichten
+    python3 Wissen_Informationsvisualisierung/_tools/ingest.py --force    # alles neu rendern
 """
 
 from __future__ import annotations
@@ -554,7 +554,7 @@ def coverage(state: dict, rules: dict) -> dict:
 
     for p in discover_sources():
         key = unicodedata.normalize("NFC", rel(p))
-        if key.startswith("Wissen/"):
+        if key.startswith("Wissen_Informationsvisualisierung/"):
             continue
         status, ziel, grund = "", "", ""
 

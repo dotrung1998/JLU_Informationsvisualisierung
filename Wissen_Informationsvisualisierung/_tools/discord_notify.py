@@ -8,9 +8,9 @@ Der Webhook ist ein Geheimnis. Er wird hier gelesen, in dieser Reihenfolge:
 Fehlt alles, wird nichts gesendet. Der Webhook steht nie im Vault und nie im Repo.
 
 Aufruf:
-    python3 Wissen/_tools/discord_notify.py
-    python3 Wissen/_tools/discord_notify.py --dry-run
-    python3 Wissen/_tools/discord_notify.py --status fail --detail "ingest.py"
+    python3 Wissen_Informationsvisualisierung/_tools/discord_notify.py
+    python3 Wissen_Informationsvisualisierung/_tools/discord_notify.py --dry-run
+    python3 Wissen_Informationsvisualisierung/_tools/discord_notify.py --status fail --detail "ingest.py"
 """
 
 from __future__ import annotations
@@ -179,7 +179,7 @@ def message() -> str:
     elif structure:
         lines.append(structure)
     if structure.upper().startswith("BOARD-STRUKTUR: FEHLER") or "FEHLER" in structure:
-        lines.append("⚠️ **Board-Struktur prüfen** — Details in `Wissen/_tools/daily.log`")
+        lines.append("⚠️ **Board-Struktur prüfen** — Details in `Wissen_Informationsvisualisierung/_tools/daily.log`")
 
     rows = faellige()
     lines.append("")
@@ -190,7 +190,7 @@ def message() -> str:
         lines.append("Keine Frist in den nächsten sieben Tagen.")
 
     lines.append("")
-    lines.append("Details: `Wissen/00 Start/Status.md` · `Board.md`")
+    lines.append("Details: `Wissen_Informationsvisualisierung/00 Start/Status.md` · `Board.md`")
     return "\n".join(lines)
 
 

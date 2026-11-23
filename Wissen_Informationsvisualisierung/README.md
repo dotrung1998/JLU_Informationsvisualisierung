@@ -1,8 +1,8 @@
 # Obsidian-Vault: Informationsvisualisierung
 
 Dieser Ordner **ist** der Vault. Öffnen mit Obsidian → „Ordner als Vault öffnen“ →
-`Wissen/` auswählen. Alles ist reines Markdown mit Wikilinks; das Kanban-Plugin für
-[[Board]] liegt unter `Wissen/.obsidian/plugins/obsidian-kanban`.
+`Wissen_Informationsvisualisierung/` auswählen. Alles ist reines Markdown mit Wikilinks; das Kanban-Plugin für
+[[Board]] liegt unter `Wissen_Informationsvisualisierung/.obsidian/plugins/obsidian-kanban`.
 
 ## Aufbau
 
@@ -33,7 +33,7 @@ Vietnamesische Leseansicht: [[Điểm vào (VI)]] (kurz) und [[Theo dõi dự á
 2. Im Projektordner ausführen:
 
 ```bash
-python3 Wissen/_tools/daily.sh
+python3 Wissen_Informationsvisualisierung/_tools/daily.sh
 ```
 
 3. `00 Start/Neu seit letztem Lauf.md` lesen — dort steht, was neu oder geändert ist.
@@ -53,7 +53,7 @@ Ein lokaler LaunchAgent liegt nur als Datei bei (`_tools/com.infovis.daily.plist
 stattdessen installieren will:
 
 ```bash
-cp Wissen/_tools/com.infovis.daily.plist ~/Library/LaunchAgents/
+cp Wissen_Informationsvisualisierung/_tools/com.infovis.daily.plist ~/Library/LaunchAgents/
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.infovis.daily.plist
 ```
 
