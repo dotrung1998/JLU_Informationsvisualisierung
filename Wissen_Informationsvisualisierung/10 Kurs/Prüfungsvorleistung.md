@@ -41,6 +41,11 @@ Kapitel 0, Folie „Notenrelevantes“.
   die Endung setzen, zum Beispiel `Nasenbaer_Theo_zustimmung_V01.pdf`.
 - Beide Dateien sind für **beide** Präsentationsformen nötig (Video und Hörsaal).
 
+**Widerspruch zwischen den Dokumenten.** Das Übungsblatt verlangt die MP4-Datei für beide
+Präsentationsformen (S. 1). Das Handout schreibt dagegen: „Bei einer Live-Präsentation im
+Hörsaal ist kein Video einzureichen“ (S. 1). Beide Stellen bleiben stehen; geklärt wird das
+beim Dozenten, nicht im Vault ([[Offene Entscheidungen]]).
+
 ## Aufgabenübersicht
 
 | Nr. | Kapitel | Titel | Kern der Aufgabe |
@@ -106,6 +111,7 @@ Geräuschaufgabe der Sonderfall — nicht 0.
 
 ## Eigene Wahl
 
-`Status: zu klären` — Aufgabe und Variante sind noch nicht gewählt
-([[Offene Entscheidungen]]). Ablage: `Prüfungsvorleistung/`
-([[Abgaben (auto)]]).
+**Stand 23.11.2026:** U02, Variante A (Werte 50 und 60, Basis 40, Piktogrammfaktor 1,2) ist
+als Entwurf gerechnet und gezeichnet ([[U02 Lie Factor]]) und am 23.11.2026 bestätigt. Der
+Termin für den Hörsaalvortrag ist nicht dokumentiert, abgegeben ist nichts. Ablage:
+`Prüfungsvorleistung/` ([[Abgaben (auto)]]).

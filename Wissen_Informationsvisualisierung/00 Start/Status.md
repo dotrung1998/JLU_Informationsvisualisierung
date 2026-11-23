@@ -1,6 +1,6 @@
 ---
 titel: Status
-stand: 2026-11-22
+stand: 2026-11-23
 ---
 
 # Status
@@ -9,7 +9,7 @@ stand: 2026-11-22
 
 | Wann | Was | Erledigt |
 |---|---|---|
-| bis So 25.10.2026 | Einstiegsseite über Stud.IP abgeben (Handout S. 1) | ☐ — Datei liegt vor, Abgabenachweis fehlt |
+| bis So 25.10.2026 | Einstiegsseite über Stud.IP abgeben (Handout S. 1) | ☑ — laut Angabe eingereicht, PDF am 23.11.2026 erzeugt, Quittung fehlt |
 | alle 2 Wochen | Übungsaufgaben (Kap. 0, Folie „Ablauf“); Termine nicht dokumentiert | ☐ |
 | bis „etwa Weihnachten 2026“ bzw. nach Ende der FlexNow-Anmeldefrist | Einteilung in Sechsergruppen durch die Lehrenden (Handout S. 2) | ☐ |
 | Mi 31.03.2027 | vollständiges individuelles Portfolio **und Programmcode** (Handout S. 1) | ☐ |
@@ -29,21 +29,24 @@ menschliche Checkliste. **Nur belegte Daten** stehen in `_tools/fristen.json`; T
 | 2027-04-09 | Blockseminar Tag 1: Präsentation des Gruppenteils | in 137 Tagen | team |
 | 2027-04-10 | Blockseminar Tag 2 | in 138 Tagen | team |
 
-Board: 2 von 14 Karten erledigt. Details in [[Board]], Quellenstand in [[Abgaben (auto)]].
+Board: 4 von 14 Karten erledigt. Details in [[Board]], Quellenstand in [[Abgaben (auto)]].
+
+**Abgabe mit Dateien, aber ohne bekannte Frist:** Sitzung Prüfungsvorleistung — Frist in `_tools/fristen.json` nachtragen.
 <!-- AUTO:END -->
 
 ## Nächste Aktion
 
-**Stand 22.11.2026:** Der Vault ist eingerichtet, das Material eingelesen. Die nächsten
-Schritte sind in dieser Reihenfolge sinnvoll:
+**Stand 23.11.2026:** Die Einstiegsseite ist erledigt (PDF gesetzt, Abgabe laut Angabe
+erfolgt). Die nächsten Schritte sind in dieser Reihenfolge sinnvoll:
 
-1. **Prüfungsvorleistung festlegen.** Eine Aufgabe aus U01–U14 und eine Variante wählen
-   ([[Prüfungsvorleistung]]); die Aufgabe bestimmt, welche Kapitel zuerst zu lesen sind.
-   Ohne diese Wahl ist keine Vorbereitung möglich.
-2. **Einstiegsseite absichern.** Die `.tex` liegt vor, eine PDF fehlt; prüfen, ob die
-   Abgabe am 25.10. in Stud.IP erfolgt ist, und die Seite unverändert als Seite 2
-   übernehmen ([[Einstiegsseite]]).
-3. **Kapitel 2 und 3 lesen** (Grundlagen, Lie Factor, Data-Ink, Wahrnehmung, Farbe) — dort
+1. **U02-Vortrag bauen.** Variante A ist bestätigt, Rechnung und Entwurf liegen vor
+   ([[U02 Lie Factor]]); jetzt den Ablauf für 3–6 Minuten festlegen und proben.
+2. **Präsentationstermin erfragen.** Termine der Übungsabgaben und des Hörsaalvortrags sind
+   in keinem Dokument genannt; per E-Mail an den Dozenten ([[Personen]]).
+3. **Die zwei Abgabedateien bauen.** Zustimmungs-PDF und MP4 (höchstens 25 MB), und im
+   Vortrag die drei Kriterien abhaken (Problem zeigen, vollständig lösen, Änderung
+   begründen).
+4. **Kapitel 2 und 3 lesen** (Grundlagen, Lie Factor, Data-Ink, Wahrnehmung, Farbe) — dort
    liegen die Kriterien, mit denen der Gruppenteil später begründet wird
    ([[Kapitel 02 Grundlagen und Konzepte]], [[Kapitel 03 Wahrnehmung]]).
 
@@ -55,7 +58,7 @@ Präsentation, Zeitpunkt der Gruppeneinteilung, Kapitelnummerierung 5/6
 
 | Person | Rolle (belegt) | Nächster Schritt | Frist |
 |---|---|---|---|
-| **Trung Do** | Studierende:r, eigenes Portfolio; Gruppenzuordnung noch offen | Aufgabe für die Prüfungsvorleistung wählen, Einstiegsseite als PDF sichern, Kapitel 2–3 lesen | 31.03.2027 (Portfolio); Übungstermin offen |
+| **Trung Do** | Studierende:r, eigenes Portfolio; Gruppenzuordnung noch offen | U02-Entwurf prüfen und bestätigen, Vortrag bauen, Termin erfragen | 31.03.2027 (Portfolio); Übungstermin offen |
 | Prof. Sangam Chatterjee, Ph.D. | Dozent, I. Physikalisches Institut, Raum 432, Sprechstunde nach Vereinbarung | Ansprechpartner für Termine der Übungen und des Hörsaalvortrags ([[Personen]]) | — |
 
 Eine Gruppenzuordnung ist nicht dokumentiert; sie erfolgt laut Handout S. 2 durch die
@@ -74,8 +77,8 @@ Lehrenden bis etwa Weihnachten 2026 beziehungsweise nach Ende der Anmeldefrist i
 
 | Ordner | Was | Datum | Datei | Stand |
 |---|---|---|---|---|
-| `Visual 3. Semester/` | Einstiegsseite (Seite 2) | 25.10.2026 | `Do_Trung_*_Einstiegsseite.tex`, zwei Fotos | `.tex` vorhanden, **keine PDF**, Abgabe unbestätigt |
-| `Prüfungsvorleistung/` | Übungsaufgabe U01–U14 | offen | — | leer, Aufgabe nicht gewählt |
+| `Visual 3. Semester/` | Einstiegsseite (Seite 2) | 25.10.2026 | `Do_Trung_*_Einstiegsseite.tex`, `.pdf`, zwei Fotos | `.tex` und PDF (eine Seite A4) vorhanden, Abgabe laut Angabe erfolgt |
+| `Prüfungsvorleistung/` | Übungsaufgabe U02, Variante A | offen | `U02_Lie_Factor_Entwurf.tex`, `.pdf` | Entwurf gerechnet und gezeichnet, nichts abgegeben |
 | `e-Portfolio/Portfolio/` | Gesamtportfolio | 31.03.2027 | — | leer |
 | `e-Portfolio/Programmcode/` | Programmcode | 31.03.2027 | — | leer |
 

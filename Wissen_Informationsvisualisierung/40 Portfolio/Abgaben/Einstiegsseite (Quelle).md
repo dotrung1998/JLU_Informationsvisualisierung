@@ -2,7 +2,7 @@
 titel: "Einstiegsseite"
 quelle: "Abgabe/Visual 3. Semester"
 stand: 2026-11-23
-hash: e26992c9655e
+hash: a94f7845fc98
 automatisch: true
 ---
 
@@ -17,6 +17,7 @@ Handskizze und Erwartungen, Seite 2 des Portfolios; Abgabe bis 25.10.2026 (Hando
 
 | Datei | Größe | Typ | Herkunft |
 |---|---|---|---|
+| `Do_Trung_8229831_Einstiegsseite.pdf` | 580 KB | PDF | eigene Datei |
 | `Do_Trung_8229831_Einstiegsseite.tex` | 4 KB | TEX | eigene Datei |
 | `informationsvisualisierung_einstiegsseite.tex` | 8 KB | TEX | Fremddatei oder Vorlage |
 | `skizze-a-bibliothek.jpg` | 278 KB | JPG | Fremddatei oder Vorlage |
@@ -26,6 +27,43 @@ Handskizze und Erwartungen, Seite 2 des Portfolios; Abgabe bis 25.10.2026 (Hando
 
 ## Inhalt
 
+### Do_Trung_8229831_Einstiegsseite.pdf
+
+~~~~
+Informationsvisualisierung
+                                    Einstiegsseite – Handskizze und Erwartungen, WiSe 2026/27
+                                               Trung Do | Matrikelnummer: 8229831
+
+
+Teil A: Handskizze
+A Fiktive Bibliotheksdaten
+
+
+
+
+B Meine Bibliotheks- und Online-Literaturnutzung (typische Arbeitswoche)
+
+
+
+
+Teil B: Darstellungsabsicht, Begründung und Erwartungen
+Ich möchte zeigen, wann die Bibliothek besonders voll ist und wie sich meine eigene Literaturarbeit dazu verhält. Oben stehen die
+ﬁktiven Bibliotheksdaten als vier Strich-Kreis-Diagramme, weil sich so jeder Einzelwert direkt ablesen lässt und keine Farbﬂäche
+nötig ist. Unten zeige ich für jeden Tag zwei Zeitspuren, die meine Bibliotheksnutzung (B) und meine Online-Literatur (O) trennen
+und Überschneidungen sichtbar lassen. Geschätzte Zeiten sind gestrichelt gezeichnet, und ein Fragezeichen markiert Angaben, die
+ich nicht rekonstruieren konnte. Am Mittwoch war ich nicht in der Bibliothek, weil ich zu Hause geschrieben habe, und am Sonntag
+habe ich bewusst beides nicht genutzt, um zu pausieren. Im Modul hoﬀe ich zu lernen, wie ich passende Diagrammtypen auswähle,
+Kernaussagen klar darstelle und meine Gestaltungsentscheidungen nachvollziehbar begründe.1
+
+Wortzahl: 119/120
+
+
+
+
+   1 Datenquelle Skizze A: Handout Informationsvisualisierung – Portfolio Übungen und Abschlussseminar, S. 3 (ﬁktive Bibliotheksdaten).
+
+KI-Hilfe: Perplexity AI unterstützte beim LaTeX-Code. Zeichnung und Text stammen von mir.
+~~~~
 ### Do_Trung_8229831_Einstiegsseite.tex
 
 ~~~~

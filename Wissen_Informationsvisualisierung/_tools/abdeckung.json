@@ -1,5 +1,5 @@
 {
-  "stand": "2026-11-23 01:43",
+  "stand": "2026-11-23 03:06",
   "dateien": [
     {
       "pfad": "00_Materialien/Handout_Informationsvisualisierung.pdf",
@@ -38,6 +38,30 @@
       "grund": "Download-Liste des Lernportals (Name, Größe, Uploader, Downloadzahl, Datum, Pfad) — Metadaten zu den fünf PDFs, kein fachlicher Inhalt"
     },
     {
+      "pfad": "Prüfungsvorleistung/U02_Lie_Factor_Entwurf.pdf",
+      "status": "notiz",
+      "ziel": "40 Portfolio/Abgaben/Prüfungsvorleistung (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "Prüfungsvorleistung/U02_Lie_Factor_Entwurf.tex",
+      "status": "notiz",
+      "ziel": "40 Portfolio/Abgaben/Prüfungsvorleistung (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "Prüfungsvorleistung/U02_Vorschau.png",
+      "status": "notiz",
+      "ziel": "40 Portfolio/Abgaben/Prüfungsvorleistung (Quelle).md",
+      "grund": ""
+    },
+    {
+      "pfad": "Visual 3. Semester/Do_Trung_8229831_Einstiegsseite.pdf",
+      "status": "notiz",
+      "ziel": "40 Portfolio/Abgaben/Einstiegsseite (Quelle).md",
+      "grund": ""
+    },
+    {
       "pfad": "Visual 3. Semester/Do_Trung_8229831_Einstiegsseite.tex",
       "status": "notiz",
       "ziel": "40 Portfolio/Abgaben/Einstiegsseite (Quelle).md",
@@ -65,11 +89,14 @@
   "unbekannt": [],
   "ohne_text": [],
   "ordner_mit_dateien": [
-    "Visual 3. Semester"
+    "Visual 3. Semester",
+    "Prüfungsvorleistung"
   ],
-  "wochen_ohne_frist": [],
+  "wochen_ohne_frist": [
+    "Prüfungsvorleistung"
+  ],
   "zaehlung": {
-    "notiz": 7,
+    "notiz": 11,
     "manuell": 2,
     "ausgeschlossen": 1,
     "unbekannt": 0

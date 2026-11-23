@@ -1,6 +1,6 @@
 ---
 titel: Offene Entscheidungen
-stand: 2026-11-22
+stand: 2026-11-23
 ---
 
 # Offene Entscheidungen
@@ -10,15 +10,13 @@ Empfehlung und was die Entscheidung blockiert.
 
 ## 1. Welche Übungsaufgabe und welche Variante?
 
-**Stand:** offen. U01–U14 stehen im Übungsblatt „Kapitel 1 bis 5“; jede Aufgabe hat eine
-Variante A und eine Variante B, von denen genau eine vollständig zu bearbeiten ist
-([[Prüfungsvorleistung]]).
+**Stand: entschieden am 23.11.2026.** **U02 „Eine Übertreibung messen und beheben“,
+Variante A** (Werte 50 und 60, Basis 40, Piktogrammfaktor 1,2) ist gerechnet und gezeichnet
+([[U02 Lie Factor]], [[Entscheidungen]]). U01–U14 stehen im Übungsblatt „Kapitel 1 bis 5“;
+jede Aufgabe hat eine Variante A und eine Variante B, von denen genau eine vollständig zu
+bearbeiten ist ([[Prüfungsvorleistung]]).
 
-**Empfehlung.** Eine Aufgabe aus Kapitel 2 oder 3 wählen (U02 Lie Factor, U04 Daten-Tinte,
-U05 Treffer, U06 Farbskala): dort sind die Kriterien der Vorlesung direkt anwendbar, und die
-Rechnung ist kurz. U02 verlangt nur zwei Wertepaare und eine korrigierte Fassung.
-
-**Blockiert:** jede Vorbereitung der Prüfungsvorleistung, die Wahl der Kapitel, den Termin.
+**Blockiert:** nichts mehr. Offen bleibt der Vortragstermin (Frage 2).
 
 ## 2. Wann sind die Übungsabgaben und die eigene Präsentation?
 
@@ -45,14 +43,16 @@ Beispiele.
 
 ## 4. Ist die Einstiegsseite in Stud.IP abgegeben worden?
 
-**Stand:** offen. Die `.tex` mit zwei fotografierten Handskizzen liegt vor, eine PDF fehlt;
-ein Abgabenachweis ist nicht im Ordner.
+**Stand: entschieden am 23.11.2026.** Die einreichende Person hat bestätigt, die Seite
+fristgerecht über Stud.IP eingereicht zu haben. Eine Quittung liegt nicht im Projekt und wird
+nicht nachgereicht. Die PDF wurde am 23.11.2026 mit `tectonic` aus der `.tex` erzeugt und
+liegt neben der Quelle ([[Einstiegsseite]], [[Entscheidungen]]).
 
-**Empfehlung.** In Stud.IP nachsehen; falls nicht abgegeben, die Datei jetzt kompilieren und
-den Stand schriftlich festhalten. Die Seite geht unverändert als Seite 2 ins Portfolio.
+**Empfehlung.** Keine weitere Prüfung. Die Seite unverändert als Seite 2 ins Portfolio
+übernehmen.
 
-**Blockiert:** die Sicherheit, dass eine Pflichtseite des Portfolios existiert, und die
-Wortzahl-Angabe 119/120 in der Abgabe.
+**Blockiert:** nichts mehr. Offen bleibt nur der Abgabenachweis für die eigenen Unterlagen,
+falls die Lehrenden ihn anfordern.
 
 ## 5. Kapitel 5 oder Kapitel 6 — Interaktion oder Graphen?
 
@@ -69,8 +69,10 @@ bis dahin in Notizen beide Nummern nennen ([[Kapitel 06 Graphen und Netzwerke]])
 ## 6. Video oder Hörsaalvortrag?
 
 **Stand:** offen. Beide Wege sind zulässig; Live-Vorträge per Videokonferenz sind
-ausgeschlossen (Übungsblatt S. 1). Bei einer Videopräsentation im Hörsaal ist die
-schriftliche Einwilligung aller Beteiligten nötig (Handout S. 3).
+ausgeschlossen (Übungsblatt S. 1). Für den Hörsaalvortrag verlangt das Handout kein Video
+(S. 1), das Übungsblatt verlangt die MP4-Datei trotzdem für beide Formen (S. 1) — dieser
+Widerspruch ist zu klären ([[Prüfungsvorleistung]]). Bei einer Videopräsentation im Hörsaal
+ist die schriftliche Einwilligung aller Beteiligten nötig (Handout S. 3).
 
 **Empfehlung.** Hörsaalvortrag, solange die eigene Präsenz sicher ist: kein Upload-Limit,
 keine Einwilligung Dritter, unmittelbare Rückfragen.

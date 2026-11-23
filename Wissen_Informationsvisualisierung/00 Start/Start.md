@@ -1,6 +1,6 @@
 ---
 titel: Start
-stand: 2026-11-22
+stand: 2026-11-23
 status: aktiv
 ---
 
@@ -42,6 +42,13 @@ gemeinsame Gruppenteil muss in allen Portfolios der Gruppe identisch sein.
 - 22.11.2026: Gedächtnis und Automatik eingerichtet — dieser Vault, `ingest.py`,
   `board_sync.py`, GitHub Actions und Discord-Bericht, nach dem Muster des
   Schwesterprojekts `../Projektplanung` ([[Entscheidungen]]).
+- 23.11.2026: U02 (Lie Factor) als Entwurf gerechnet und gezeichnet: Lie Factor 5,00 für
+den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C mit Achse ab 0
+([[U02 Lie Factor]]). Nichts abgegeben, Termin offen.
+- 23.11.2026: Einstiegsseite abgeschlossen. Die Abgabe am 25.10.2026 ist laut Angabe der
+  Person erfolgt, die PDF wurde mit `tectonic` gesetzt (eine Seite A4, „Wortzahl: 119/120“,
+  beide Fotos eingebettet) und liegt neben der `.tex` ([[Einstiegsseite]]). Nächster Schritt
+  ist die Wahl der Übungsaufgabe ([[Prüfungsvorleistung]]).
 - 22.11.2026: Vault-Ordner von `Wissen/` in `Wissen_Informationsvisualisierung/`
   umbenannt; Skripte, Hooks, Workflows und `AGENTS.md` folgen dem neuen Pfad
   ([[Entscheidungen]]).

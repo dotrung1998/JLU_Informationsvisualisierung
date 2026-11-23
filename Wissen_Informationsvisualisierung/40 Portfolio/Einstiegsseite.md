@@ -1,6 +1,6 @@
 ---
 titel: Einstiegsseite
-stand: 2026-11-22
+stand: 2026-11-23
 ---
 
 # Einstiegsseite (Seite 2 des Portfolios)
@@ -13,8 +13,8 @@ Quelle: `Visual 3. Semester/Do_Trung_*_Einstiegsseite.tex` und die beiden Fotos
 | Punkt | Stand |
 |---|---|
 | `.tex` vorhanden | ja, eine Seite, A4, Fotos eingebunden |
-| PDF vorhanden | **nein** |
-| Abgabe in Stud.IP (bis 25.10.2026) | **unbestätigt** |
+| PDF vorhanden | ja, `Do_Trung_8229831_Einstiegsseite.pdf`, eine Seite A4, 23.11.2026 mit `tectonic` gesetzt |
+| Abgabe in Stud.IP (bis 25.10.2026) | laut Angabe der Person abgegeben, Quittung nicht im Projekt |
 | Wortzahl im Dokument | `\Wortzahl{119}` → „Wortzahl: 119/120“ |
 | Übernahme als Seite 2 | vorgesehen, unverändert 1:1 |
 
@@ -51,9 +51,11 @@ Abgabe und wird nicht eingereicht. Sie bleibt als Beispiel im Ordner, damit die 
 
 ## Was zu tun bleibt
 
-- [ ] PDF aus der `.tex` erzeugen (lokal `tectonic`, mit den beiden Fotos im selben Ordner).
-- [ ] Prüfen, ob die Abgabe am 25.10.2026 in Stud.IP erfolgt ist; Ergebnis hier und in
-      [[Status]] festhalten.
+- [x] PDF aus der `.tex` erzeugen (lokal `tectonic`, mit den beiden Fotos im selben Ordner).
+      Erledigt 23.11.2026: eine Seite A4, beide Fotos eingebettet, kein Platzhalter,
+      `Wortzahl: 119/120` im Text.
+- [x] Prüfen, ob die Abgabe am 25.10.2026 in Stud.IP erfolgt ist. Erledigt 23.11.2026: laut
+      Angabe der Person abgegeben, eine Quittung liegt nicht im Projekt.
 - [ ] Wortzahl nach jeder Textänderung neu zählen (119 ist der Stand im Dokument).
 - [ ] Die Seite später **unverändert** als Seite 2 einsetzen; keine Nachbesserung, auch
       wenn die Darstellung heute verbesserungswürdig erscheint — genau dieser Abstand

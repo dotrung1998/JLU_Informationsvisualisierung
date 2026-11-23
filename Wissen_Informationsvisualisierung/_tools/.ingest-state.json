@@ -39,10 +39,20 @@
     "v": 1,
     "ziel": "10 Kurs/Projektion InfoVis 2026-10-12 (Quelle).md"
   },
+  "Abgabe/Prüfungsvorleistung": {
+    "anhang_dir": "90 Anhänge/Abgaben/Prüfungsvorleistung",
+    "eingelesen": "2026-11-23 03:06",
+    "hash": "e292e6ebf0998d9c68f6d2c9f21dc40cd7649296f180a15abacccb04c9672928",
+    "ohne_text": [
+      "U02_Vorschau.png"
+    ],
+    "v": 1,
+    "ziel": "40 Portfolio/Abgaben/Prüfungsvorleistung (Quelle).md"
+  },
   "Abgabe/Visual 3. Semester": {
     "anhang_dir": "90 Anhänge/Abgaben/Einstiegsseite",
-    "eingelesen": "2026-11-23 00:40",
-    "hash": "e26992c9655e0d0d53fd8abeab0e2a2a44a6604167fc6afa291c102b59eec4eb",
+    "eingelesen": "2026-11-23 02:48",
+    "hash": "a94f7845fc98f9fece43e0dbc87576eb1a22768154704bb774eafd15f8d6ca60",
     "ohne_text": [
       "skizze-a-bibliothek.jpg",
       "skizze-b-meine-woche.jpg"

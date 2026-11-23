@@ -1,6 +1,6 @@
 ---
 titel: Điểm vào (VI)
-stand: 2026-11-22
+stand: 2026-11-23
 ---
 
 # Điểm vào (VI) — Informationsvisualisierung
@@ -31,12 +31,14 @@ Mã module trên tên folder: `07-BDS-15`, `07-MDS-06`, `07-MDA-11`; slide lại
 
 ## Ba việc gấp nhất
 
-1. **Chọn bài tập.** Đọc U01–U14 trong [[Prüfungsvorleistung]] và chọn **một** bài, một
-   biến thể (A hoặc B). Không có lựa chọn này thì không chuẩn bị được gì.
+1. **Chốt bài tập.** U02 (Lie Factor) đã có bản nháp: LF 5,00 cho Fassung A, 2,20 cho
+   Fassung B, Fassung C vẽ lại từ 0 ([[U02 Lie Factor]]). Xem lại, xác nhận Variante A,
+   rồi dựng bài nói 3–6 phút.
 2. **Hỏi ngày trình bày.** Tài liệu không ghi ngày; phải hỏi thầy qua email hoặc trước/sau
    giờ học ([[Personen]]).
-3. **Cứu trang 2.** File `.tex` có, **chưa có PDF**, và chưa rõ đã nộp Stud.IP hay chưa.
-   Trang này phải vào portfolio **1:1, không sửa** ([[Einstiegsseite]]).
+3. ~~**Cứu trang 2.**~~ **Xong 23.11.2026:** PDF đã tạo bằng `tectonic` (1 trang A4, đủ 2
+   ảnh, „Wortzahl: 119/120“), bạn xác nhận đã nộp trên Stud.IP. Nhớ đưa trang này vào
+   portfolio **1:1, không sửa** ([[Einstiegsseite]]).
 
 ## Cấu trúc portfolio (5–10 trang)
 
@@ -67,9 +69,9 @@ Dùng cho phần nhóm ([[Gruppenarbeit]]):
 
 | Việc | Hạn |
 |---|---|
-| Chọn bài U01–U14 + biến thể, tính và vẽ, tập nói 3–6 phút | chưa có ngày |
+| U02 Variante A: bản nháp đã có, cần xác nhận + tập nói 3–6 phút | chưa có ngày |
 | Nộp 2 file (Zustimmung PDF + MP4 ≤ 25 MB) | cùng ngày trình bày |
-| Einstiegsseite: tạo PDF, kiểm tra đã nộp chưa | ngay |
+| Einstiegsseite: PDF đã tạo, đã nộp (xác nhận 23.11.2026) | xong |
 | Đọc Kapitel 2 và 3 (tiêu chí), Kapitel 4 (loại biểu đồ) | trước khi làm bài |
 | Portfolio + code | 31.03.2027 |
 

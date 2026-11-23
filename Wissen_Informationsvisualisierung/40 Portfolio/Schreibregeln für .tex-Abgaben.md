@@ -1,6 +1,6 @@
 ---
 titel: Schreibregeln für .tex-Abgaben
-stand: 2026-11-22
+stand: 2026-11-23
 ---
 
 # Schreibregeln für .tex-Abgaben
@@ -13,6 +13,10 @@ Gilt für alle eigenen Dateien (Trung). Beleg: die vorhandene Einstiegsseite
 - **Kein Semikolon** im Fließtext. Statt `;` ein Punkt oder ein Komma.
 - **Kein Gedankenstrich als Satzzeichen** im Fließtext. Stattdessen Punkt oder Komma;
   Bindestriche in Komposita bleiben (`Strich-Kreis-Diagramm`).
+- **Kein literales „ß“ im Quelltext.** Mit `tectonic` (XeTeX + `inputenc`/`T1`) wird es in
+  jedem Schnitt als „SS“ gesetzt (Befund 23.11.2026 an `U02_Lie_Factor_Entwurf.tex`,
+  geprüft mit einem Minimalbeispiel: aufrecht, kursiv, fett, klein). Stattdessen
+  `gro\ss{}er` schreiben. Die Einstiegsseite enthält kein ß und bleibt unverändert.
 - `--` nur in Überschriften und in der Titelzeile.
 - `\enquote{…}` statt `"…"`.
 - Zahlen mit Einheit und Quelle nennen, keine gerundete Zahl ohne Beleg.

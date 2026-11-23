@@ -6,12 +6,12 @@ automatisch: true
 
 # Abgaben (automatisch)
 
-Lauf: 2026-11-23 00:40. Quelle: die Abgabeordner im Projektordner.
+Lauf: 2026-11-23 02:54. Quelle: die Abgabeordner im Projektordner.
 
 | Ordner | Was | Frist | Dateien | Stand |
 |---|---|---|---|---|
-| `Visual 3. Semester` | Einstiegsseite | 2026-10-25 | 4 | eigene Datei, **keine PDF** |
-| `Prüfungsvorleistung` | Prüfungsvorleistung | — | 0 | leer |
+| `Visual 3. Semester` | Einstiegsseite | 2026-10-25 | 5 | eigene PDF vorhanden |
+| `Prüfungsvorleistung` | Prüfungsvorleistung | — | 3 | **nur Fremddateien** |
 | `e-Portfolio/Portfolio` | e-Portfolio – Portfolio | 2027-03-31 | 0 | leer |
 | `e-Portfolio/Programmcode` | e-Portfolio – Programmcode | 2027-03-31 | 0 | leer |
 

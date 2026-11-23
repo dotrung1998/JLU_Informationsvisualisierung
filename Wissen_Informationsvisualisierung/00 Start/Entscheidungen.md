@@ -150,3 +150,74 @@ scheitern würden.
 **Verworfen.** Die Regeln zusätzlich im Hook duplizieren (zwei Listen, die auseinanderlaufen);
 nur den Workflow prüfen (der Commit wäre schon geschrieben); jedes Vorkommen von „bot“
 sperren (false positives beim Discord-Bot).
+
+## 2026-11-23 — Einstiegsseite gilt als abgegeben, PDF mit `tectonic` gesetzt
+
+**Entscheidung.** Die Einstiegsseite gilt als am 25.10.2026 über Stud.IP eingereicht. Beleg
+ist die Angabe der einreichenden Person in der Sitzung vom 23.11.2026; eine Quittung aus
+Stud.IP liegt nicht im Projekt. Aus `Do_Trung_8229831_Einstiegsseite.tex` wurde mit
+`tectonic` eine PDF erzeugt und neben der Quelle abgelegt
+(`Visual 3. Semester/Do_Trung_8229831_Einstiegsseite.pdf`).
+
+**Grund.** Die Frage „abgegeben oder nicht“ stand seit dem 22.11. als offene Entscheidung
+und blockierte die Planung der Pflichtseite 2. Die Person hat sie beantwortet; ohne diese
+Festlegung beginnt jede Sitzung mit derselben Rückfrage. Die PDF war die letzte fehlende
+Datei zu einer bereits abgegebenen Seite und wird für das 1:1-Übernehmen ins Portfolio
+gebraucht. `tectonic` ist lokal installiert und kompiliert die Datei mit beiden Fotos ohne
+Nacharbeit. Geprüft: eine Seite A4, beide Fotos eingebettet, kein Platzhalter, Wortzahlzeile
+„119/120“.
+
+**Verworfen.** Auf die Stud.IP-Quittung warten und die Seite weiter als unbestätigt führen
+(blockiert die Planung ohne Erkenntnisgewinn); die PDF über texpage.com setzen (kein lokaler
+Beleg, zusätzlicher Arbeitsschritt); die `.tex` vor dem Setzen noch glätten (verletzt die
+Vorgabe „unverändert 1:1“).
+
+## 2026-11-23 — Literales „ß“ in `.tex` durch `\ss{}` ersetzen
+
+**Entscheidung.** In eigenen `.tex`-Dateien wird kein literales „ß“ mehr geschrieben,
+sondern `\ss{}`. Die Regel steht in [[Schreibregeln für .tex-Abgaben]].
+
+**Grund.** `tectonic` (XeTeX mit `inputenc` und `T1`) setzt das Zeichen in jedem Schnitt als
+zwei Großbuchstaben „SS“: „größer“ wurde zu „größSer“. Ein Minimalbeispiel mit demselben
+Präambel wie die Abgaben zeigt den Fehler für aufrechten, kursiven, fetten und kleinen Satz
+und zeigt gleichzeitig, dass `\ss{}` richtig gesetzt wird. Die Schreibregeln empfehlen
+`tectonic` namentlich, deshalb ist das kein Einzelfall, sondern betrifft jede künftige Datei.
+
+**Verworfen.** Auf pdfLaTeX (texpage.com) für die Arbeitsfassungen umstellen (kein lokaler
+Lauf, jeder Zwischenstand wäre ein Upload); `fontspec` mit einer Systemschrift laden (die
+Schreibregeln schließen `fontspec` in der Abgabedatei aus, und die Vorschau soll dieselbe
+Kette nutzen wie die Abgabe); das ß umschreiben („groesser“ wäre eine falsche Schreibweise
+im abgegebenen Text).
+
+## 2026-11-23 — U02 als Übungsaufgabe vorbereitet, Variante A
+
+**Entscheidung.** Für die Prüfungsvorleistung wird **U02 „Eine Übertreibung messen und
+beheben“** in **Variante A** vorbereitet (Werte 50 und 60, Basis 40, Piktogrammfaktor 1,2).
+Der Entwurf liegt als `U02_Lie_Factor_Entwurf.tex` und `.pdf` in `Prüfungsvorleistung/`
+([[U02 Lie Factor]]). Nichts ist abgegeben, die Wahl ist noch bestätigbar.
+
+**Grund.** Die Aufgabe braucht nur zwei Wertepaare und eine korrigierte Fassung, deckt aber
+alle drei Bewertungskriterien des Übungsblatts in einem Zug ab: Die abgeschnittene Basis und
+die Flächenskalierung sind zwei verschiedene Fehlerbilder, der Lie Factor beziffert beide,
+und Fassung C zeigt die Korrektur. Die Zahlen sind mit dem Übungsblatt belegt, die
+Begründung stützt sich auf Kapitel 2 der Vorlesung.
+
+**Verworfen.** U05 „Treffer sichtbar machen“ (näher an der eigenen Bibliotheksskizze, aber
+mehr Zeichenarbeit und eine Präattentiv-Diskussion ohne belastbaren Messwert); U09
+(Fehlerbalken, mehr Rechnung bei gleicher Vortragszeit); eine Aufgabe aus Kapitel 1 ohne
+Bezug zu den Kriterien aus Kapitel 2 und 3.
+
+## 2026-11-23 — Variante A bleibt, KI-Offenlegung erweitert
+
+**Entscheidung.** U02 bleibt bei **Variante A** (50 und 60, Basis 40, Piktogrammfaktor 1,2),
+kein Wechsel auf B. Die Fußnote des Entwurfs nennt seit demselben Tag drei Arbeitsschritte
+als KI-gestützt: Rechnung, Formulierung der Begründung und LaTeX-/TikZ-Code; die
+Verantwortung für die Richtigkeit bleibt bei der einreichenden Person.
+
+**Grund.** Die Person hat Variante A bestätigt. Die alte Fußnote deckte nur den Satz ab,
+obwohl Rechnung und Begründung ebenfalls mit dem Assistenten entstanden sind. Das Handout
+verlangt die Kennzeichnung der Arbeitsschritte, nicht nur des Codes.
+
+**Verworfen.** Wechsel auf Variante B (Lie Factor 8,00 statt 5,00, aber eine neue Zeichnung
+und kein zusätzlicher Erkenntnisgewinn für den Vortrag); die Fußnote im alten Wortlaut
+lassen (unvollständige Offenlegung).
