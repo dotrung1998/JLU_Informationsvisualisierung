@@ -37,3 +37,17 @@ Status: unverändert
 Board-Struktur: ok (Kanban-Plugin)
 ---
 Discord: gesendet (HTTP 204)
+=== 2026-11-23 19:57:10 ===
+Lauf 2026-11-23 19:57
+  neu:         0
+  geändert:    0
+  unverändert: 7
+  Abdeckung:   11 Notiz, 2 manuell, 1 ausgeschlossen, 0 unbekannt
+  Abgabeordner ohne bekannte Frist: Prüfungsvorleistung
+  keine Änderungen an den Quellen.
+---
+Board: unverändert
+Status: unverändert
+Board-Struktur: ok (Kanban-Plugin)
+---
+Discord: gesendet (HTTP 204)
