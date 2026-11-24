@@ -982,7 +982,7 @@
               <div class="embed-title">Zwei Fallen, die das Material selbst benennt</div>
               <div class="embed-desc">
                 <p><strong>1. Summe ist keine Besucherzahl.</strong> 18 + 64 + 96 + 55 = 233 für Mittwoch. Dieselbe Person kann zu mehreren Zeitpunkten erfasst sein. Wer 233 als „Besucher“ beschriftet, erzeugt eine falsche Aussage.</p>
-                <p><strong>2. Momentaufnahme ist kein Verlauf.</strong> Vier Zeitpunkte beschreiben keinen Tag. Eine Linie zwischen 08:00 und 12:00 behauptet einen Verlauf, den die Daten nicht enthalten.</p>
+                <p><strong>2. Momentaufnahme ist kein Verlauf.</strong> Vier Zeitpunkte beschreiben keinen Tag. Eine Linie zwischen 08:00 und 12:00 behauptet einen Verlauf, den die Daten nicht enthalten. Um 16:00 liegt Mittwoch mit 96 belegten Plätzen 34 über Freitag (62) — der Unterschied gilt für diesen einen Zeitpunkt, nicht für den Tag.</p>
                 <p><strong>3. Nullwerte sind Daten.</strong> Sonntag 08:00 = 0 ist ein Messwert, kein fehlender Wert.</p>
               </div>
               <div class="embed-footer">Handout S. 3; Gesamtfolien Kap. 2, Folien „Bibliotheksbelegung“ und „Vier Momentaufnahmen“</div>
@@ -3138,6 +3138,11 @@ window.QUIZ_DATA = [
       if(cnt) cnt.textContent = base + (on ? 1 : 0);
       save();
     }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const sp = e.target.closest(".spoiler");
+    if(sp && (e.key === "Enter" || e.key === " ")){ e.preventDefault(); sp.classList.toggle("open"); }
   });
 
   /* ---------------- Lie Factor calculator ---------------- */

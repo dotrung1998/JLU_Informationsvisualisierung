@@ -273,3 +273,18 @@ Quellenangabe. Eine einzelne HTML-Datei läuft offline im Browser und bleibt neb
 **Verworfen.** `dashboard.html` erweitern (mischt Fristen-Cockpit und Stoff, macht beide
 unübersichtlich); nur Markdown-Notizen im Vault (keine Suche, keine Interaktion); Wiki oder
 Notion (zweiter Ort neben dem Vault, kein Bezug zu den Dateien).
+
+## 2026-11-24 — Lernserver: Spoiler per Tastatur, Bibliotheksvergleich ergänzt
+
+**Entscheidung.** `lernserver.html` öffnet Spoiler zusätzlich mit Enter und Leertaste
+(eigener `keydown`-Handler). Die Bibliotheksnachricht in Kapitel 2 nennt den Unterschied
+zwischen Mittwoch (96) und Freitag (62) um 16:00 ausdrücklich: 34 Plätze, gültig für diesen
+Zeitpunkt.
+
+**Grund.** Die Prüfung des Blobs aus `origin/main` zeigte zwei Lücken: Der Spoiler war mit
+`tabindex="0"` fokussierbar, ließ sich aber nur per Klick öffnen; die Kapitel-2-Notiz nennt
+den 34-Plätze-Vergleich, die Nachricht zeigte nur die Tabelle. Beides ist ohne neue Quelle
+behebbar (96 − 62 = 34).
+
+**Verworfen.** Spoiler als `<button>` umbauen (größerer Eingriff in Textfluss und Layout);
+den 34-Plätze-Satz weglassen (dann fehlt der im Quellenstand notierte Vergleich).
