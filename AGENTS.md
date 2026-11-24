@@ -88,7 +88,8 @@ Das Skript schreibt nur:
 - `Wissen_Informationsvisualisierung/00 Start/Ingest Log.md`, `Neu seit letztem Lauf.md`
 - den Block zwischen `<!-- AUTO:START -->` und `<!-- AUTO:END -->` in `Status.md`
 - Statusvermerke am Zeilenende der Board-Karten
-- optional einen kurzen Discord-Bericht; der Webhook liegt unter
+- einen ausführlichen Discord-Bericht in zwei Nachrichten (Bericht + Kopiervorlage in einem
+  Code-Block); der Webhook liegt unter
   `~/.config/informationsvisualisierung/discord-webhook` (Rückfall:
   `~/.config/projektplanung/discord-webhook`), nie im Vault.
 

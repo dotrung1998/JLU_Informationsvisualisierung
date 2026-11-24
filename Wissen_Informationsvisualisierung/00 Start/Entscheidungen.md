@@ -221,3 +221,55 @@ verlangt die Kennzeichnung der Arbeitsschritte, nicht nur des Codes.
 **Verworfen.** Wechsel auf Variante B (Lie Factor 8,00 statt 5,00, aber eine neue Zeichnung
 und kein zusätzlicher Erkenntnisgewinn für den Vortrag); die Fußnote im alten Wortlaut
 lassen (unvollständige Offenlegung).
+
+## 2026-11-24 — Discord-Bericht trägt die Aufgaben selbst, Kopiervorlage in einem Block
+
+**Entscheidung.** `discord_notify.py` sendet zwei Nachrichten je Lauf.
+
+1. **Bericht.** Kopf mit Zählern (Karten erledigt/offen/in Arbeit, Fristen bis sieben Tage,
+   Quellen) und Warnungen (überfällig, Quelle ohne Abdeckung, Ordner ohne Frist); alle
+   Fristen aus `fristen.json` mit Datum, Abstand und Zuständigkeit; jede offene Board-Karte
+   aus `To Do` und `Doing` mit Kennung, Titel, Tag, Frist, Belegstand, Kurzbeschreibung und
+   Zielnotiz; die Abschnitte „Nächste Aktion“ und „Zu klären“ aus [[Status]]; die offenen
+   Punkte aus [[Offene Entscheidungen]] mit dem, was sie blockieren; der Quellenstand des
+   letzten Laufs.
+2. **Kopiervorlage.** Alle Aufgaben als `- [ ]`-Zeilen — Fristen, offene Karten, nächste
+   Schritte, offene Fragen, Abgabeordner — in **genau einem** Code-Block. Ein Klick auf das
+   Kopiersymbol kopiert den vollständigen Text.
+
+**Grund.** Vorgabe der bearbeitenden Person in der Sitzung vom 24.11.2026: der Bericht soll
+so ausführlich sein, dass die Arbeit allein aus Discord erledigt werden kann, und alles
+Kopierbare soll in einem Block stehen. Discord begrenzt `content` plus Embeds gemeinsam auf
+6000 Zeichen; Bericht (3927) und Kopiervorlage (4032) passen deshalb nur als zwei Nachrichten
+vollständig hinein. Die Kopiervorlage bliebe in einer Nachricht bei rund 4000 Zeichen
+abgeschnitten. Alle Angaben stammen unverändert aus `fristen.json`, [[Board]], [[Status]],
+[[Offene Entscheidungen]] und `abdeckung.json`; fehlt eine Angabe, bleibt die Lücke stehen.
+
+**Verworfen.** Eine einzige Nachricht (die Kopiervorlage würde am Zeichenlimit abgeschnitten,
+zuletzt fiel der Abschnitt „Belege/Ordner“ weg); mehrere kleine Code-Blöcke je Abschnitt
+(mehrere Kopierknöpfe statt einem); die Kopiervorlage auf eine Kurzfassung kürzen (dann
+fehlen in Discord genau die Angaben, die die Nachricht ersetzt).
+
+**Nebenfolge.** Die Datei weicht damit bewusst von der Kopie im Schwesterprojekt ab
+(Entscheidung vom 22.11.2026: Werkzeuge gleich halten). Der Bericht dort bleibt unverändert,
+bis er dort ebenfalls gebraucht wird.
+
+## 2026-11-24 — Lernserver als eine HTML-Datei in `00 Start/`
+
+**Entscheidung.** Der Stoff liegt zusätzlich als interaktive Lernfassung in
+`Wissen_Informationsvisualisierung/00 Start/lernserver.html`: 17 Kanäle in der Form eines
+Discord-Servers, 108 Nachrichten, Suche über alle Kanäle (Strg K), Merkliste, Lernstand,
+20-Fragen-Quiz, Lie-Factor-Rechner, Filter-Explorer für Räume K–P, Farb- und
+Histogramm-Demo. Inhalte aus Gesamtfolien (18.11.2026), Übungsblatt (15.11.2026), Handout
+und Arbeitsfassung Kapitel 5 (19.11.2026); jede inhaltliche Nachricht nennt ihre Quelle.
+Widersprüche (3–6 gegen 5–10 Minuten, Kapitel 5 Interaktion gegen Graphen) bleiben
+markiert. Eine einzelne Datei ohne externe Bibliotheken, ohne Build und ohne Server.
+
+**Grund.** Der Stoff liegt über 320 Folien und 17 Übungsseiten verstreut; zum Nachschlagen
+vor dem U02-Vortrag und für den Gruppenteil braucht es eine durchsuchbare Fassung mit
+Quellenangabe. Eine einzelne HTML-Datei läuft offline im Browser und bleibt neben
+`dashboard.html`, das weiterhin nur Fristen, Checkliste und Wortzähler führt.
+
+**Verworfen.** `dashboard.html` erweitern (mischt Fristen-Cockpit und Stoff, macht beide
+unübersichtlich); nur Markdown-Notizen im Vault (keine Suche, keine Interaktion); Wiki oder
+Notion (zweiter Ort neben dem Vault, kein Bezug zu den Dateien).

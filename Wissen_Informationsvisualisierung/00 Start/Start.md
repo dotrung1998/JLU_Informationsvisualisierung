@@ -52,6 +52,17 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
 - 22.11.2026: Vault-Ordner von `Wissen/` in `Wissen_Informationsvisualisierung/`
   umbenannt; Skripte, Hooks, Workflows und `AGENTS.md` folgen dem neuen Pfad
   ([[Entscheidungen]]).
+- 24.11.2026: Der Discord-Bericht ist ausgebaut. Er kommt als zwei Nachrichten: ein Bericht
+  mit allen Fristen, jeder offenen Board-Karte, der nächsten Aktion, den offenen
+  Entscheidungen und dem Quellenstand, danach eine Kopiervorlage mit allen Aufgaben in einem
+  einzigen Code-Block (ein Klick kopiert alles) ([[Entscheidungen]]). Testlauf gegen den
+  vorhandenen Webhook: HTTP 204 für beide Nachrichten.
+- 24.11.2026: **Lernserver** `Wissen_Informationsvisualisierung/00 Start/lernserver.html`
+  angelegt: 17 Kanäle, 108 Nachrichten, Suche über alle Kanäle (Strg K), Merkliste,
+  Lernstand, 20-Fragen-Quiz, Lie-Factor-Rechner, Filter-Explorer K–P, Farb- und
+  Histogramm-Demo. Quellenangabe je Nachricht; Widersprüche (3–6/5–10 Minuten,
+  Kapitel 5/6) markiert; Inhalte deutsch, kurze vietnamesische Hinweise je Kapitel
+  ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 
