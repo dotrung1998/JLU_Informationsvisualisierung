@@ -21,13 +21,13 @@ menschliche Checkliste. **Nur belegte Daten** stehen in `_tools/fristen.json`; T
 ([[Offene Entscheidungen]]).
 
 <!-- AUTO:START -->
-**Fristen (automatisch, Stand 2026-11-23)**
+**Fristen (automatisch, Stand 2026-11-24)**
 
 | Termin | Was | Abstand | Wer |
 |---|---|---|---|
-| 2027-03-31 | Vollständiges Portfolio + Programmcode in Stud.IP abgeben | in 128 Tagen | person |
-| 2027-04-09 | Blockseminar Tag 1: Präsentation des Gruppenteils | in 137 Tagen | team |
-| 2027-04-10 | Blockseminar Tag 2 | in 138 Tagen | team |
+| 2027-03-31 | Vollständiges Portfolio + Programmcode in Stud.IP abgeben | in 127 Tagen | person |
+| 2027-04-09 | Blockseminar Tag 1: Präsentation des Gruppenteils | in 136 Tagen | team |
+| 2027-04-10 | Blockseminar Tag 2 | in 137 Tagen | team |
 
 Board: 4 von 14 Karten erledigt. Details in [[Board]], Quellenstand in [[Abgaben (auto)]].
 
