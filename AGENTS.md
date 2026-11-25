@@ -33,6 +33,7 @@ in `Wissen_Informationsvisualisierung/_tools/`, die bewusst gleich gehalten sind
 ## Pflichtschritte am Anfang jeder Sitzung
 
 ```bash
+bash Wissen_Informationsvisualisierung/_tools/sync_pull.sh         # erst main holen, nie auf altem Stand arbeiten
 python3 Wissen_Informationsvisualisierung/_tools/ingest.py        # neue/geänderte Quellen einlesen
 python3 Wissen_Informationsvisualisierung/_tools/board_sync.py    # Board und Fristen fortschreiben
 cat "Wissen_Informationsvisualisierung/00 Start/Neu seit letztem Lauf.md"
