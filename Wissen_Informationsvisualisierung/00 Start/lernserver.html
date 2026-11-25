@@ -299,6 +299,8 @@
     background:#1e1f22;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 8px;
     font:inherit;font-size:13.5px;width:110px;
   }
+  /* Auswahlfeld so breit wie der längste Eintrag, damit nichts abgeschnitten wird */
+  .w-field select{width:auto;min-width:110px}
   .w-field input[type=range]{width:150px;accent-color:var(--blurple)}
   .btn{
     border:0;border-radius:6px;padding:6px 12px;font-size:13.5px;font-weight:500;cursor:pointer;
@@ -2622,22 +2624,22 @@ Baum:  |Knoten| = |Kanten| + 1</pre>
 window.QUIZ_DATA = [
   {
     q: "Wie ist der Lie Factor definiert?",
-    opts: ["Grafikänderung ÷ Datenänderung", "Datenänderung ÷ Grafikänderung", "Tinte für Daten ÷ Gesamttinte", "Häufigkeit ÷ Klassenbreite"],
-    a: 0,
+    opts: ["Tinte für Daten ÷ Gesamttinte", "Häufigkeit ÷ Klassenbreite", "Grafikänderung ÷ Datenänderung", "Datenänderung ÷ Grafikänderung"],
+    a: 2,
     why: "Der Lie Factor setzt die relative Änderung in der Grafik zur relativen Änderung der Daten ins Verhältnis. Über 1,05 gilt als Übertreibung.",
     src: "Kapitel 2 · Tufte 2001"
   },
   {
     q: "Ab welchem Wert gilt der Lie Factor als Übertreibung?",
-    opts: ["1,05", "1,5", "2,0", "0,95"],
-    a: 0,
+    opts: ["0,95", "1,05", "1,5", "2,0"],
+    a: 1,
     why: "Die Vorlesung nennt 1,05 als Schwelle; 0,95 markiert entsprechend die Untertreibung.",
     src: "Kapitel 2"
   },
   {
     q: "Was misst die Data-Ink Ratio?",
-    opts: ["Anteil der Tinte, die Daten darstellt", "Anteil der Grafikfläche mit Farbe", "Verhältnis von Breite zu Höhe", "Anzahl der Datenpunkte pro Pixel"],
-    a: 0,
+    opts: ["Anteil der Grafikfläche mit Farbe", "Verhältnis von Breite zu Höhe", "Anzahl der Datenpunkte pro Pixel", "Anteil der Tinte, die Daten darstellt"],
+    a: 3,
     why: "Data-Ink ist der nicht löschbare Kern der Grafik; die Ratio setzt diese Tinte zur gesamten Tinte ins Verhältnis.",
     src: "Kapitel 2 · Tufte"
   },
@@ -2650,22 +2652,22 @@ window.QUIZ_DATA = [
   },
   {
     q: "Was passiert bei der Suche nach einem roten Kreis zwischen roten Quadraten und blauen Kreisen?",
-    opts: ["Serielle Suche: die Merkmale müssen kombiniert werden", "Parallele Suche: ein Merkmal genügt", "Die Suche ist unmöglich", "Die Farbe wird ignoriert"],
-    a: 0,
+    opts: ["Die Suche ist unmöglich", "Die Farbe wird ignoriert", "Serielle Suche: die Merkmale müssen kombiniert werden", "Parallele Suche: ein Merkmal genügt"],
+    a: 2,
     why: "Ein einzigartiges Merkmal sticht hervor; eine Merkmalskombination erzwingt die langsame serielle Suche.",
     src: "Kapitel 3"
   },
   {
     q: "Welches Gestaltgesetz erklärt die Gruppierung durch geringe Abstände?",
-    opts: ["Nähe", "Ähnlichkeit", "Symmetrie", "Figur-Grund"],
-    a: 0,
+    opts: ["Ähnlichkeit", "Symmetrie", "Figur-Grund", "Nähe"],
+    a: 3,
     why: "Nähe gruppiert Elemente mit kleinen Abständen; bei gleichen Abständen wirkt zusätzlich das Prinzip der räumlichen Konzentration.",
     src: "Kapitel 3 · Gestaltgesetze"
   },
   {
     q: "Was ist ein Hauptproblem der Regenbogenskala?",
-    opts: ["Sie erzeugt wahrgenommene Grenzen, die in den Daten nicht existieren", "Sie hat zu wenige Farben für Kategorien", "Sie ist nicht druckbar", "Sie hat einen zu niedrigen Kontrast zu Schwarz"],
-    a: 0,
+    opts: ["Sie hat einen zu niedrigen Kontrast zu Schwarz", "Sie erzeugt wahrgenommene Grenzen, die in den Daten nicht existieren", "Sie hat zu wenige Farben für Kategorien", "Sie ist nicht druckbar"],
+    a: 1,
     why: "Die Regenbogenskala ist nicht monoton; Gelb in der Mitte zieht Aufmerksamkeit und die Übergänge legen Grenzen nahe, die es in den Daten nicht gibt.",
     src: "Kapitel 3"
   },
@@ -2678,22 +2680,22 @@ window.QUIZ_DATA = [
   },
   {
     q: "Was zeichnet man bei ungleichen Klassenbreiten im Histogramm?",
-    opts: ["Häufigkeitsdichte = Häufigkeit ÷ Klassenbreite", "Die Häufigkeit unverändert", "Den Median als Balkenhöhe", "Die kumulierte Häufigkeit"],
-    a: 0,
+    opts: ["Den Median als Balkenhöhe", "Die kumulierte Häufigkeit", "Häufigkeitsdichte = Häufigkeit ÷ Klassenbreite", "Die Häufigkeit unverändert"],
+    a: 2,
     why: "Nur mit der Dichte ist die Balkenfläche proportional zur Fallzahl; sonst wirkt die breite Klasse zu schwer.",
     src: "Kapitel 4 · U08"
   },
   {
     q: "Was fehlt einem Fehlerbalken ohne Beschriftung?",
-    opts: ["Die Angabe, ob Standardabweichung, Standardfehler oder Konfidenzintervall gezeigt wird", "Die Farbe", "Die Anzahl der Balken", "Der Titel"],
-    a: 0,
+    opts: ["Die Farbe", "Die Anzahl der Balken", "Der Titel", "Die Angabe, ob Standardabweichung, Standardfehler oder Konfidenzintervall gezeigt wird"],
+    a: 3,
     why: "SD, SE und KI beantworten verschiedene Fragen; ohne Angabe ist der Balken nicht interpretierbar.",
     src: "Kapitel 4 · U09"
   },
   {
     q: "Was verändert bei parallelen Koordinaten das Bild, ohne die Daten zu ändern?",
-    opts: ["Die Reihenfolge der Achsen", "Die Anzahl der Fälle", "Der Mittelwert", "Die Farbe des Hintergrunds"],
-    a: 0,
+    opts: ["Die Farbe des Hintergrunds", "Die Reihenfolge der Achsen", "Die Anzahl der Fälle", "Der Mittelwert"],
+    a: 1,
     why: "Die i-te Koordinate liegt auf der i-ten Achse; eine Rotation der Achsen ergibt andere Strukturen. Auch die Skalierung muss vergleichbar sein.",
     src: "Kapitel 4"
   },
@@ -2706,22 +2708,22 @@ window.QUIZ_DATA = [
   },
   {
     q: "Wie hängt bei einem Baum die Zahl der Knoten mit den Kanten zusammen?",
-    opts: ["Knoten = Kanten + 1", "Knoten = Kanten − 1", "Knoten = 2 × Kanten", "Es gibt keinen festen Zusammenhang"],
-    a: 0,
+    opts: ["Knoten = 2 × Kanten", "Es gibt keinen festen Zusammenhang", "Knoten = Kanten + 1", "Knoten = Kanten − 1"],
+    a: 2,
     why: "Ein Baum ist zusammenhängend und zyklenfrei; deshalb ist die Knotenzahl um eins größer als die Kantenzahl.",
     src: "Kapitel 6"
   },
   {
     q: "Warum ist die Treemap für genaue Größenvergleiche schwach?",
-    opts: ["Fläche ist ein schwacher Kanal; kleine Unterschiede sind kaum zu sehen", "Rechtecke haben keine Fläche", "Sie nutzt zu wenig Bildschirmfläche", "Sie kann keine Hierarchie darstellen"],
-    a: 0,
+    opts: ["Sie kann keine Hierarchie darstellen", "Fläche ist ein schwacher Kanal; kleine Unterschiede sind kaum zu sehen", "Rechtecke haben keine Fläche", "Sie nutzt zu wenig Bildschirmfläche"],
+    a: 1,
     why: "Die Fläche trägt die Größe, aber Länge und Position sind genauer. Kleine Unterschiede in Rechtecken sind schwer zu vergleichen.",
     src: "Kapitel 7"
   },
   {
     q: "Was kodiert im Fahrplan Paris–Lyon (Marey 1885) die Steigung einer Linie?",
-    opts: ["Die Geschwindigkeit", "Die Anzahl der Passagiere", "Die Temperatur", "Den Preis"],
-    a: 0,
+    opts: ["Die Anzahl der Passagiere", "Die Temperatur", "Den Preis", "Die Geschwindigkeit"],
+    a: 3,
     why: "Zeit auf der einen, Ort auf der anderen Achse: Steigung ist Weg pro Zeit, also Geschwindigkeit.",
     src: "Kapitel 8"
   },
@@ -2734,22 +2736,22 @@ window.QUIZ_DATA = [
   },
   {
     q: "Wie viele Seiten und welcher Abgabetermin gelten für das Portfolio?",
-    opts: ["5–10 Seiten + Programmcode, 31.03.2027", "3–6 Seiten, 25.10.2026", "10–20 Seiten, 09.04.2027", "5–10 Seiten ohne Code, 31.03.2027"],
-    a: 0,
+    opts: ["10–20 Seiten, 09.04.2027", "5–10 Seiten ohne Code, 31.03.2027", "5–10 Seiten + Programmcode, 31.03.2027", "3–6 Seiten, 25.10.2026"],
+    a: 2,
     why: "Das Handout nennt 5–10 Seiten und Programmcode, Abgabe bis 31.03.2027; Inhalte ab Seite 11 gelten als nicht abgegeben.",
     src: "Handout S. 1"
   },
   {
     q: "Welche Präsentationsdauer nennt das Übungsblatt?",
-    opts: ["3–6 Minuten", "5–10 Minuten", "10–15 Minuten", "20–40 Minuten"],
-    a: 0,
+    opts: ["5–10 Minuten", "10–15 Minuten", "20–40 Minuten", "3–6 Minuten"],
+    a: 3,
     why: "Das Übungsblatt nennt 3–6 Minuten; die Folie Notenrelevantes nennt 5–10 Minuten. Der Widerspruch bleibt dokumentiert.",
     src: "Übungsblatt S. 1"
   },
   {
     q: "Wie viele Folien sind im Blockseminar höchstens erlaubt?",
-    opts: ["5 einschließlich Titelfolie", "10", "3", "20"],
-    a: 0,
+    opts: ["20", "5 einschließlich Titelfolie", "10", "3"],
+    a: 1,
     why: "Höchstens fünf Folien einschließlich Titelfolie; Inhalte ab Folie 6 gelten als nicht abgegeben.",
     src: "Handout S. 3"
   },
