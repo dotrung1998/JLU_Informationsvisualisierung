@@ -87,6 +87,13 @@ Der Stand wird bei jedem Lauf aus den Ordnern neu berechnet ([[Abgaben (auto)]])
 ## Lernserver (Stand 25.11.2026)
 
 `lernserver.html` hat je Nachricht drei Seiten: Deutsch · vietnamesische Skizze ·
-vietnamesische Übersetzung, 108 von 108 übersetzt. Keine Frist ändert sich; die Abgabe steht
-unverändert am 31.03.2027. Im Browser geprüft: 108 Blätter, Umschalten und Wischen
-funktionieren; die Übersetzungen sind gerafft, Zahlen und Quellen unverändert.
+vietnamesische Übersetzung, 108 von 108 übersetzt. Seite 2 wird aus dem Inhalt der eigenen
+Nachricht gebaut (Tabelle mit den echten Werten, Formel im Original, geordnete Liste,
+Zeitachse mit den echten Daten, Karten aus den Stichpunkten); keine zwei Nachrichten haben
+dasselbe Bild. Auf dem Telefon ist die Zeichnung ein responsives HTML-Raster mit
+13,5–15 px Schrift, gestapelten Karten und Tabellen als Zeilenkarten. Das grüne Lesehäkchen
+im Kanalbaum ist ein Knopf und setzt das Kapitel per Klick wieder auf ungelesen. Keine Frist
+ändert sich; die Abgabe steht unverändert am 31.03.2027. Im Browser geprüft: 108 Blätter,
+324 Seiten, Umschalten, Pfeiltasten und Wischen funktionieren; bei 390 px alle 108 Bilder
+ohne Überlauf, ohne leere und ohne doppelte Bilder. Die Übersetzungen sind gerafft, Zahlen
+und Quellen unverändert.

@@ -329,3 +329,45 @@ Die Zeichnungen sind Schemata aus den Stichpunkten, keine neu gezeichneten Kursf
 **Verworfen.** 108 handgezeichnete Einzelbilder (nicht belegbar, nicht wartbar); eine zweite
 HTML-Datei je Sprache (bricht die Ein-Datei-Regel); automatische Übersetzung im Browser
 (kein Netz, keine Bibliothek).
+
+## 2026-11-25 — Lernserver: Zeichnung je Nachricht, Lesehäkchen zurücksetzbar
+
+**Entscheidung.** Seite 2 wird nicht mehr aus einem festen Motiv je Kanal gebaut. Der
+Zeichner liest die deutsche Nachricht selbst — Tabelle, Formel/Code, geordnete Liste,
+Datumsangaben, Prozentwerte sowie Farb-, Graphen-, Baum- und Filterbegriffe — und wählt
+daraus das Motiv. Die Beschriftungen kommen aus derselben Stelle der vietnamesischen
+Übersetzung: Tabellen zeigen die echten Werte, Formeln den Originaltext, die Zeitachse die
+echten Daten, Karten die Stichpunkte der Nachricht. Das grüne Lesehäkchen im Kanalbaum ist
+jetzt ein Knopf und macht das Kapitel per Klick wieder ungelesen.
+
+**Grund.** Vorher lief die Motivwahl nach dem Auslagern des deutschen Blattes und fand keinen
+Inhalt mehr; deshalb bekamen alle Nachrichten eines Kanals dasselbe Bild. Die Person braucht
+aber je Nachricht die passende Skizze, nicht elfmal dieselbe.
+
+**Grenze.** Schemata, keine neu gezeichneten Kursfolien; Zahlen und Quellen nur aus der
+Nachricht. Wo weder Tabelle noch Formel, Liste oder Datum vorliegen, bleibt eine Karte mit
+den Stichpunkten.
+
+**Verworfen.** Ein festes Motiv je Kanal (führt zur Wiederholung); handgezeichnete 108
+Einzelbilder (nicht wartbar); automatische Übersetzung im Browser (kein Netz).
+
+## 2026-11-25 — Lernserver: Seite 2 auf dem Telefon lesbar
+
+**Entscheidung.** Die Zeichnung auf Seite 2 ist jetzt ein responsives HTML-Raster statt eines
+SVG mit fester 700-px-Breite. Karten, Schritte, Tabellen, Formeln, Zeitachse, Farbskala,
+Netz, Baum, Filter, Vergleich und Balken nutzen die Schriftgröße der Seite (13,5–15 px). Auf
+schmalen Geräten stapeln die Karten einspaltig, Tabellen werden zu Zeilenkarten mit
+Beschriftung, Zeitachse und Filter stehen untereinander. Die doppelte Stichpunktliste unter
+dem Bild entfällt bei Motiven, die die Punkte schon im Bild zeigen; sie bleibt nur bei
+Tabelle und Formel.
+
+**Grund.** Auf einem iPhone wurde die 700-px-Zeichnung auf etwa 260–320 px verkleinert;
+14-px-Beschriftungen erschienen dann mit 5–7 px. Die Person konnte die Zeichnung nicht lesen,
+obwohl der Inhalt stimmte.
+
+**Grenze.** Weiterhin Schemata aus dem Inhalt der Nachricht, keine neu gezeichneten
+Kursfolien; Zahlen und Quellen nur aus der Nachricht. Die Farbrampen der Farbskala sind
+illustrativ, die Beschriftungen kommen aus der Nachricht.
+
+**Verworfen.** SVG-Schrift künstlich vergrößern (Beschriftungen brechen aus den Kästen),
+eine zweite mobile SVG-Variante (doppelte Pflege), Zoom-Zwang auf dem Telefon.

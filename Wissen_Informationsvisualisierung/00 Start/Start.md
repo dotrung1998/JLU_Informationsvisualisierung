@@ -85,6 +85,12 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
   vietnamesische Skizze, vietnamesische Übersetzung; die Übersetzungen liegen im JSON-Block
   `#viData` derselben Datei, die Zeichnung wird aus den Stichpunkten erzeugt
   ([[Entscheidungen]]).
+- 25.11.2026: Seite 2 zeichnet jede Nachricht aus ihrem eigenen Inhalt (Tabelle, Formel,
+  Liste, Datum, Prozent) statt aus einem Kanalmotiv; das grüne Lesehäkchen im Kanalbaum
+  lässt sich per Klick zurücksetzen ([[Entscheidungen]]).
+- 25.11.2026: Seite 2 ist auf dem Telefon lesbar: responsives HTML-Raster mit 13,5–15 px
+  statt fester SVG-Breite, Tabellen als Zeilenkarten; bei 390 px geprüft, 108 Bilder ohne
+  Überlauf und ohne Dubletten ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 
