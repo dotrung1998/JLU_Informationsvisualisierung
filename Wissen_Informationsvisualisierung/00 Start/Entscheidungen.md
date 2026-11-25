@@ -488,3 +488,31 @@ Build, nicht die Prüfung, ob das letzte Deploy geklappt hat.
 war die Fehlerquelle); Build in GitHub Actions (kein Weg zu den Sites-Zugangsdaten); Deploy
 per Wrangler CLI (die Vorschau ist eine Sites-Deployment mit verwalteten Bindings, kein
 eigener Cloudflare-Account).
+
+## 2026-11-25 — Clutter-Beispiele als einseitiger Ergänzungskanal
+
+**Entscheidung.** Die sechs Techniken der Clutter-Reduktion aus Kapitel 4 bekommen einen
+eigenen Ergänzungskanal `#04-clutter-beispiele` mit sechs schematischen Vorher/Nachher-Bildern
+(SVG, ohne externe Assets). Die Artikel tragen `data-nopager`; `buildPagers()` lässt sie
+deshalb einseitig. Die sechs Punkte im Kapitelkanal verweisen auf das jeweilige Beispiel und,
+wo vorhanden, auf die ausführlichere Stelle (parallele Koordinaten, Daten-Transformation,
+Rank-by-Feature, Filter in Kapitel 5). Der bestehende Kanal `#changelog` bekommt einen
+Eintrag; `CHANGELOG.md` hält die Langfassung.
+
+**Grund.** Die Folie nennt die Techniken nur als Stichworte; der Lernserver erklärt sie nicht
+später. Ohne Beispiel bleibt „Magic Lens“ oder „konstante Informationsdichte“ eine Vokabel.
+Die drei Seiten je Nachricht sind für Text, Graphen und Übersetzung gebaut — bei einer
+Galerie würden Seite 2 und 3 den Inhalt duplizieren. Ein einseitiger Kanal hält die sechs
+Bilder zusammen und lässt die 108 bestehenden Nachrichten unangetastet. Eine kurze
+vietnamesische Zusammenfassung am Ende des Kanals reicht für die Orientierung; die
+Bildunterschriften bleiben deutsch, weil die Begriffe so im Portfolio stehen.
+
+**Grenze.** Der Galeriekanal hat keinen Pager und keine sechs Einzelübersetzungen; die
+Bilder sind schematisch und als solche gekennzeichnet, keine Messdaten. `data-nopager` ist
+eine Ausnahme, kein neues Muster für alle Nachrichten.
+
+**Verworfen.** Sechs Nachrichten mit je drei Seiten (Seite 2 würde einen generischen Graphen
+zeigen, Seite 3 eine Übersetzung ohne eigenen Nutzen); die Bilder in die bestehende
+Kapitelnachricht einfügen (sprengt die Nachricht und vermischt Begriff und Anschauung);
+externe Bilddateien oder generierte Fotos (keine Belegstelle, größere Abhängigkeit, weniger
+präzise).

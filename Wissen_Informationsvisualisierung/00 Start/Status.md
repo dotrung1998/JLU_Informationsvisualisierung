@@ -101,8 +101,11 @@ Am 25.11. kam der Rechenweg zu U09 dazu: `#msg-u09` führt auf Seite 1 und 3 in 
 vor, wie aus `s = 12` und `n = 16` bzw. `64` die Standardfehler 3,00 und 1,50, die t-Werte
 2,131 und 1,998 und daraus die Intervalle [65,61; 78,39] und [69,00; 75,00] entstehen; der
 Graph auf Seite 2 nennt dieselben Grenzen in der Bildunterschrift. Der eigene Kanal
-`#changelog` (Gruppe Werkzeuge, 18 Kanäle) listet die letzten Änderungen und springt per
-„hin“ zur Nachricht (`#msg-u09`, `#msg-quiz`, `#msg-seiten`).
+`#changelog` (Gruppe Werkzeuge, 19 Kanäle) listet die letzten Änderungen und springt per
+„hin“ zur Nachricht (`#msg-u09`, `#msg-quiz`, `#msg-seiten`, `beispiel-reordering`). Der
+Ergänzungskanal `#04-clutter-beispiele` ist bewusst einseitig — sechs Bilder in einem
+Kanal, ohne Pager — und im Changelog verlinkt; die bestehenden 108 Nachrichten behalten
+ihre drei Seiten.
 
 Die Freebuff-Vorschau (https://lernserver-108-tin-3-trang-4wz4jg-preview.freebuff.site,
 Konto-Sync über D1) wird **nicht** vom gh-pages-Workflow versorgt. Seit 25.11.2026 baut
