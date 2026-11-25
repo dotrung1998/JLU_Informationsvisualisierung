@@ -86,14 +86,13 @@ Der Stand wird bei jedem Lauf aus den Ordnern neu berechnet ([[Abgaben (auto)]])
 
 ## Lernserver (Stand 25.11.2026)
 
-`lernserver.html` hat je Nachricht drei Seiten: Deutsch · vietnamesische Skizze ·
-vietnamesische Übersetzung, 108 von 108 übersetzt. Seite 2 wird aus dem Inhalt der eigenen
-Nachricht gebaut (Tabelle mit den echten Werten, Formel im Original, geordnete Liste,
-Zeitachse mit den echten Daten, Karten aus den Stichpunkten); keine zwei Nachrichten haben
-dasselbe Bild. Auf dem Telefon ist die Zeichnung ein responsives HTML-Raster mit
-13,5–15 px Schrift, gestapelten Karten und Tabellen als Zeilenkarten. Das grüne Lesehäkchen
-im Kanalbaum ist ein Knopf und setzt das Kapitel per Klick wieder auf ungelesen. Keine Frist
-ändert sich; die Abgabe steht unverändert am 31.03.2027. Im Browser geprüft: 108 Blätter,
-324 Seiten, Umschalten, Pfeiltasten und Wischen funktionieren; bei 390 px alle 108 Bilder
-ohne Überlauf, ohne leere und ohne doppelte Bilder. Die Übersetzungen sind gerafft, Zahlen
-und Quellen unverändert.
+`lernserver.html` hat je Nachricht drei Seiten: Deutsch · Graph · vietnamesische Übersetzung,
+108 von 108 übersetzt. Seite 2 zeigt einen eigenen Graphen aus den Werten der Nachricht —
+Heatmap, Scatter, Parallelkoordinaten, Fehlerbalken, Treemap, Netz, Baum, Zeitachse, Balken,
+Histogramm, Boxplot, Farbmuster oder Ablauf; keine zwei Nachrichten haben denselben Graphen
+(108 eigene Titel). Die frühere Stichpunktkarte ist nur noch ein eingeklappter Hinweis unter
+dem Graphen. Auf 390 px geprüft: 108 Graphen, 324 Seiten, kein Text- oder Seitenüberlauf,
+Wischen und Tabs wechseln auf Seite 2 und 3. Der linke Kanalbaum lässt sich auf dem Telefon
+per X, dunklem Hintergrund oder Escape schließen. GitHub Actions hält `gh-pages` aktuell
+(`.github/workflows/gh-pages-lernserver.yml`); öffentlich:
+https://dotrung1998.github.io/JLU_Informationsvisualisierung/

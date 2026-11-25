@@ -91,6 +91,10 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
 - 25.11.2026: Seite 2 ist auf dem Telefon lesbar: responsives HTML-Raster mit 13,5–15 px
   statt fester SVG-Breite, Tabellen als Zeilenkarten; bei 390 px geprüft, 108 Bilder ohne
   Überlauf und ohne Dubletten ([[Entscheidungen]]).
+- 25.11.2026: **Lernserver** weitergebaut: Seite 2 trägt je Nachricht einen eigenen Graphen
+  (108 Titel, 21 Motivtypen, Daten nur aus der Nachricht), der Kanalbaum ist auf dem Telefon
+  per X, Hintergrund und Escape schließbar, und GitHub Actions schreibt `gh-pages` bei jeder
+  Änderung von `lernserver.html` auf `main` fort ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 

@@ -1,0 +1,68 @@
+# Hält die öffentliche GitHub-Pages-Fassung des Lernservers aktuell.
+#
+# Auslöser ist ausschließlich eine Änderung an der Quelldatei auf main (oder ein
+# manueller Start). Der Workflow kopiert die Datei als index.html in die Wurzel
+# des Zweigs gh-pages; GitHub Pages veröffentlicht diesen Zweig bereits.
+#
+# Bewusst kein Bot-Autor und kein Co-Authored-By-Trailer: der Commit auf
+# gh-pages trägt denselben Autor wie die Commits der Person.
+name: Lernserver gh-pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Wissen_Informationsvisualisierung/00 Start/lernserver.html"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lernserver-gh-pages
+  cancel-in-progress: false
+
+jobs:
+  veroeffentlichen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: gh-pages auf den Stand von main bringen
+        env:
+          SRC: Wissen_Informationsvisualisierung/00 Start/lernserver.html
+        run: |
+          set -euo pipefail
+          test -f "$SRC"
+
+          git config user.name "Trung Do"
+          git config user.email "dotrung1998@gmail.com"
+
+          WORKTREE="$(mktemp -d)"
+          if git fetch --quiet origin gh-pages; then
+            git worktree add --detach "$WORKTREE" FETCH_HEAD
+          else
+            echo "Zweig gh-pages fehlt — er wird als Wurzel-Commit angelegt."
+            git worktree add --detach "$WORKTREE"
+            git -C "$WORKTREE" checkout --orphan gh-pages
+            git -C "$WORKTREE" rm -rf . >/dev/null 2>&1 || true
+          fi
+
+          cp "$SRC" "$WORKTREE/index.html"
+          git -C "$WORKTREE" add index.html
+
+          if git -C "$WORKTREE" diff --cached --quiet; then
+            echo "gh-pages ist bereits aktuell."
+            exit 0
+          fi
+
+          git -C "$WORKTREE" commit \
+            -m "Lernserver: gh-pages auf den Stand von main bringen" \
+            -m "- index.html aus $SRC" \
+            -m "- Quelle: ${GITHUB_SHA}"
+
+          git -C "$WORKTREE" push origin HEAD:gh-pages

@@ -371,3 +371,57 @@ illustrativ, die Beschriftungen kommen aus der Nachricht.
 
 **Verworfen.** SVG-Schrift künstlich vergrößern (Beschriftungen brechen aus den Kästen),
 eine zweite mobile SVG-Variante (doppelte Pflege), Zoom-Zwang auf dem Telefon.
+
+
+## 2026-11-25 — Lernserver: eigener Graph je Nachricht statt Textkarte
+
+**Entscheidung.** Seite 2 zeigt für jede der 108 Nachrichten einen eigenen Graphen. Eine
+kleine SVG-Engine im selben HTML zeichnet 21 Motivtypen: Balken (auch logarithmisch und mit
+abgeschnittener Achse), Rangliste, gruppierte Balken, Linie, Scatter, Heatmap/Matrix,
+Netzwerk, Baum, Treemap, Ablauf, Zeitachse, Donut, Kästchenraster, Histogramm, Boxplot,
+Fehlerbalken, Parallelkoordinaten, Farbmuster, Fortschritt und Minard-Band. Die Daten kommen
+aus der jeweiligen Nachricht (K–P, Bibliothekszeiten, U02, U08–U12, Portfolio-Grenzen,
+Fristen); begriffliche Nachrichten bekommen ein Netz, einen Baum oder einen Ablauf ohne
+erfundene Zahlen. Jede Nachricht hat einen eigenen Graphentitel; 108 von 108 sind belegt.
+Die alte Stichpunktkarte ist nur noch ein eingeklappter Hinweis unter dem Graphen, damit der
+Graph die Aussage trägt und Text zweitrangig bleibt.
+
+**Grund.** Die Person hat die bisherige Seite 2 als Textkarten wahrgenommen; verlangt war ein
+Graph pro Nachricht, der zeigt, was der Stoff ausdrücken will.
+
+**Grenze.** Schemata aus dem Inhalt, keine neu gezeichneten Kursfolien. Wo die Nachricht keine
+Zahlen nennt, behauptet der Graph keine; er ordnet Begriffe. Geprüft bei 390 px: 108 Graphen,
+kein Textüberlauf, kein horizontaler Überlauf, Wischen und Tabs funktionieren.
+
+**Verworfen.** 108 handgezeichnete Einzelbilder (nicht wartbar); ein Diagramm je Kanal
+(Wiederholung); externe Chart-Bibliothek (Seite soll ohne Netz und ohne CDN laufen).
+
+## 2026-11-25 — Lernserver: Kanalbaum auf dem Telefon wieder schließbar
+
+**Entscheidung.** In der schmalen Ansicht hat der Kanalbaum jetzt drei Wege zum Schließen:
+ein X im Kopf, ein dunkler Hintergrund über dem Chat und die Escape-Taste. Der Burger trägt
+`aria-expanded`; ein Kanalwechsel schließt den Baum ebenfalls.
+
+**Grund.** Bisher ließ sich das eingeschobene Panel auf dem Telefon nur durch Neuladen oder
+Kanalwechsel schließen; es blieb über dem Chat liegen.
+
+**Grenze.** Nur unter 900 px sichtbar; auf dem Desktop bleibt der Baum fest eingebaut.
+
+**Verworfen.** Zweiter Burger im Chat (doppelte Bedeutung); Schließen nur per Wischgeste
+(nicht auffindbar).
+
+## 2026-11-25 — gh-pages wird aus main automatisch fortgeschrieben
+
+**Entscheidung.** `.github/workflows/gh-pages-lernserver.yml` reagiert auf Änderungen an
+`lernserver.html` auf `main` und auf manuellen Start. Der Lauf kopiert die Datei als
+`index.html` in die Wurzel von `gh-pages`, committet nur bei Unterschied und pusht. Autor ist
+Trung Do, die Nachricht ist deutsch und ohne Bot-Trailer.
+
+**Grund.** Die öffentliche GitHub-Pages-Fassung soll nicht veralten, wenn die Quelldatei auf
+`main` weitergebaut wird.
+
+**Grenze.** Der Workflow ersetzt keine Prüfung der Seite; er veröffentlicht nur die Datei.
+Der erste Lauf nach dieser Sitzung ist zugleich der Test des Workflows.
+
+**Verworfen.** Zweig `gh-pages` von Hand pflegen (veraltet); Pages aus `main/docs` bauen
+(langer Pfad); Force-Push (unnötig und riskant).
