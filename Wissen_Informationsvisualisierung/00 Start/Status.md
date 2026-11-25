@@ -100,6 +100,11 @@ https://dotrung1998.github.io/JLU_Informationsvisualisierung/
 Am 25.11. kam der Rechenweg zu U09 dazu: `#msg-u09` führt auf Seite 1 und 3 in vier Schritten
 vor, wie aus `s = 12` und `n = 16` bzw. `64` die Standardfehler 3,00 und 1,50, die t-Werte
 2,131 und 1,998 und daraus die Intervalle [65,61; 78,39] und [69,00; 75,00] entstehen; der
-Graph auf Seite 2 nennt dieselben Grenzen in der Bildunterschrift. Ein Block „Changelog“ in
-`#lernfortschritt` listet die letzten Änderungen und springt per „hin“ zur Nachricht
-(`#msg-u09`, `#msg-quiz`, `#msg-seiten`).
+Graph auf Seite 2 nennt dieselben Grenzen in der Bildunterschrift. Der eigene Kanal
+`#changelog` (Gruppe Werkzeuge, 18 Kanäle) listet die letzten Änderungen und springt per
+„hin“ zur Nachricht (`#msg-u09`, `#msg-quiz`, `#msg-seiten`).
+
+Die Freebuff-Vorschau (https://lernserver-108-tin-3-trang-4wz4jg-preview.freebuff.site,
+Konto-Sync über D1) wird **nicht** vom gh-pages-Workflow versorgt: nach jeder Änderung an
+`lernserver.html` `_build/freebuff-preview/build_page.py` laufen lassen, `dist/worker.js` neu
+bündeln und die Umgebung `preview` erneut deployen — sonst bleibt sie auf dem alten Stand.

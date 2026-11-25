@@ -447,3 +447,21 @@ Kanäle mitgezogen werden.
 **Verworfen.** Änderungshinweise direkt in die betroffenen Nachrichten schreiben (veraltet
 schnell, stört den Lesefluss); Changelog aus `git log` erzeugen (Commit-Texte sind keine
 Leserfassung); eigener Kanal `#changelog` (ein weiterer Kanal für drei Zeilen).
+
+## 2026-11-25 — Changelog wird eigener Kanal unter Werkzeuge
+
+**Entscheidung.** Der Changelog ist kein Block in `#lernfortschritt` mehr, sondern ein eigener
+Kanal `#changelog` in der Gruppe Werkzeuge (`data-slug="changelog"`) mit derselben
+Eintragsliste und denselben „hin“-Knöpfen. Die Kanalzahl im Willkommenskanal ist von 17 auf 18
+fortgeschrieben, samt der beiden vietnamesischen Graphen, die Kanäle zählen (Balken und
+Treemap); die Werkzeugliste in „Bedienung“ nennt `#changelog`.
+
+**Grund.** Werkzeuge gehören in die Werkzeugliste. `#lernfortschritt` bleibt damit auf Stand,
+Merkliste und Zurücksetzen beschränkt; der Changelog ist ein Nachschlageort, kein Fortschritt.
+
+**Grenze.** Ein Kanal mehr in der Werkzeuggruppe; die Einträge bleiben handgepflegt und die
+Anker (`#msg-u09`, `#msg-quiz`, `#msg-seiten`) müssen beim Umbau mitgezogen werden.
+
+**Verworfen.** Block in `#lernfortschritt` (Fassung vom selben Tag, jetzt ersetzt); eigener
+Kanal in der Prüfungsgruppe (falscher Ort); Einträge aus `git log` erzeugen (keine
+Leserfassung).
