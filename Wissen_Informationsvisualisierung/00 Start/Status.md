@@ -96,3 +96,10 @@ Wischen und Tabs wechseln auf Seite 2 und 3. Der linke Kanalbaum lässt sich auf
 per X, dunklem Hintergrund oder Escape schließen. GitHub Actions hält `gh-pages` aktuell
 (`.github/workflows/gh-pages-lernserver.yml`); öffentlich:
 https://dotrung1998.github.io/JLU_Informationsvisualisierung/
+
+Am 25.11. kam der Rechenweg zu U09 dazu: `#msg-u09` führt auf Seite 1 und 3 in vier Schritten
+vor, wie aus `s = 12` und `n = 16` bzw. `64` die Standardfehler 3,00 und 1,50, die t-Werte
+2,131 und 1,998 und daraus die Intervalle [65,61; 78,39] und [69,00; 75,00] entstehen; der
+Graph auf Seite 2 nennt dieselben Grenzen in der Bildunterschrift. Ein Block „Changelog“ in
+`#lernfortschritt` listet die letzten Änderungen und springt per „hin“ zur Nachricht
+(`#msg-u09`, `#msg-quiz`, `#msg-seiten`).

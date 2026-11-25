@@ -425,3 +425,25 @@ Der erste Lauf nach dieser Sitzung ist zugleich der Test des Workflows.
 
 **Verworfen.** Zweig `gh-pages` von Hand pflegen (veraltet); Pages aus `main/docs` bauen
 (langer Pfad); Force-Push (unnötig und riskant).
+
+## 2026-11-25 — Lernserver: U09-Rechenweg offengelegt und Changelog eingeführt
+
+**Entscheidung.** Die U09-Nachricht (`#msg-u09`) trägt auf Seite 1 und 3 einen Rechenweg in
+vier Schritten — `SE = s/√n`, Freiheitsgrade und t-Wert, `KI = x̄ ± t · SE`, Intervallgrenzen —
+und eine Begründung, warum beide Balken gleich hoch sitzen. Die Bildunterschrift des
+Fehlerbalken-Graphen nennt dieselben Grenzen. `#lernfortschritt` hat einen Block „Changelog“;
+jeder Eintrag hat den Knopf „hin“, der wie die Merkliste den Kanal öffnet, zur Nachricht
+scrollt und sie kurz hervorhebt. Ziele sind feste Anker (`#msg-u09`, `#msg-quiz`,
+`#msg-seiten`), nicht Nachrichtenindizes.
+
+**Grund.** Aus der Tabelle allein war die Herkunft der Zahlen nicht ablesbar; die Frage
+„warum sieht der Graph so aus“ blieb offen. Der Changelog macht Änderungen am Lernserver
+auffindbar, ohne die Nachrichtentexte mit Versionshinweisen zu belasten.
+
+**Grenze.** Der Changelog ist eine kurze, von Hand gepflegte Liste; er ersetzt kein
+Änderungsprotokoll und wird nicht aus den Commits erzeugt. Die Anker müssen beim Umbau der
+Kanäle mitgezogen werden.
+
+**Verworfen.** Änderungshinweise direkt in die betroffenen Nachrichten schreiben (veraltet
+schnell, stört den Lesefluss); Changelog aus `git log` erzeugen (Commit-Texte sind keine
+Leserfassung); eigener Kanal `#changelog` (ein weiterer Kanal für drei Zeilen).

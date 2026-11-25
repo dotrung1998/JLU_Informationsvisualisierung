@@ -95,6 +95,10 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
   (108 Titel, 21 Motivtypen, Daten nur aus der Nachricht), der Kanalbaum ist auf dem Telefon
   per X, Hintergrund und Escape schließbar, und GitHub Actions schreibt `gh-pages` bei jeder
   Änderung von `lernserver.html` auf `main` fort ([[Entscheidungen]]).
+- 25.11.2026: U09 im Lernserver erklärt: der Rechenweg von `SE = s/√n` über die t-Werte
+  2,131/1,998 zu den Intervallen [65,61; 78,39] und [69,00; 75,00], auf Seite 1 und 3 der
+  Nachricht; dazu ein Changelog in `#lernfortschritt`, dessen Knopf „hin“ zur betroffenen
+  Nachricht springt ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 
