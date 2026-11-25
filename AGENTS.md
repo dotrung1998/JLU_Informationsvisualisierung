@@ -29,6 +29,7 @@ in `Wissen_Informationsvisualisierung/_tools/`, die bewusst gleich gehalten sind
 | `e-Portfolio/Programmcode/` | **Ablage.** Programmcode, den Ergebnissen zugeordnet. |
 | `Wissen_Informationsvisualisierung/` | **Gedächtnis.** Obsidian-Vault mit Start, Kurs, Vorlesungen, Gruppe, Portfolio, Plan. |
 | `Wissen_Informationsvisualisierung/_tools/` | `ingest.py`, `board_sync.py`, `sync_pull.sh`, `daily.sh`, `daily_guard.sh`, `discord_notify.py`, `author_guard.py`. |
+| `Wissen_Informationsvisualisierung/_tools/freebuff-preview/` | **Bau der Freebuff-Vorschau:** `build.sh` (ein Aufruf), `build_page.py` (Patch der Seite), `worker.js`, `deploy.json`, `package.json`/`package-lock.json`. Schreibt nur nach `_build/freebuff-preview/`. |
 
 **Quelle der Wahrheit sind die Dateien in diesem Repository.** Eine Kopie derselben Skripte in einer Freebuff-Skill (`cloud-session-sync`) dient nur dazu, ein anderes Repository aufzusetzen; bei Abweichung zählt die Datei im Repo, und die Skill-Kopie wird danach nachgezogen.
 
@@ -76,6 +77,33 @@ Danach `Start.md` und `Status.md` lesen und erst dann arbeiten.
   „Generated with …“, keine Trailer. Die Commit-Message endet mit ihrem letzten inhaltlichen
   Satz. Commit-Messages auf Deutsch: eine Zeile Zusammenfassung, darunter Stichpunkte. Push
   nur, wenn die Person es verlangt.
+
+## Lernserver und Freebuff-Vorschau
+
+`Wissen_Informationsvisualisierung/00 Start/lernserver.html` ist die einzige Quelle des
+Lernservers. Zwei Veröffentlichungen hängen daran, beide müssen nach jeder Änderung nach:
+
+| Ziel | Weg | Wann |
+|---|---|---|
+| GitHub Pages | `.github/workflows/gh-pages-lernserver.yml` kopiert die Datei nach `gh-pages` | automatisch bei Push auf `main` |
+| Freebuff-Vorschau | `build.sh` bauen, danach `sites_deploy` mit `_build/freebuff-preview/deploy.json`, Umgebung `preview` | von Hand; der Deploy ist kein Shell-Befehl |
+
+```bash
+bash Wissen_Informationsvisualisierung/_tools/freebuff-preview/build.sh
+```
+
+Das Skript patcht den Konto-Sync (`/api/progress`, D1) in die Seite, schreibt `page.html`,
+bündelt `dist/worker.js` mit esbuild und prüft die Marker. Es schreibt ausschließlich nach
+`_build/freebuff-preview/` (gitignoriert, wegwerfbar), committet und pusht nichts und sagt
+am Ende, ob der Quellstand seit dem letzten Build unverändert ist — dann ist kein neues
+Ausliefern nötig, solange das letzte Deploy geklappt hat. Der Deploy-Aufruf und die beiden
+Prüf-URLs (`/healthz` → 200, `/` → 302 zur Anmeldung) stehen in der Ausgabe; sie zeigen nur,
+dass die Vorschau läuft, nicht welchen Stand sie zeigt.
+
+`worker.js`, `build_page.py`, `deploy.json` und `package*.json` liegen versioniert neben dem
+Skript, `node_modules` holt der erste Lauf per `npm ci` aus dem Lockfile. Wer den Patcher
+ändert, verlässt sich nicht auf die Ausgabe allein: das Skript bricht mit Exit ≠ 0 ab, wenn
+ein Marker fehlt.
 
 ## Automatik
 

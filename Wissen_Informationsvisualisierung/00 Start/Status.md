@@ -105,6 +105,10 @@ Graph auf Seite 2 nennt dieselben Grenzen in der Bildunterschrift. Der eigene Ka
 „hin“ zur Nachricht (`#msg-u09`, `#msg-quiz`, `#msg-seiten`).
 
 Die Freebuff-Vorschau (https://lernserver-108-tin-3-trang-4wz4jg-preview.freebuff.site,
-Konto-Sync über D1) wird **nicht** vom gh-pages-Workflow versorgt: nach jeder Änderung an
-`lernserver.html` `_build/freebuff-preview/build_page.py` laufen lassen, `dist/worker.js` neu
-bündeln und die Umgebung `preview` erneut deployen — sonst bleibt sie auf dem alten Stand.
+Konto-Sync über D1) wird **nicht** vom gh-pages-Workflow versorgt. Seit 25.11.2026 baut
+`bash Wissen_Informationsvisualisierung/_tools/freebuff-preview/build.sh` in einem Aufruf
+`page.html` und `dist/worker.js` unter `_build/freebuff-preview/`, prüft die Marker und nennt
+am Ende den Deploy-Aufruf (`sites_deploy`, Umgebung `preview`); die Quellen liegen versioniert
+neben dem Skript statt nur im ignorierten `_build/`. Der Deploy selbst bleibt ein Sites-Aufruf:
+`/healthz` 200 und `/` 302 zur Anmeldung zeigen nur, dass die Vorschau läuft, nicht welchen
+Stand sie zeigt.

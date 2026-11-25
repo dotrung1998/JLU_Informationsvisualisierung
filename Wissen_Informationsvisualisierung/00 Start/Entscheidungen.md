@@ -465,3 +465,26 @@ Anker (`#msg-u09`, `#msg-quiz`, `#msg-seiten`) müssen beim Umbau mitgezogen wer
 **Verworfen.** Block in `#lernfortschritt` (Fassung vom selben Tag, jetzt ersetzt); eigener
 Kanal in der Prüfungsgruppe (falscher Ort); Einträge aus `git log` erzeugen (keine
 Leserfassung).
+
+## 2026-11-25 — Freebuff-Vorschau über ein versioniertes Build-Skript
+
+**Entscheidung.** Der Bau der Freebuff-Vorschau ist ein Skript im Repository:
+`Wissen_Informationsvisualisierung/_tools/freebuff-preview/build.sh` patcht die Seite, bündelt
+`dist/worker.js` und prüft das Ergebnis; `build_page.py`, `worker.js`, `deploy.json` und
+`package*.json` liegen versioniert daneben, die Ausgabe bleibt in `_build/freebuff-preview/`.
+Das Ausliefern (`sites_deploy`, Umgebung `preview`) bleibt ein Sites-Aufruf, den das Skript
+am Ende ausgibt.
+
+**Grund.** Die Vorschau blieb am 25.11. zweimal auf dem alten Stand, weil die Baukette nur
+unter dem ignorierten `_build/` lag und von Hand nachgezogen werden musste. Mit versionierten
+Quellen und einem Aufruf ist der Build reproduzierbar (`npm ci` aus dem Lockfile) und nicht
+mehr an eine Sitzung gebunden.
+
+**Grenze.** Das Skript deployt nicht selbst — die Sites-Schnittstelle ist kein Shell-Befehl —,
+und es ersetzt den gh-pages-Workflow nicht. Ein unveränderter Quellstand erspart nur den
+Build, nicht die Prüfung, ob das letzte Deploy geklappt hat.
+
+**Verworfen.** Baukette weiter in `_build/` lassen und in `Status.md` beschreiben (genau das
+war die Fehlerquelle); Build in GitHub Actions (kein Weg zu den Sites-Zugangsdaten); Deploy
+per Wrangler CLI (die Vorschau ist eine Sites-Deployment mit verwalteten Bindings, kein
+eigener Cloudflare-Account).
