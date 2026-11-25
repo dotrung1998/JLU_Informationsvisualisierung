@@ -288,3 +288,22 @@ behebbar (96 − 62 = 34).
 
 **Verworfen.** Spoiler als `<button>` umbauen (größerer Eingriff in Textfluss und Layout);
 den 34-Plätze-Satz weglassen (dann fehlt der im Quellenstand notierte Vergleich).
+## 2026-11-25 — `sync_pull.sh` statt Pull in `daily.sh`
+
+**Entscheidung.** Ein eigenes Skript `Wissen_Informationsvisualisierung/_tools/sync_pull.sh`
+bringt den Arbeitsstand am Sitzungsbeginn auf `main`: `git fetch origin main`, danach
+`git merge --ff-only FETCH_HEAD`. Es committet, pusht und stasht nichts. Ein unsauberes
+Arbeitsverzeichnis bricht mit Exit 2 ab, eigene Commits daneben mit Exit 4. `--no-fetch`
+vergleicht gegen einen bereits geholten Stand (Cloud-Workspace: Fetch über die
+Git-Integration). `daily.sh` bleibt unverändert.
+
+**Grund.** Der Cloud-Workspace arbeitet in einem eigenen Klon und sieht einen Push auf
+`main` erst nach einem Fetch; ohne den Schritt wird auf einem alten Stand gelesen und
+geschrieben. Der Vergleich läuft über `FETCH_HEAD`, weil dieses Repository beim Fetch kein
+`origin/main`-Ref schreibt (geprüft am 25.11.2026: `git fetch origin main` lässt `origin/main`
+fehlen und schreibt nur `FETCH_HEAD`).
+
+**Verworfen.** Den Pull in `daily.sh` einbauen (der Lauf startet in GitHub Actions auf einem
+losen HEAD aus `actions/checkout`; ein Merge dort bricht den Tageslauf ab, auf dem Mac würde
+er ohne Zutun der Person mergen); `git pull` ohne `--ff-only` (könnte einen eigenen Stand
+zusammenführen, statt ihn zu melden); automatisches Stashen (versteckt unfertige Arbeit).

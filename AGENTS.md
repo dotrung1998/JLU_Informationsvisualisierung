@@ -28,7 +28,7 @@ in `Wissen_Informationsvisualisierung/_tools/`, die bewusst gleich gehalten sind
 | `e-Portfolio/Portfolio/` | **Ablage.** Gesamtportfolio (PDF). |
 | `e-Portfolio/Programmcode/` | **Ablage.** Programmcode, den Ergebnissen zugeordnet. |
 | `Wissen_Informationsvisualisierung/` | **Gedächtnis.** Obsidian-Vault mit Start, Kurs, Vorlesungen, Gruppe, Portfolio, Plan. |
-| `Wissen_Informationsvisualisierung/_tools/` | `ingest.py`, `board_sync.py`, `daily.sh`, `daily_guard.sh`, `discord_notify.py`, `author_guard.py`. |
+| `Wissen_Informationsvisualisierung/_tools/` | `ingest.py`, `board_sync.py`, `sync_pull.sh`, `daily.sh`, `daily_guard.sh`, `discord_notify.py`, `author_guard.py`. |
 
 ## Pflichtschritte am Anfang jeder Sitzung
 

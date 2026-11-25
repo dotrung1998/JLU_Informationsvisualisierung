@@ -1,6 +1,6 @@
 ---
 titel: Start
-stand: 2026-11-23
+stand: 2026-11-25
 status: aktiv
 ---
 
@@ -10,6 +10,21 @@ status: aktiv
 > [[Offene Entscheidungen]]. Việc gấp: **bài tập U01–U14 (Prüfungsvorleistung)** chọn và
 > trình bày, **trang 2 (Einstiegsseite)** phải vào portfolio 1:1, **31.03.2027** nộp
 > portfolio + code, **09.–10.04.2027** Blockseminar.
+
+## Sitzungsbeginn
+
+Vor dem ersten Lesen und Schreiben den Arbeitsstand auf den aktuellen `main` bringen:
+
+```bash
+bash Wissen_Informationsvisualisierung/_tools/sync_pull.sh
+```
+
+Das Skript holt `main` und spult nur per Fast-Forward vor. Es committet, pusht und stasht
+nichts: Ein unsauberes Arbeitsverzeichnis bricht mit Exit 2 ab, eigene Commits daneben mit
+Exit 4 — dann entscheidet die Person, nicht das Skript. Meldet der Cloud-Workspace einen
+Fetch-Fehler, den Fetch über die Git-Integration ausführen und danach
+`sync_pull.sh --no-fetch` aufrufen. Danach die Pflichtschritte aus `AGENTS.md`
+(`ingest.py`, `board_sync.py`, „Neu seit letztem Lauf“).
 
 ## Worum es geht
 
@@ -62,6 +77,9 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
   Lernstand, 20-Fragen-Quiz, Lie-Factor-Rechner, Filter-Explorer K–P, Farb- und
   Histogramm-Demo. Quellenangabe je Nachricht; Widersprüche (3–6/5–10 Minuten,
   Kapitel 5/6) markiert; Inhalte deutsch, kurze vietnamesische Hinweise je Kapitel
+  ([[Entscheidungen]]).
+- 25.11.2026: `sync_pull.sh` angelegt: holt am Sitzungsbeginn `main` und spult nur per
+  Fast-Forward vor, damit der Cloud-Workspace nicht auf einem alten Stand arbeitet
   ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
