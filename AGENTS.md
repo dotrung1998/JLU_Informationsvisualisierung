@@ -30,6 +30,8 @@ in `Wissen_Informationsvisualisierung/_tools/`, die bewusst gleich gehalten sind
 | `Wissen_Informationsvisualisierung/` | **Gedächtnis.** Obsidian-Vault mit Start, Kurs, Vorlesungen, Gruppe, Portfolio, Plan. |
 | `Wissen_Informationsvisualisierung/_tools/` | `ingest.py`, `board_sync.py`, `sync_pull.sh`, `daily.sh`, `daily_guard.sh`, `discord_notify.py`, `author_guard.py`. |
 
+**Quelle der Wahrheit sind die Dateien in diesem Repository.** Eine Kopie derselben Skripte in einer Freebuff-Skill (`cloud-session-sync`) dient nur dazu, ein anderes Repository aufzusetzen; bei Abweichung zählt die Datei im Repo, und die Skill-Kopie wird danach nachgezogen.
+
 ## Pflichtschritte am Anfang jeder Sitzung
 
 ```bash

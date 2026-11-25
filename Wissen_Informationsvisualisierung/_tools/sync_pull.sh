@@ -19,7 +19,7 @@
 #
 # Exit-Codes:
 #   0  schon aktuell oder vorgespult
-#   1  kein Git-Repository
+#   1  liegt in keinem Git-Repository
 #   2  Arbeitsverzeichnis unsauber, es wird nicht gezogen
 #   3  Fetch fehlgeschlagen oder kein FETCH_HEAD vorhanden
 #   4  auseinandergelaufen (eigene Commits), nichts verändert
