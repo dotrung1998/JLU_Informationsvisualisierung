@@ -83,3 +83,10 @@ Lehrenden bis etwa Weihnachten 2026 beziehungsweise nach Ende der Anmeldefrist i
 | `e-Portfolio/Programmcode/` | Programmcode | 31.03.2027 | — | leer |
 
 Der Stand wird bei jedem Lauf aus den Ordnern neu berechnet ([[Abgaben (auto)]]).
+
+## Lernserver (Stand 25.11.2026)
+
+`lernserver.html` hat je Nachricht drei Seiten: Deutsch · vietnamesische Skizze ·
+vietnamesische Übersetzung, 108 von 108 übersetzt. Keine Frist ändert sich; die Abgabe steht
+unverändert am 31.03.2027. Im Browser geprüft: 108 Blätter, Umschalten und Wischen
+funktionieren; die Übersetzungen sind gerafft, Zahlen und Quellen unverändert.

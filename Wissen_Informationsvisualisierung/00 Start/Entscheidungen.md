@@ -307,3 +307,25 @@ fehlen und schreibt nur `FETCH_HEAD`).
 losen HEAD aus `actions/checkout`; ein Merge dort bricht den Tageslauf ab, auf dem Mac würde
 er ohne Zutun der Person mergen); `git pull` ohne `--ff-only` (könnte einen eigenen Stand
 zusammenführen, statt ihn zu melden); automatisches Stashen (versteckt unfertige Arbeit).
+
+## 2026-11-25 — Lernserver: jede Nachricht als drei wischbare Seiten
+
+**Entscheidung.** Jede der 108 Nachrichten in `lernserver.html` ist jetzt ein horizontal
+wischbares Blatt mit drei Seiten: Seite 1 der unveränderte deutsche Text, Seite 2 eine
+schematische Zeichnung mit vietnamesischen Beschriftungen, Seite 3 eine vietnamesische
+Übersetzung. Die Übersetzungen liegen als JSON-Block `#viData` in derselben Datei; die
+Zeichnung entsteht aus den Stichpunkten der jeweiligen Übersetzung (Motive: Ablauf, Balken,
+Farbskala, Netz, Baum, Zeitachse, Filter, Dokument). Bedienung: Tabs 1–3, Wischen,
+Pfeiltasten. Weiterhin eine Datei, keine Bibliothek, kein Build.
+
+**Grund.** Die Person lernt den Stoff auf Deutsch, braucht zum Verstehen aber die
+vietnamesische Fassung und eine Zeichnung. Die Reihenfolge ist bewusst: erst der Originaltext
+mit Quellenangabe, dann die bildliche Zusammenfassung, dann die Übersetzung.
+
+**Grenze.** Die Übersetzungen sind gerafft (sinngemäß vollständig, Zahlen und Quellen
+unverändert), keine wörtliche Satz-für-Satz-Übertragung; das steht auch auf jeder Seite 3.
+Die Zeichnungen sind Schemata aus den Stichpunkten, keine neu gezeichneten Kursfolien.
+
+**Verworfen.** 108 handgezeichnete Einzelbilder (nicht belegbar, nicht wartbar); eine zweite
+HTML-Datei je Sprache (bricht die Ein-Datei-Regel); automatische Übersetzung im Browser
+(kein Netz, keine Bibliothek).

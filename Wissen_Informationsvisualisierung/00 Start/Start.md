@@ -81,6 +81,10 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
 - 25.11.2026: `sync_pull.sh` angelegt: holt am Sitzungsbeginn `main` und spult nur per
   Fast-Forward vor, damit der Cloud-Workspace nicht auf einem alten Stand arbeitet
   ([[Entscheidungen]]).
+- 25.11.2026: Lernserver: jede der 108 Nachrichten hat drei wischbare Seiten — Deutsch,
+  vietnamesische Skizze, vietnamesische Übersetzung; die Übersetzungen liegen im JSON-Block
+  `#viData` derselben Datei, die Zeichnung wird aus den Stichpunkten erzeugt
+  ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 
