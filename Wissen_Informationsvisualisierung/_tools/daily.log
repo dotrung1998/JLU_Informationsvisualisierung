@@ -65,3 +65,17 @@ Status: geändert
 Board-Struktur: ok (Kanban-Plugin)
 ---
 Discord: gesendet (HTTP 204)
+=== 2026-11-25 18:46:34 ===
+Lauf 2026-11-25 18:46
+  neu:         0
+  geändert:    0
+  unverändert: 7
+  Abgaben-Tabelle aktualisiert: 10 Kurs/Abgaben (auto).md
+  Abdeckung:   11 Notiz, 2 manuell, 1 ausgeschlossen, 0 unbekannt
+  Abgabeordner ohne bekannte Frist: Prüfungsvorleistung
+---
+Board: unverändert
+Status: geändert
+Board-Struktur: ok (Kanban-Plugin)
+---
+Discord: gesendet (HTTP 204, 204, 2 Nachrichten)
