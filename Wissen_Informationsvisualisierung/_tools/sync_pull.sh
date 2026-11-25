@@ -27,14 +27,19 @@
 set -uo pipefail
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$DIR/../.." || exit 1
+
+# Wurzel über Git bestimmen, nicht über ../..: liegt das Skript höher oder tiefer
+# (z. B. in tools/), würde ../.. aus dem Repository herauszeigen.
+if ! ROOT="$(git -C "$DIR" rev-parse --show-toplevel 2>/dev/null)"; then
+  echo "sync_pull: $DIR liegt in keinem Git-Repository." >&2
+  exit 1
+fi
+cd "$ROOT" || exit 1
 
 REMOTE="${SYNC_REMOTE:-origin}"
 BRANCH="${SYNC_BRANCH:-main}"
 DO_FETCH=1
 [ "${1:-}" = "--no-fetch" ] && DO_FETCH=0
-
-git rev-parse --git-dir >/dev/null 2>&1 || { echo "sync_pull: kein Git-Repository." >&2; exit 1; }
 
 # 1. Unfertige Änderungen gehören der Person: nicht stashen, nicht überschreiben.
 if [ -n "$(git status --porcelain)" ]; then
