@@ -13,13 +13,15 @@ Kanal `#changelog`, die Entscheidungen und Gründe in
   - `#04-clutter-beispiele` steht im Kanalbaum eingerückt unter
     `#04-multivariate-daten` (Klasse `chan sub`), nicht mehr auf derselben Ebene wie die
     Kapitel;
-  - jede der sechs Beispielnachrichten hat **zwei** Seiten statt einer — Deutsch und
+  - jede Nachricht des Kanals hat **zwei** Seiten statt einer — Deutsch und
     Tiếng Việt; die Vorher/Nachher-Grafik bleibt auf Seite 1, deshalb entfällt die
     erzeugte Seite 2 (Attribut `data-de-vi` statt `data-nopager`, `buildPagers()` baut
     dafür zwei Registerkarten);
-  - die sechs vietnamesischen Fassungen stehen im JSON-Block `#viData` unter
-    `k04beispiele`; die abschließende Ghi-chú-Nachricht bleibt einseitig, weil sie schon
-    vietnamesisch ist;
+  - die vietnamesischen Fassungen — sieben, auch für die Nachricht am Kanalende — stehen
+    im JSON-Block `#viData` unter `k04beispiele`; die Fazit-Nachricht hat dafür Seite 1
+    auf Deutsch (Einordnung und Verweise) und Seite 3 auf Vietnamesisch;
+  - die Legende in `#willkommen-&-regeln` nennt die Ausnahme: zwei statt drei Seiten im
+    Galeriekanal, weil die Vorher/Nachher-Grafik dort schon auf Seite 1 steht;
   - Rückweg über dem Kanal und am Ende: `← zurück zu #04-multivariate-daten`;
   - Eintrag im Kanal `#changelog`, Zähler unverändert bei 19 Kanälen.
 - `Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md`: Entscheidung vom 25.11.

@@ -540,3 +540,22 @@ Lesefortschritt von Kapitel 4 nicht doppelt setzen und die Zählung bei neun Kap
 vorhandene Grafik verdoppelt); den Kanal ganz in Kapitel 4 aufgehen lassen (die Galerie
 würde die Kapitelnachricht sprengen); `data-chapter="4"` am Unterkanal (hätte ihn als
 Kapitel gezählt und das grüne Lesehäkchen doppelt gesetzt).
+
+## 2026-11-26 — Ghi chú am Kanalende ebenfalls zweisprachig
+
+**Entscheidung.** Die schließende Nachricht in `#04-clutter-beispiele` ist nicht mehr
+einseitig: Sie hat Seite 1 auf Deutsch (Einordnung der sechs Techniken, Verweis auf parallele
+Koordinaten und `#05-interaktion`, Rückweg) und Seite 3 als vietnamesische Fassung
+(`data-de-vi`). Die Legende in `#willkommen-&-regeln` nennt die Ausnahme des Kanals jetzt
+explizit: zwei statt drei Seiten.
+
+**Grund.** Nach dem Einbau der zwei Seiten war die Ghi-chú-Nachricht die einzige Nachricht des
+Kanals ohne Sprachumschaltung und las sich wie ein Rest aus der einseitigen Fassung. Seite 1
+war außerdem nur vietnamesisch; ein deutscher Text passt zur Regel, dass die Fachinhalte
+deutsch bleiben und Vietnamesisch die Übersetzung ist.
+
+**Grenze.** Die Fazit-Seite fasst nur zusammen, was in den sechs Beispielen schon steht; sie
+fügt keine Quelle hinzu. Der Kanal bleibt bei zwei statt drei Seiten.
+
+**Verworfen.** Die Nachricht einseitig und vietnamesisch lassen (bricht die Sprachumschaltung
+im Kanal); ihr eine erzeugte Seite 2 geben (ohne eigenen Inhalt, weil kein Bild vorhanden ist).
