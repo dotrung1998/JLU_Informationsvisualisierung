@@ -5306,7 +5306,9 @@ window.QUIZ_DATA = [
       a.addEventListener("blur", scheduleHide);
     });
   }
-  window.addEventListener("scroll", function(){ if(previewEl) hidePreview(); }, true);
+  window.addEventListener("scroll", function(e){
+    if(previewEl && e.target !== previewEl && !previewEl.contains(e.target)) hidePreview();
+  }, true);
   window.addEventListener("resize", function(){ if(previewEl) hidePreview(); });
   document.addEventListener("keydown", function(e){ if(e.key === "Escape") hidePreview(); });
   /* ---------------- Changelog ---------------- */
