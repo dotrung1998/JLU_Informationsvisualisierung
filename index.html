@@ -5116,7 +5116,7 @@ window.QUIZ_DATA = [
       const slug = sec.dataset.slug;
       const data = VI_DATA[slug] || [];
       $$("article.msg", sec).forEach(function(msg, idx){
-        if(msg.dataset.pager || msg.hasAttribute("data-nopager")) return;
+        if(msg.dataset.pager) return;
         const body = msg.querySelector(".body");
         if(!body || !body.firstChild) return;
         msg.dataset.pager = "1";
