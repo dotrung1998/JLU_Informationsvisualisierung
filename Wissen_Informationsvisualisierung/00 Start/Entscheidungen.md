@@ -591,3 +591,25 @@ alle Typen in die Kapitelnachrichten einfügen (sprengt sie und mischt Begriff u
 Anschauung); `wheel` auf `document` abfangen (würde vertikales Scrollen und die
 Browser-Geste stören); echte Fotos oder externe Bilddateien (keine Belegstelle, größere
 Abhängigkeit, weniger präzise).
+
+### 2026-11-26 — Wisch über einer breiten Grafik scrollt zuerst
+
+**Entscheidung.** `scrollableX()` sucht im Pager den nächsten horizontal scrollbaren
+Vorfahren mit `overflow-x: auto` oder `scroll`. Solange dieser nicht am Rand steht, bleibt
+das Wheel-Ereignis unangetastet und die Grafik scrollt nativ; erst am Rand wird
+`preventDefault()` gesetzt und die Seite geblättert. Der Akkumulator fällt nach 160 ms ohne
+Wheel-Ereignis auf 0 zurück; die 420-ms-Sperre nach einem Seitenwechsel bleibt.
+
+**Grund.** Auf dem Trackpad ist die horizontale Geste dieselbe für „Grafik ansehen“ und
+„Nachricht blättern“. Ohne Vorrang gewinnt der Pager und die Grafik ist nicht erreichbar.
+Die Pause verhindert, dass zwei getrennte Wische kurz hintereinander als ein langer Wisch
+gezählt werden.
+
+**Grenze.** Der Vorrang gilt nur bei horizontalem Überwiegen und nur für Container mit
+`overflow-x: auto|scroll`; vertikales Scrollen und die Browser-Geste bleiben unberührt.
+Am Rand blättert ein weiterer Wisch sofort — das ist gewollt.
+
+**Verworfen.** Immer blättern und die Grafik nur per Ziehen scrollen (verlangt Halten);
+die Grafik erst bei vollem Scrollweg freigeben (dann blättert ein Wisch am Rand nie, weil
+der Rand nie ganz erreicht wird); den Zähler nie zurücksetzen (zwei kurze Wische zählen als
+einer).

@@ -120,7 +120,9 @@ mit einer schematischen Bildtafel und einer Merkpunkt-Nachricht; `04-multivariat
 hat zwei Unterseiten. `buildSubChannels()` erzeugt die eingerückten Einträge aus
 `data-parent`, damit ein Kapitel beliebig viele tragen kann. Der Pager reagiert auf
 horizontalen Wisch (Trackpad, Magic Mouse), ohne dass die Maustaste gehalten werden muss;
-vertikales Scrollen bleibt unberührt. Die Seite hat damit 25 Kanäle.
+über einer breiten Grafik scrollt zuerst die Grafik selbst, geblättert wird erst am Rand,
+und der Zähler fällt nach 160 ms Pause zurück; vertikales Scrollen bleibt unberührt. Die
+Seite hat damit 25 Kanäle.
 
 Die Freebuff-Vorschau (https://lernserver-108-tin-3-trang-4wz4jg-preview.freebuff.site,
 Konto-Sync über D1) wird **nicht** vom gh-pages-Workflow versorgt. Seit 25.11.2026 baut

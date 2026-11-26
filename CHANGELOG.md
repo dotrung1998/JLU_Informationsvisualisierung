@@ -19,7 +19,9 @@ Kanal `#changelog`, die Entscheidungen und Gründe in
     kann mehrere Unterseiten tragen (`04-multivariate-daten`: `04-clutter-beispiele` und
     `04-diagrammtypen`);
   - der Pager reagiert auf horizontales `wheel` (Trackpad, Magic Mouse): ein Wisch
-    blättert, ohne die Maustaste zu halten; vertikales Scrollen bleibt unberührt;
+    blättert, ohne die Maustaste zu halten; vertikales Scrollen bleibt unberührt; über
+    einer breiten Grafik scrollt zuerst die Grafik selbst, geblättert wird erst am Rand,
+    und der Zähler fällt nach 160 ms ohne Ereignis zurück;
   - Legende, Kanalzähler (25) und Suchfuß beschreiben den neuen Stand, der Suchfuß zählt
     die Sektionen selbst.
 - `Status.md`, `Entscheidungen.md`, `Start.md`: Stand, Entscheidung und Sitzungsnotiz

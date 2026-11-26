@@ -5824,14 +5824,38 @@ window.QUIZ_DATA = [
         }
         pager.addEventListener("pointerup", endDrag);
         pager.addEventListener("pointercancel", endDrag);
-        let wheelLock = 0, wheelSum = 0;
+        let wheelLock = 0, wheelSum = 0, wheelIdle = null;
+        function scrollableX(node){
+          let el = node && node.nodeType === 1 ? node : null;
+          while(el && el !== pager){
+            if(el.scrollWidth - el.clientWidth > 2){
+              const ox = window.getComputedStyle(el).overflowX;
+              if(ox === "auto" || ox === "scroll") return el;
+            }
+            el = el.parentElement;
+          }
+          return null;
+        }
         pager.addEventListener("wheel", function(e){
           if(Math.abs(e.deltaX) < 2 || Math.abs(e.deltaX) <= Math.abs(e.deltaY) * 1.2) return;
+          /* Erst scrollt die breite Grafik selbst; die Seite blättert erst am Rand. */
+          const box = scrollableX(e.target);
+          if(box){
+            const max = box.scrollWidth - box.clientWidth;
+            const atEnd = e.deltaX > 0 ? box.scrollLeft >= max - 1 : box.scrollLeft <= 1;
+            if(!atEnd){
+              wheelSum = 0;
+              clearTimeout(wheelIdle);
+              return;
+            }
+          }
           e.preventDefault();
           const now = Date.now();
           if(now < wheelLock) return;
           if((wheelSum > 0 && e.deltaX < 0) || (wheelSum < 0 && e.deltaX > 0)) wheelSum = 0;
           wheelSum += e.deltaX;
+          clearTimeout(wheelIdle);
+          wheelIdle = setTimeout(function(){ wheelSum = 0; }, 160);
           if(Math.abs(wheelSum) >= 40){
             go(index + (wheelSum > 0 ? 1 : -1));
             wheelSum = 0;
