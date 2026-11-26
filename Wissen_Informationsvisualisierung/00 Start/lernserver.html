@@ -5276,22 +5276,23 @@ window.QUIZ_DATA = [
     if(!el){ toast("Nachricht nicht gefunden."); return; }
     const msg = el.closest("article.msg");
     const want = lang || (msg && msg.dataset.lang) || viewLang;
+    let hasVI = false;
     if(msg && msg._pagerGo){
       const viPage = msg.querySelector(".page-vi");
-      const hasVI = viPage && viPage.dataset.missing !== "1";
+      hasVI = !!(viPage && viPage.dataset.missing !== "1");
       if(want === "vi" && hasVI) msg._pagerGo(msg.querySelectorAll(".page").length - 1);
       else {
         msg._pagerGo(0);
         if(want === "vi") toast("Keine vietnamesische Fassung — Ziel öffnet auf Deutsch.");
       }
     }
-    const target = msg || el;
+    const target = (want === "vi" && hasVI) ? msg : (el || msg);
     const scrollTarget = function(){
       if(target.scrollIntoView) target.scrollIntoView({block:"center"});
     };
     scrollTarget();
     requestAnimationFrame(function(){ requestAnimationFrame(scrollTarget); });
-    [target, el].forEach(function(n){
+    [target, msg, el].forEach(function(n){
       if(!n) return;
       n.classList.remove("flash"); void n.offsetWidth; n.classList.add("flash");
     });
