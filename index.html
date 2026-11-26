@@ -5399,7 +5399,7 @@ window.QUIZ_DATA = [
       hidePreview(); return;
     }
     const hitNow = card.querySelector(".pv-hit");
-    if(hitNow) card.scrollTop = Math.max(0, hitNow.getBoundingClientRect().top - card.getBoundingClientRect().top - 46);
+    if(hitNow && !missingVI) card.scrollTop = Math.max(0, hitNow.getBoundingClientRect().top - card.getBoundingClientRect().top - 46);
   }
   function schedulePreview(link){
     if(!previewAllowed()) return;
