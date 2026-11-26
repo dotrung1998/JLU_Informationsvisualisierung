@@ -645,3 +645,40 @@ Zustand, kein Gewinn); Nachrichten mit `data-author` in jeder Zeile auszeichnen 
 steht schon im Kopf, eine zweite Quelle würde nur auseinanderlaufen); die Vorschau als
 modalen Dialog (blockiert und lässt sich nicht neben dem Link lesen); die Vorwärts-Links von
 Hand in jedes Kapitel schreiben (doppelte Pflege, sobald eine Unterseite dazukommt).
+
+## 2026-11-26 — Filter bleibt erhalten, Vorschau und Sprung folgen der Lesesprache
+
+**Entscheidung.** Der Profilfilter ist nicht mehr an die Mitgliederliste gebunden. Die
+Filterleiste bleibt immer sichtbar und trägt ein Auswahlfeld mit denselben fünf Profilen;
+unter 1180 px, wo die Mitgliederliste verschwindet, ist das die einzige, aber vollständige
+Zufahrt. Auswahlfeld und Mitgliederliste schreiben denselben Zustand. Der Filter liegt als
+`filter` im bestehenden `localStorage`-Objekt und zusätzlich in der Query
+(`?profil=Lernbot`); `openChannel` schreibt die Query beim Kanalwechsel mit, direkte URLs
+mit `?profil=…` und `#unterseite` stellen Filter und Ziel wieder her. Kanäle ohne Treffer
+bleiben sichtbar und anklickbar, die Notiz nennt den Filter; „Filter aufheben“ bleibt
+sichtbar. Die Vorschau klont nicht mehr fest `.page-de`, sondern die Seite des aktiven
+Pagers (`.page-de` oder `.page-vi`); jede VI-Seite trägt `data-missing`, und bei fehlender
+Fassung erscheint ein sichtbarer Hinweis, statt still Deutsch zu zeigen. `jumpTo` öffnet
+das Ziel in der Sprache des auslösenden Links: Deutsch scrollt auf den exakten Anker,
+Tiếng Việt auf die übersetzte Zielnachricht. Das Scrollen läuft nach dem Pager- und
+Höhenwechsel in zwei Frames.
+
+**Grund.** Der Filter war auf schmalen Geräten und nach einem Reload nicht erreichbar; wer
+eine Unterseite direkt öffnete, verlor ihn. Die Vorschau war auf Deutsch festgelegt und
+damit beim Lesen der vietnamesischen Fassung irreführend. Ein Filter, der beim nächsten
+Kanalwechsel verschwindet, ist kein Filter; ein „Deutsch“-Popover neben einer VI-Seite ist
+ein stiller Sprachwechsel.
+
+**Grenze.** Der Filter wirkt auf direkte `article.msg`, nicht auf verschachtelte Threads.
+Die Vorschau ist ab 900 px und nur bei echtem Hover aktiv; auf schmalen oder touch-only
+Ansichten öffnet ein Tipp direkt das Ziel, weil die Karte dort den Link überdecken würde.
+Im Vietnamesischen gibt es keine eigenen Abschnitts-IDs: der Link landet auf der
+übersetzten Nachricht, im Deutschen auf dem exakten Anker. Fehlt eine VI-Fassung, zeigt die
+Vorschau Deutsch mit Hinweis und der Sprung öffnet Deutsch mit Toast.
+
+**Verworfen.** Den Filter nur im Speicher halten (Direktlinks verlieren ihn); ihn nur in der
+Query halten (Reload ohne Query verliert ihn); die Mitgliederliste unter 1180 px einblenden
+(nimmt dem Chat die Breite); die Vorschau fest auf Deutsch lassen (falsche Sprache); die
+Vorschau unter 900 px als Vollflächen-Overlay lassen (blockiert den Chip, im Test bei 390 px
+reproduziert); bei VI auf den deutschen Anker springen (Sprachwechsel statt Übersetzung).
+

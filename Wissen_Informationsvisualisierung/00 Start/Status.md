@@ -88,13 +88,13 @@ Der Stand wird bei jedem Lauf aus den Ordnern neu berechnet ([[Abgaben (auto)]])
 
 ## Lernserver (Stand 26.11.2026)
 
-`lernserver.html` hat je Nachricht drei Seiten: Deutsch · Graph · vietnamesische Übersetzung,
-108 von 108 übersetzt. Seite 2 zeigt einen eigenen Graphen aus den Werten der Nachricht —
-Heatmap, Scatter, Parallelkoordinaten, Fehlerbalken, Treemap, Netz, Baum, Zeitachse, Balken,
-Histogramm, Boxplot, Farbmuster oder Ablauf; keine zwei Nachrichten haben denselben Graphen
-(108 eigene Titel). Die frühere Stichpunktkarte ist nur noch ein eingeklappter Hinweis unter
-dem Graphen. Auf 390 px geprüft: 108 Graphen, 324 Seiten, kein Text- oder Seitenüberlauf,
-Wischen und Tabs wechseln auf Seite 2 und 3. Der linke Kanalbaum lässt sich auf dem Telefon
+`lernserver.html` hat 132 Nachrichten: 109 mit drei Seiten (Deutsch · Graph · Tiếng Việt)
+und 23 mit zwei Seiten (Deutsch · Tiếng Việt), zusammen 373 Seiten; alle 132 haben eine
+vietnamesische Fassung (`#viData`/`#viDataMore`). Die 109 Graphseiten zeigen einen Graphen
+aus den Werten der Nachricht — Heatmap, Scatter, Parallelkoordinaten, Fehlerbalken, Treemap,
+Netz, Baum, Zeitachse, Balken, Histogramm, Boxplot, Farbmuster oder Ablauf. Die frühere
+Stichpunktkarte ist nur noch ein eingeklappter Hinweis unter dem Graphen. Auf 390 px wurden
+Filterleiste, Wischen und Tabs geprüft; der linke Kanalbaum lässt sich auf dem Telefon
 per X, dunklem Hintergrund oder Escape schließen. GitHub Actions hält `gh-pages` aktuell
 (`.github/workflows/gh-pages-lernserver.yml`); öffentlich:
 https://dotrung1998.github.io/JLU_Informationsvisualisierung/
@@ -111,7 +111,7 @@ unter `#04-multivariate-daten` und hat **zwei** statt drei Seiten je Nachricht
 erzeugte Zeichnung würde sie doppeln. Die sieben vietnamesischen Fassungen — auch die
 Fazit-Nachricht am Ende — stehen in `#viData` unter `k04beispiele`; über und unter dem
 Kanal führt ein Rückweg `← zurück zu #04-multivariate-daten`. Die Legende in
-`#willkommen-&-regeln` nennt die Ausnahme, die 108 Nachrichten der übrigen Kanäle behalten
+`#willkommen-&-regeln` nennt die Ausnahme, die übrigen 109 Nachrichten behalten
 ihre drei Seiten.
 
 Seit 26.11.2026 tragen die Kapitel **Unterseiten**: `03-gestalt-farben`, `04-diagrammtypen`,
@@ -123,13 +123,20 @@ hat zwei Unterseiten. `buildSubChannels()` erzeugt die eingerückten Einträge a
 horizontalen Wisch (Trackpad, Magic Mouse), ohne dass die Maustaste gehalten werden muss;
 über einer breiten Grafik scrollt zuerst die Grafik selbst, geblättert wird erst am Rand,
 und der Zähler fällt nach 160 ms Pause zurück; vertikales Scrollen bleibt unberührt. Die
-Seite hat damit 27 Kanäle und neun Unterseiten. Seit 26.11.2026 filtert die Mitgliederliste:
-Ein Klick auf ein Profil zeigt in allen Kanälen nur dessen Nachrichten, der Balken nennt die
-Trefferzahl, ein zweiter Klick hebt den Filter auf. Links zu einer Unterseite (Rückweg und
-die Chips „Unterseiten“ im Kapitel) zeigen beim Überfahren die genaue Zielstelle als
-Vorschau; ein Klick springt dorthin. Die neuen Unterseiten `02-tufte-bilder` und
-`05-interaktionsvokabular` bringen die Tufte-Werkzeuge und das Interaktionsvokabular nach
-Yi et al. 2007 als Bildtafel.
+Seite hat damit 27 Kanäle und neun Unterseiten. Seit 26.11.2026 filtert die Profilauswahl in
+der immer sichtbaren Filterleiste — auch unter 1180 px, wo die Mitgliederliste ausgeblendet
+ist. Ein Klick oder die Auswahl zeigt in allen Kanälen nur die Nachrichten dieses Profils,
+der Balken nennt Treffer und Gesamtzahl, „Filter aufheben“ bleibt sichtbar. Der Filter steht
+in `localStorage` und in `?profil=…`; Kanal- und Unterseitenwechsel erhalten die Query,
+direkte URLs mit Filter und `#unterseite` stellen beides wieder her. Kanäle ohne Treffer
+bleiben sichtbar und anklickbar und nennen den aktiven Filter. Links zu einer Unterseite
+(Rückweg und die Chips „Unterseiten“ im Kapitel) zeigen beim Überfahren die Zielstelle in
+der gerade gelesenen Sprache — Deutsch oder Tiếng Việt; fehlt die VI-Fassung, erscheint ein
+Hinweis. Die Vorschau ist ab 900 px und bei echtem Hover aktiv; darunter öffnet ein Tipp
+direkt. Ein Klick springt in der aktuellen Sprache zum Ziel, im Deutschen auf den exakten
+Anker. Alle 28 Links wurden in beiden Sprachen bei 1280 px und 390 px geprüft. Die neuen
+Unterseiten `02-tufte-bilder` und `05-interaktionsvokabular` bringen die Tufte-Werkzeuge und
+das Interaktionsvokabular nach Yi et al. 2007 als Bildtafel.
 
 Die Freebuff-Vorschau (https://lernserver-108-tin-3-trang-4wz4jg-preview.freebuff.site,
 Konto-Sync über D1) wird **nicht** vom gh-pages-Workflow versorgt. Seit 25.11.2026 baut

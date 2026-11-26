@@ -117,6 +117,11 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
   Zielstelle als Vorschau, und die Kapitel tragen eine Chip-Reihe zu ihren Unterseiten
   (Weg in beide Richtungen); zwei weitere Vertiefungskanäle **02-tufte-bilder** und
   **05-interaktionsvokabular** ergänzen die Bildtafeln ([[Entscheidungen]]).
+- 26.11.2026: Der Profilfilter ist auch auf schmalen Ansichten über ein Auswahlfeld
+  erreichbar, bleibt in `localStorage` und `?profil=…` über Reload und Direktlinks erhalten,
+  und die Vorschau folgt der Lesesprache (Deutsch/Tiếng Việt, mit Hinweis bei fehlender
+  Übersetzung); alle 28 Links in beiden Sprachen und beiden Breiten geprüft
+  ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 

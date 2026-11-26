@@ -5,6 +5,32 @@ Thema, damit die Liste nicht zerfasert. Die kurze Fassung steht im Lernserver im
 Kanal `#changelog`, die Entscheidungen und Gründe in
 `Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md`.
 
+## 2026-11-26 — Filter auf jeder Breite, Vorschau in der Lesesprache
+
+**Thema:** Filter und Vorschau so, wie sie im Alltag gebraucht werden.
+
+- `Wissen_Informationsvisualisierung/00 Start/lernserver.html`
+  - die Filterleiste ist immer sichtbar und trägt ein Auswahlfeld mit allen fünf Profilen;
+    sie ist auch dann erreichbar, wenn die Mitgliederliste unter 1180 px ausgeblendet ist.
+    Auswahlfeld und Mitgliederliste halten denselben Zustand, „Filter aufheben“ bleibt sichtbar;
+  - der Filter steht in `localStorage` und in der Query (`?profil=Lernbot`); `openChannel`
+    erhält die Query, sodass Kanal- und Unterseitenwechsel den Filter nicht verlieren.
+    Direkte URLs mit Filter und `#unterseite` stellen beides wieder her. Leere Kanäle bleiben
+    sichtbar, anklickbar und nennen den aktiven Filter;
+  - die Hover-Vorschau liest die Sprache des aktiven Pagers: Deutsch aus `.page-de`,
+    Tiếng Việt aus `.page-vi`. Fehlt eine VI-Fassung (`data-missing="1"`), zeigt sie die
+    deutsche Fassung **mit sichtbarem Hinweis** statt still umzuschalten;
+  - die Vorschau ist ab 900 px und nur bei echtem Hover aktiv; darunter öffnet ein Tipp
+    direkt das Ziel. Sie schließt sich, wenn sie den auslösenden Link überdecken würde;
+  - Sprungziele öffnen die Zielnachricht in der aktuellen Lesesprache: Deutsch scrollt auf
+    den exakten Anker, Tiếng Việt auf die übersetzte Nachricht; das Scrollen läuft erst nach
+    dem Pager-/Höhenwechsel. Alle 28 Links (9 Chips, 9 Rückwege, 10 Inline-Links) wurden in
+    beiden Sprachen bei 1280 px und 390 px geprüft;
+  - Stand: 132 Nachrichten, 109 Graphseiten, 23 Nachrichten mit zwei Seiten, 373 Seiten;
+    27 Kanäle, neun Unterseiten.
+- `Status.md`, `Entscheidungen.md`, `Start.md`: Stand, Entscheidung und Sitzungsnotiz
+  fortgeschrieben.
+
 ## 2026-11-26 — Profilfilter, Hover-Vorschau, zwei neue Unterseiten
 
 **Thema:** Filtern, schnelles Nachsehen und Wege zwischen Kapitel und Unterseite.
