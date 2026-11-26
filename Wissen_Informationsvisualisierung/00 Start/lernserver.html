@@ -5295,6 +5295,13 @@ window.QUIZ_DATA = [
 
   /* ---------------- Vorschau beim Überfahren (Obsidian-Stil) ---------------- */
   let previewEl = null, previewTimer = null, previewHide = null;
+  function previewAllowed(){
+    if(window.innerWidth < 900) return false;
+    try {
+      if(window.matchMedia && window.matchMedia("(hover: hover)").matches) return true;
+    } catch(e){}
+    return !(navigator.maxTouchPoints > 0);
+  }
   function hidePreview(){
     clearTimeout(previewTimer); clearTimeout(previewHide);
     if(previewEl){ previewEl.remove(); previewEl = null; }
@@ -5304,6 +5311,7 @@ window.QUIZ_DATA = [
     previewHide = setTimeout(hidePreview, 180);
   }
   function showPreview(link){
+    if(!previewAllowed()) return;
     clearTimeout(previewTimer); clearTimeout(previewHide);
     const sec = sectionBySlug(link.dataset.target);
     if(!sec) return;
@@ -5384,6 +5392,7 @@ window.QUIZ_DATA = [
     if(hitNow) card.scrollTop = Math.max(0, hitNow.getBoundingClientRect().top - card.getBoundingClientRect().top - 46);
   }
   function schedulePreview(link){
+    if(!previewAllowed()) return;
     clearTimeout(previewTimer);
     previewTimer = setTimeout(function(){ showPreview(link); }, 220);
   }
