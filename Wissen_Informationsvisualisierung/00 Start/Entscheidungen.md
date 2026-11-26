@@ -613,3 +613,35 @@ Am Rand blättert ein weiterer Wisch sofort — das ist gewollt.
 die Grafik erst bei vollem Scrollweg freigeben (dann blättert ein Wisch am Rand nie, weil
 der Rand nie ganz erreicht wird); den Zähler nie zurücksetzen (zwei kurze Wische zählen als
 einer).
+
+## 2026-11-26 — Profilfilter, Hover-Vorschau, Vorwärts-Links
+
+**Entscheidung.** Die Mitgliederliste besteht aus `button.member` mit `data-filter`; ein Klick
+setzt einen globalen Autorenfilter, der alle `section.channel` auf die Nachrichten dieses
+Profils reduziert (`filtered-out`), den Zustand im Balken `#filterBar` nennt und Kanäle ohne
+Treffer mit `no-match` abdunkelt. Der Filter wird nicht gespeichert. Links mit `data-target`
+und `data-anchor` — Rückwege der Unterseiten und die von `buildSubLinks()` erzeugten
+Unterseiten-Chips — öffnen beim Überfahren nach 220 ms eine Vorschau: geklont wird die
+deutsche Seite (`.page-de`) der Zielnachricht, der Anker wird markiert, IDs werden entfernt.
+Die Chips entstehen aus `section.channel[data-parent]`, nicht aus zusätzlichem Markup.
+
+**Grund.** Die Mitgliederliste sah bisher wie eine Liste aus, tat aber nichts; ein Klick auf
+ein Profil ist die naheliegende Erwartung. Wer in einer Unterseite steckt, will oft nur kurz
+nachsehen, was im Kapitel steht — der Kanalwechsel mit Scrollen ist dafür zu teuer. Die
+Vorschau zeigt genau die verlinkte Stelle, nicht die ganze Nachricht. Die Chips machen den
+Weg Kapitel → Unterseite sichtbar, der bisher nur in einzelnen Nachrichten als Textlink
+existierte; zusammen mit den Rückwegen ist der Weg symmetrisch.
+
+**Grenze.** Der Filter wirkt nur auf direkte `article.msg` einer Sektion, nicht auf
+verschachtelte Threads; er wird nicht gespeichert und überlebt keinen Neuladen. Die Vorschau
+zeigt immer die deutsche Seite, auch wenn die Nachricht auf Tiếng Việt steht; sie ist eine
+Leshilfe, kein Ersatz für den Kanal. Auf schmalen Bildschirmen ist die Mitgliederliste
+ausgeblendet (`max-width: 1180px`), der Filter ist dort nicht erreichbar. Die zwei neuen
+Unterseiten folgen dem Muster der sechs bestehenden: schematische Grafik, keine neuen
+Messdaten.
+
+**Verworfen.** Den Filter über eine eigene Ansicht oder einen Suchparameter lösen (mehr
+Zustand, kein Gewinn); Nachrichten mit `data-author` in jeder Zeile auszeichnen (der Autor
+steht schon im Kopf, eine zweite Quelle würde nur auseinanderlaufen); die Vorschau als
+modalen Dialog (blockiert und lässt sich nicht neben dem Link lesen); die Vorwärts-Links von
+Hand in jedes Kapitel schreiben (doppelte Pflege, sobald eine Unterseite dazukommt).

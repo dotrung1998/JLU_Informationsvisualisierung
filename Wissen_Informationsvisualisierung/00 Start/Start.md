@@ -113,6 +113,10 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
   Zeitbilder); der Kanalbaum erzeugt die eingerückten Unterseiten aus `data-parent` (ein
   Kapitel kann mehrere haben), und der Pager blättert per horizontalem Wisch von Trackpad
   oder Magic Mouse ([[Entscheidungen]]).
+- 26.11.2026: Mitgliederliste filtert nach Profil, Links zeigen beim Überfahren die
+  Zielstelle als Vorschau, und die Kapitel tragen eine Chip-Reihe zu ihren Unterseiten
+  (Weg in beide Richtungen); zwei weitere Vertiefungskanäle **02-tufte-bilder** und
+  **05-interaktionsvokabular** ergänzen die Bildtafeln ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 

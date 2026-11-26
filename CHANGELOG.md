@@ -5,6 +5,32 @@ Thema, damit die Liste nicht zerfasert. Die kurze Fassung steht im Lernserver im
 Kanal `#changelog`, die Entscheidungen und Gründe in
 `Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md`.
 
+## 2026-11-26 — Profilfilter, Hover-Vorschau, zwei neue Unterseiten
+
+**Thema:** Filtern, schnelles Nachsehen und Wege zwischen Kapitel und Unterseite.
+
+- `Wissen_Informationsvisualisierung/00 Start/lernserver.html`
+  - die Mitgliederliste ist anklickbar: Ein Klick auf Dozent, Bot oder Studierende filtert
+    **alle** Kanäle auf die Nachrichten dieses Profils, ein zweiter Klick hebt den Filter auf.
+    Ein Balken über den Nachrichten nennt Profil und Trefferzahl; Kanäle ohne Treffer werden
+    abgedunkelt, leere Kanäle zeigen einen Hinweis. Der Filter läuft lokal, ohne Konto und
+    ohne gespeicherten Zustand;
+  - Links mit `data-anchor` zeigen beim Überfahren (und bei Tastaturfokus) eine Vorschau der
+    Zielstelle: den deutschen Seitentext der Nachricht mit hervorgehobenem Abschnitt, ohne
+    den Kanal zu wechseln. Die Vorschau schließt mit Esc, Scrollen, Verlassen oder Klick;
+  - die Rückwege der Unterseiten zeigen jetzt auf die **genaue** Stelle im Kapitel
+    (`data-anchor`) statt nur auf den Kanalanfang. Zusätzlich erzeugt `buildSubLinks()` in
+    jeder Kapitelseite eine Reihe „Unterseiten“-Chips — der Weg funktioniert in beide
+    Richtungen, ohne die Verweise doppelt im HTML zu pflegen;
+  - zwei neue Unterseiten: `02-tufte-bilder` (Lie Factor mit ehrlicher und abgeschnittener
+    Basis, Data-Ink, Chartjunk; U02-Werte) und `05-interaktionsvokabular` (sechs Gruppen nach
+    Yi et al. 2007). Beide mit schematischer Bildtafel und Merkpunkt-Nachricht, zwei Seiten
+    (Deutsch · Tiếng Việt); die vietnamesischen Fassungen stehen im neuen JSON-Block
+    `#viDataMore`, der beim Laden mit `#viData` zusammengeführt wird;
+  - Kanalzähler auf 27, neun Unterseiten, Changelog-Eintrag und Legende fortgeschrieben.
+- `Status.md`, `Entscheidungen.md`, `Start.md`: Stand, Entscheidung und Sitzungsnotiz
+  fortgeschrieben.
+
 ## 2026-11-26 — Unterseiten, Bildtafeln und Wischen mit dem Trackpad
 
 **Thema:** Navigation und Anschauung.
