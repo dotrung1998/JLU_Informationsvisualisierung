@@ -5286,7 +5286,11 @@ window.QUIZ_DATA = [
       }
     }
     const target = msg || el;
-    if(target.scrollIntoView) target.scrollIntoView({block:"center"});
+    const scrollTarget = function(){
+      if(target.scrollIntoView) target.scrollIntoView({block:"center"});
+    };
+    scrollTarget();
+    requestAnimationFrame(function(){ requestAnimationFrame(scrollTarget); });
     [target, el].forEach(function(n){
       if(!n) return;
       n.classList.remove("flash"); void n.offsetWidth; n.classList.add("flash");
@@ -5388,6 +5392,11 @@ window.QUIZ_DATA = [
     if(topPos + h > window.innerHeight - 8) topPos = Math.max(8, r.top - h - 8);
     card.style.left = left + "px";
     card.style.top = topPos + "px";
+    const linkRect = link.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    if(cardRect.left < linkRect.right && cardRect.right > linkRect.left && cardRect.top < linkRect.bottom && cardRect.bottom > linkRect.top){
+      hidePreview(); return;
+    }
     const hitNow = card.querySelector(".pv-hit");
     if(hitNow) card.scrollTop = Math.max(0, hitNow.getBoundingClientRect().top - card.getBoundingClientRect().top - 46);
   }
