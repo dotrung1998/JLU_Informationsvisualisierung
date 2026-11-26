@@ -421,7 +421,12 @@
   .filter-bar{position:sticky;top:0;z-index:4;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:9px 20px;background:rgba(35,36,40,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px);font-size:13px;color:var(--text)}
   .filter-bar .k{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
   .filter-bar b{color:var(--strong)}
+  .filter-bar select{appearance:none;-webkit-appearance:none;background:#2b2d31;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:5px 26px 5px 9px;font:inherit;font-size:12.5px;line-height:1.35;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 13px) 50%,calc(100% - 8px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;max-width:230px}
+  .filter-bar select:focus-visible{outline:2px solid #5865f2;outline-offset:2px}
+  .filter-bar .filter-count{font-size:12px;color:var(--muted)}
   .filter-bar .btn{margin-left:auto}
+  .preview-lang{margin-left:auto;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#aeb4c2;border:1px solid var(--line);border-radius:999px;padding:1px 7px;white-space:nowrap}
+  .preview-missing{margin:0 0 10px;padding:8px 10px;border:1px solid #8a6a2f;border-radius:7px;background:#3a3020;color:#f2dcae;font-size:12px;line-height:1.45}
   .msg.filtered-out{display:none}
 
   .preview-pop{position:fixed;z-index:75;width:min(460px,calc(100vw - 24px));max-height:min(62vh,520px);overflow:auto;background:#232428;border:1px solid #4a4d55;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.55);padding:12px 14px;font-size:14px;line-height:1.55;color:var(--text)}
@@ -702,10 +707,18 @@
     </header>
 
     <div class="scroller" id="scroller">
-      <div class="filter-bar" id="filterBar" hidden>
-        <span class="k">Profil</span>
-        <span id="filterText"></span>
-        <button type="button" class="btn small ghost" id="filterClear">Alle Nachrichten</button>
+      <div class="filter-bar" id="filterBar">
+        <label class="k" for="authorSelect">Profil</label>
+        <select id="authorSelect" aria-label="Nachrichten nach Profil filtern">
+          <option value="">Alle Profile</option>
+          <option value="Sangam Chatterjee">Sangam Chatterjee</option>
+          <option value="Lernbot">Lernbot</option>
+          <option value="Formelbot">Formelbot</option>
+          <option value="Quizbot">Quizbot</option>
+          <option value="Trung Do">Trung Do</option>
+        </select>
+        <span id="filterText" class="filter-count"></span>
+        <button type="button" class="btn small ghost" id="filterClear" hidden>Filter aufheben</button>
       </div>
 
       <!-- ============ WILLKOMMEN ============ -->
@@ -4827,7 +4840,7 @@ window.QUIZ_DATA = [
 
   /* ---------------- Storage ---------------- */
   const KEY = "infovis-lernserver-v1";
-  const defaults = { read: [], learned: [], bookmarks: [], reactions: {}, checklist: {}, quizBest: 0, last: "willkommen" };
+  const defaults = { read: [], learned: [], bookmarks: [], reactions: {}, checklist: {}, quizBest: 0, last: "willkommen", filter: "" };
   let store;
   try { store = Object.assign({}, defaults, JSON.parse(localStorage.getItem(KEY) || "{}")); }
   catch(e){ store = Object.assign({}, defaults); }
@@ -4943,15 +4956,21 @@ window.QUIZ_DATA = [
       store.read.push(chapter); store.last = slug; save(); renderProgress();
     } else { store.last = slug; save(); }
     if(!opts.keepScroll) $("#scroller").scrollTop = 0;
+    const firstMsg = sec.querySelector("article.msg");
+    viewLang = (firstMsg && firstMsg.dataset.lang) || "de";
     requestAnimationFrame(function(){ pagerSyncs.forEach(function(fn){ fn(); }); });
     if(opts.push !== false && location.hash !== "#" + slug){
-      history.replaceState(null, "", "#" + slug);
+      history.replaceState(null, "", location.pathname + location.search + "#" + slug);
     }
     if(opts.focus) sec.scrollIntoView({block:"start"});
   }
 
   /* ---------------- Profilfilter (Mitgliederliste) ---------------- */
   let authorFilter = "";
+  let viewLang = "de";
+  function profileNames(){
+    return $$(".member[data-filter]").map(function(m){ return m.dataset.filter; });
+  }
   function msgAuthor(msg){
     const a = msg.querySelector(".head .author");
     return a ? a.textContent.trim() : "";
@@ -4959,16 +4978,39 @@ window.QUIZ_DATA = [
   function sectionMessages(sec){
     return Array.prototype.filter.call(sec.children, function(el){ return el.matches("article.msg"); });
   }
+  function filterUrl(){
+    const params = new URLSearchParams(location.search);
+    if(authorFilter) params.set("profil", authorFilter); else params.delete("profil");
+    const q = params.toString();
+    history.replaceState(null, "", location.pathname + (q ? "?" + q : "") + location.hash);
+  }
+  function resolveInitialFilter(){
+    const names = profileNames();
+    const raw = new URLSearchParams(location.search).get("profil");
+    if(raw !== null){
+      if(raw === "" || raw === "alle") return "";
+      if(names.indexOf(raw) !== -1) return raw;
+    }
+    const saved = store.filter || "";
+    return names.indexOf(saved) !== -1 ? saved : "";
+  }
   function setAuthorFilter(name){
-    authorFilter = name || "";
+    const next = name || "";
+    if(next === authorFilter) return;
+    authorFilter = next;
+    store.filter = authorFilter;
+    save();
+    filterUrl();
     applyAuthorFilter();
     toast(authorFilter ? "Nur Nachrichten von " + authorFilter + "." : "Filter aufgehoben.");
   }
   function applyAuthorFilter(){
-    let total = 0;
+    let total = 0, all = 0;
     sections.forEach(function(sec){
       let shown = 0;
-      sectionMessages(sec).forEach(function(msg){
+      const msgs = sectionMessages(sec);
+      all += msgs.length;
+      msgs.forEach(function(msg){
         const ok = !authorFilter || msgAuthor(msg) === authorFilter;
         msg.classList.toggle("filtered-out", !ok);
         if(ok) shown++;
@@ -4986,11 +5028,13 @@ window.QUIZ_DATA = [
       const btn = chans.find(function(c){ return c.dataset.target === sec.dataset.slug; });
       if(btn) btn.classList.toggle("no-match", !!authorFilter && shown === 0);
     });
-    const bar = $("#filterBar"), txt = $("#filterText");
-    if(bar){
-      bar.hidden = !authorFilter;
-      if(txt) txt.innerHTML = authorFilter ? "Nur <b>" + escapeHtml(authorFilter) + "</b> · " + total + " Nachrichten" : "";
-    }
+    const bar = $("#filterBar"), txt = $("#filterText"), sel = $("#authorSelect"), clear = $("#filterClear");
+    if(bar) bar.hidden = false;
+    if(sel && sel.value !== authorFilter) sel.value = authorFilter;
+    if(txt) txt.innerHTML = authorFilter
+      ? "Nur <b>" + escapeHtml(authorFilter) + "</b> · " + total + " von " + all + " Nachrichten"
+      : "Alle " + all + " Nachrichten";
+    if(clear) clear.hidden = !authorFilter;
     $$(".member[data-filter]").forEach(function(m){
       const on = m.dataset.filter === authorFilter;
       m.classList.toggle("on", on);
@@ -4998,6 +5042,10 @@ window.QUIZ_DATA = [
     });
     requestAnimationFrame(function(){ pagerSyncs.forEach(function(fn){ fn(); }); });
   }
+  const authorSelect = $("#authorSelect");
+  if(authorSelect) authorSelect.addEventListener("change", function(){ setAuthorFilter(this.value); });
+  const filterClear = $("#filterClear");
+  if(filterClear) filterClear.addEventListener("click", function(){ setAuthorFilter(""); });
 
   document.addEventListener("click", (e) => {
     const member = e.target.closest(".member[data-filter]");
@@ -5010,7 +5058,7 @@ window.QUIZ_DATA = [
     if(t){
       e.preventDefault();
       hidePreview();
-      if(t.dataset.anchor) jumpTo(t.dataset.anchor, t.dataset.target);
+      if(t.dataset.anchor) jumpTo(t.dataset.anchor, t.dataset.target, t.dataset.lang || languageOf(t));
       else openChannel(t.dataset.target);
       return;
     }
@@ -5218,12 +5266,31 @@ window.QUIZ_DATA = [
       box.appendChild(row);
     });
   }
-  function jumpTo(id, slug){
+  function languageOf(link){
+    const msg = link && link.closest ? link.closest("article.msg") : null;
+    return (msg && msg.dataset.lang) || viewLang;
+  }
+  function jumpTo(id, slug, lang){
     if(slug) openChannel(slug);
     const el = document.getElementById(id);
     if(!el){ toast("Nachricht nicht gefunden."); return; }
-    if(el.scrollIntoView) el.scrollIntoView({block:"center"});
-    el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+    const msg = el.closest("article.msg");
+    const want = lang || (msg && msg.dataset.lang) || viewLang;
+    if(msg && msg._pagerGo){
+      const viPage = msg.querySelector(".page-vi");
+      const hasVI = viPage && viPage.dataset.missing !== "1";
+      if(want === "vi" && hasVI) msg._pagerGo(msg.querySelectorAll(".page").length - 1);
+      else {
+        msg._pagerGo(0);
+        if(want === "vi") toast("Keine vietnamesische Fassung — Ziel öffnet auf Deutsch.");
+      }
+    }
+    const target = msg || el;
+    if(target.scrollIntoView) target.scrollIntoView({block:"center"});
+    [target, el].forEach(function(n){
+      if(!n) return;
+      n.classList.remove("flash"); void n.offsetWidth; n.classList.add("flash");
+    });
   }
 
   /* ---------------- Vorschau beim Überfahren (Obsidian-Stil) ---------------- */
@@ -5244,19 +5311,40 @@ window.QUIZ_DATA = [
     const anchor = link.dataset.anchor || "";
     const hit = anchor ? sec.querySelector('[id="' + anchor.replace(/"/g, '\\"') + '"]') : null;
     const msg = hit ? hit.closest("article.msg") : null;
-    const src = msg ? (msg.querySelector(".page-de") || msg.querySelector(".body")) : sec.querySelector(".channel-hero");
+    const lang = languageOf(link);
+    let missingVI = false;
+    let src;
+    if(msg){
+      const viPage = msg.querySelector(".page-vi");
+      const dePage = msg.querySelector(".page-de");
+      if(lang === "vi" && viPage && viPage.dataset.missing !== "1") src = viPage;
+      else {
+        src = dePage || msg.querySelector(".page-de");
+        missingVI = lang === "vi";
+      }
+    } else {
+      src = sec.querySelector(".channel-hero");
+      missingVI = lang === "vi";
+    }
     if(!src) return;
     const card = document.createElement("div");
     card.className = "preview-pop";
     const top = document.createElement("div");
     top.className = "preview-top";
-    top.innerHTML = "<span>Vorschau</span><b>#" + escapeHtml(sec.dataset.name.replace(/&amp;/g, "&")) + "</b>";
+    top.innerHTML = "<span>Vorschau</span><b>#" + escapeHtml(sec.dataset.name.replace(/&amp;/g, "&")) + "</b>" +
+      '<span class="preview-lang">' + (lang === "vi" ? "Tiếng Việt" : "Deutsch") + "</span>";
     const close = document.createElement("button");
     close.type = "button"; close.className = "preview-close"; close.textContent = "✕";
     close.setAttribute("aria-label", "Vorschau schließen");
     close.addEventListener("click", hidePreview);
     top.appendChild(close);
     card.appendChild(top);
+    if(missingVI){
+      const notice = document.createElement("div");
+      notice.className = "preview-missing";
+      notice.textContent = "Chưa có bản dịch tiếng Việt cho đoạn này — đang hiện bản Đức. / Keine vietnamesische Fassung — die Vorschau zeigt Deutsch.";
+      card.appendChild(notice);
+    }
     const body = document.createElement("div");
     body.className = "preview-body";
     const wrap = document.createElement("article");
@@ -5277,6 +5365,7 @@ window.QUIZ_DATA = [
     open.href = "#" + sec.dataset.slug;
     open.dataset.target = sec.dataset.slug;
     if(link.dataset.anchor) open.dataset.anchor = link.dataset.anchor;
+    open.dataset.lang = lang;
     open.textContent = "Im Kanal öffnen →";
     foot.appendChild(open);
     card.appendChild(foot);
@@ -6116,6 +6205,7 @@ window.QUIZ_DATA = [
         if(!body || !body.firstChild) return;
         msg.dataset.pager = "1";
         const entry = data[idx];
+        const viMissing = !(entry && entry[1]);
         const viHtml = entry && entry[1] ? entry[1] : '<p class="muted">Chưa có bản dịch cho tin nhắn này.</p>';
         const viTitle = entry && entry[0] ? entry[0] : "Ghi chú tiếng Việt";
         const points = (entry && entry[2] && entry[2].length) ? entry[2] : viPoints(viHtml);
@@ -6136,6 +6226,7 @@ window.QUIZ_DATA = [
 
         const viPage = document.createElement("div");
         viPage.className = "page page-vi";
+        viPage.dataset.missing = viMissing ? "1" : "0";
         viPage.innerHTML = '<div class="vi-kicker"><span aria-hidden="true">🇻🇳</span> Bản dịch tiếng Việt</div>' +
           '<div class="vi-title">' + viEsc(viTitle) + "</div>" +
           '<div class="vi-body">' + viHtml + "</div>" +
@@ -6185,12 +6276,16 @@ window.QUIZ_DATA = [
           index = Math.max(0, Math.min(pages.length - 1, i));
           track.style.transition = "";
           track.style.transform = "translateX(-" + (index * 100) + "%)";
+          viewLang = index === 0 ? "de" : "vi";
+          msg.dataset.lang = viewLang;
           tabs.forEach(function(t, j){
             t.classList.toggle("on", j === index);
             t.setAttribute("aria-pressed", j === index ? "true" : "false");
           });
           sync();
         }
+        msg.dataset.lang = "de";
+        msg._pagerGo = go;
         tabs.forEach(function(t, j){ t.setAttribute("aria-pressed", j === 0 ? "true" : "false"); });
         pagerSyncs.push(sync);
         if(window.ResizeObserver){
@@ -6283,6 +6378,9 @@ window.QUIZ_DATA = [
   annotateMessages();
   initReactions();
   bindPreviews();
+  authorFilter = resolveInitialFilter();
+  store.filter = authorFilter;
+  save();
   applyAuthorFilter();
   const initial = (location.hash || "").replace(/^#/,"") || store.last || "willkommen";
   openChannel(sectionBySlug(initial) ? initial : "willkommen", {push:false});
