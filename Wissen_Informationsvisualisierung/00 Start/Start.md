@@ -108,6 +108,11 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
   unter **#04-multivariate-daten**, jede Nachricht des Kanals hat zwei Seiten (Deutsch und
   Tiếng Việt) statt einer, einschließlich der Fazit-Nachricht am Ende, und über und unter dem
   Kanal führt ein Rückweg zurück ins Kapitel ([[Entscheidungen]]).
+- 26.11.2026: Lernserver um sechs **Vertiefungskanäle** mit schematischen Bildtafeln
+  erweitert (Gestalt/Farbskalen, Diagrammtypen, Filterzustände, Graph-Layouts, Baum-Layouts,
+  Zeitbilder); der Kanalbaum erzeugt die eingerückten Unterseiten aus `data-parent` (ein
+  Kapitel kann mehrere haben), und der Pager blättert per horizontalem Wisch von Trackpad
+  oder Magic Mouse ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 

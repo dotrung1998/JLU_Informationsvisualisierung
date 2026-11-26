@@ -5,6 +5,26 @@ Thema, damit die Liste nicht zerfasert. Die kurze Fassung steht im Lernserver im
 Kanal `#changelog`, die Entscheidungen und Gründe in
 `Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md`.
 
+## 2026-11-26 — Unterseiten, Bildtafeln und Wischen mit dem Trackpad
+
+**Thema:** Navigation und Anschauung.
+
+- `Wissen_Informationsvisualisierung/00 Start/lernserver.html`
+  - sechs Unterseiten an den Kapiteln: `03-gestalt-farben`, `04-diagrammtypen`,
+    `05-filterzustaende`, `06-graph-layouts`, `07-baum-layouts`, `08-zeit-diagramme`;
+    jede mit einer schematischen Bildtafel (Gestaltgesetze und Farbskalen, sechs
+    Diagrammtypen, Filterzustände, vier Graph-Layouts, drei Baum-Layouts, drei
+    Zeitbilder) und einer Merkpunkt-Nachricht;
+  - `buildSubChannels()` erzeugt die eingerückten Einträge aus `data-parent`; ein Kapitel
+    kann mehrere Unterseiten tragen (`04-multivariate-daten`: `04-clutter-beispiele` und
+    `04-diagrammtypen`);
+  - der Pager reagiert auf horizontales `wheel` (Trackpad, Magic Mouse): ein Wisch
+    blättert, ohne die Maustaste zu halten; vertikales Scrollen bleibt unberührt;
+  - Legende, Kanalzähler (25) und Suchfuß beschreiben den neuen Stand, der Suchfuß zählt
+    die Sektionen selbst.
+- `Status.md`, `Entscheidungen.md`, `Start.md`: Stand, Entscheidung und Sitzungsnotiz
+  fortgeschrieben.
+
 ## 2026-11-26 — 04-clutter-beispiele: Unterkanal, zwei Seiten, Rückweg
 
 **Thema:** Ergänzungskanal zu Kapitel 4, Einordnung und Lesbarkeit.

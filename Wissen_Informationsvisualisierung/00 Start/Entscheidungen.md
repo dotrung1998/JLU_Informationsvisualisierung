@@ -559,3 +559,35 @@ fügt keine Quelle hinzu. Der Kanal bleibt bei zwei statt drei Seiten.
 
 **Verworfen.** Die Nachricht einseitig und vietnamesisch lassen (bricht die Sprachumschaltung
 im Kanal); ihr eine erzeugte Seite 2 geben (ohne eigenen Inhalt, weil kein Bild vorhanden ist).
+
+## 2026-11-26 — Unterseiten je Kapitel, Bildtafeln, Wisch-Geste
+
+**Entscheidung.** Unterseiten sind eigene `section.channel` mit `data-parent`; die Klasse
+`chan sub` wird nicht mehr von Hand im Kanalbaum gepflegt, sondern von `buildSubChannels()`
+aus den Sektionen erzeugt. Ein Kapitel kann beliebig viele Unterseiten tragen (k04 führt
+`04-clutter-beispiele` und `04-diagrammtypen`). Sechs Unterseiten kommen dazu:
+`03-gestalt-farben`, `04-diagrammtypen`, `05-filterzustaende`, `06-graph-layouts`,
+`07-baum-layouts`, `08-zeit-diagramme` — je eine schematische Bildtafel plus Merkpunkt-
+Nachricht, mit zwei Seiten (Deutsch · Tiếng Việt). Der Pager hört zusätzlich auf
+horizontales `wheel`: ein Wisch auf Trackpad oder Magic Mouse blättert eine Seite weiter,
+ohne gehaltene Maustaste; vertikales Scrollen wird nicht abgefangen.
+
+**Grund.** Die Mission ist Anschauung und Bedienbarkeit: Die Kapitel nennen viele Typen
+(Gestaltgesetze, Farbskalen, Diagrammtypen, Filterzustände, Layouts, Zeitbilder), die im
+Text erklärt, aber nicht gezeigt werden. Die Unterseiten halten diese Bilder beim Kapitel,
+statt die Kapitelnachrichten zu sprengen. Die eingerückte Form macht sichtbar, dass es
+Zusatzmaterial ist, nicht ein zehnter Stoffblock. Der Wheel-Weg ist die natürliche Geste
+auf dem Trackpad und mit der Magic Mouse; der bisherige Pointer-Drag verlangte Halten und
+Ziehen.
+
+**Grenze.** Alle Bilder sind schematisch und als solche beschriftet; sie fügen keine
+Messdaten und keine neuen Quellen hinzu. Die Unterseiten tragen `data-chapter="none"` und
+zählen nicht in den Lesefortschritt. Zwei statt drei Seiten, weil die Bildtafel schon auf
+Seite 1 steht. Der Wisch greift nur bei horizontalem Überwiegen (`|deltaX| > 1,2·|deltaY|`)
+und mit 420 ms Sperre, damit ein langer Wisch nicht mehrere Seiten überspringt.
+
+**Verworfen.** Die Unterseiten-Knöpfe im HTML duplizieren (zwei Pflegen für einen Eintrag);
+alle Typen in die Kapitelnachrichten einfügen (sprengt sie und mischt Begriff und
+Anschauung); `wheel` auf `document` abfangen (würde vertikales Scrollen und die
+Browser-Geste stören); echte Fotos oder externe Bilddateien (keine Belegstelle, größere
+Abhängigkeit, weniger präzise).

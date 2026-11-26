@@ -103,7 +103,7 @@ Am 25.11. kam der Rechenweg zu U09 dazu: `#msg-u09` führt auf Seite 1 und 3 in 
 vor, wie aus `s = 12` und `n = 16` bzw. `64` die Standardfehler 3,00 und 1,50, die t-Werte
 2,131 und 1,998 und daraus die Intervalle [65,61; 78,39] und [69,00; 75,00] entstehen; der
 Graph auf Seite 2 nennt dieselben Grenzen in der Bildunterschrift. Der eigene Kanal
-`#changelog` (Gruppe Werkzeuge, 19 Kanäle) listet die letzten Änderungen und springt per
+`#changelog` (Gruppe Werkzeuge, 25 Kanäle) listet die letzten Änderungen und springt per
 „hin“ zur Nachricht (`#msg-u09`, `#msg-quiz`, `#msg-seiten`, `beispiel-reordering`). Der
 Ergänzungskanal `#04-clutter-beispiele` hängt seit 26.11.2026 als Unterkanal eingerückt
 unter `#04-multivariate-daten` und hat **zwei** statt drei Seiten je Nachricht
@@ -113,6 +113,14 @@ Fazit-Nachricht am Ende — stehen in `#viData` unter `k04beispiele`; über und 
 Kanal führt ein Rückweg `← zurück zu #04-multivariate-daten`. Die Legende in
 `#willkommen-&-regeln` nennt die Ausnahme, die 108 Nachrichten der übrigen Kanäle behalten
 ihre drei Seiten.
+
+Seit 26.11.2026 tragen die Kapitel **Unterseiten**: `03-gestalt-farben`, `04-diagrammtypen`,
+`05-filterzustaende`, `06-graph-layouts`, `07-baum-layouts` und `08-zeit-diagramme`, jede
+mit einer schematischen Bildtafel und einer Merkpunkt-Nachricht; `04-multivariate-daten`
+hat zwei Unterseiten. `buildSubChannels()` erzeugt die eingerückten Einträge aus
+`data-parent`, damit ein Kapitel beliebig viele tragen kann. Der Pager reagiert auf
+horizontalen Wisch (Trackpad, Magic Mouse), ohne dass die Maustaste gehalten werden muss;
+vertikales Scrollen bleibt unberührt. Die Seite hat damit 25 Kanäle.
 
 Die Freebuff-Vorschau (https://lernserver-108-tin-3-trang-4wz4jg-preview.freebuff.site,
 Konto-Sync über D1) wird **nicht** vom gh-pages-Workflow versorgt. Seit 25.11.2026 baut
