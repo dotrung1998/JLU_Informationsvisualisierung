@@ -22,6 +22,8 @@ Kanal `#changelog`, die Entscheidungen und Gründe in
     auf Deutsch (Einordnung und Verweise) und Seite 3 auf Vietnamesisch;
   - die Legende in `#willkommen-&-regeln` nennt die Ausnahme: zwei statt drei Seiten im
     Galeriekanal, weil die Vorher/Nachher-Grafik dort schon auf Seite 1 steht;
+  - `buildPagers()` prüft nur noch `data-pager`; die Ausnahme `data-nopager` ist entfallen,
+    weil keine Nachricht sie mehr nutzt;
   - Rückweg über dem Kanal und am Ende: `← zurück zu #04-multivariate-daten`;
   - Eintrag im Kanal `#changelog`, Zähler unverändert bei 19 Kanälen.
 - `Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md`: Entscheidung vom 25.11.

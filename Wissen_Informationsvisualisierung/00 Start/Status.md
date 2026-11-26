@@ -1,6 +1,6 @@
 ---
 titel: Status
-stand: 2026-11-23
+stand: 2026-11-26
 ---
 
 # Status
@@ -36,8 +36,10 @@ Board: 4 von 14 Karten erledigt. Details in [[Board]], Quellenstand in [[Abgaben
 
 ## Nächste Aktion
 
-**Stand 23.11.2026:** Die Einstiegsseite ist erledigt (PDF gesetzt, Abgabe laut Angabe
-erfolgt). Die nächsten Schritte sind in dieser Reihenfolge sinnvoll:
+**Stand 26.11.2026:** Die Einstiegsseite ist erledigt (PDF gesetzt, Abgabe laut Angabe
+erfolgt); am 26.11. wurde nur der Lernserver nachgezogen (Clutter-Kanal unter Kapitel 4,
+zwei Seiten je Nachricht), an den Abgaben hat sich nichts geändert. Die nächsten Schritte
+sind in dieser Reihenfolge sinnvoll:
 
 1. **U02-Vortrag bauen.** Variante A ist bestätigt, Rechnung und Entwurf liegen vor
    ([[U02 Lie Factor]]); jetzt den Ablauf für 3–6 Minuten festlegen und proben.
@@ -84,7 +86,7 @@ Lehrenden bis etwa Weihnachten 2026 beziehungsweise nach Ende der Anmeldefrist i
 
 Der Stand wird bei jedem Lauf aus den Ordnern neu berechnet ([[Abgaben (auto)]]).
 
-## Lernserver (Stand 25.11.2026)
+## Lernserver (Stand 26.11.2026)
 
 `lernserver.html` hat je Nachricht drei Seiten: Deutsch · Graph · vietnamesische Übersetzung,
 108 von 108 übersetzt. Seite 2 zeigt einen eigenen Graphen aus den Werten der Nachricht —
@@ -103,8 +105,13 @@ vor, wie aus `s = 12` und `n = 16` bzw. `64` die Standardfehler 3,00 und 1,50, d
 Graph auf Seite 2 nennt dieselben Grenzen in der Bildunterschrift. Der eigene Kanal
 `#changelog` (Gruppe Werkzeuge, 19 Kanäle) listet die letzten Änderungen und springt per
 „hin“ zur Nachricht (`#msg-u09`, `#msg-quiz`, `#msg-seiten`, `beispiel-reordering`). Der
-Ergänzungskanal `#04-clutter-beispiele` ist bewusst einseitig — sechs Bilder in einem
-Kanal, ohne Pager — und im Changelog verlinkt; die bestehenden 108 Nachrichten behalten
+Ergänzungskanal `#04-clutter-beispiele` hängt seit 26.11.2026 als Unterkanal eingerückt
+unter `#04-multivariate-daten` und hat **zwei** statt drei Seiten je Nachricht
+(Deutsch · Tiếng Việt): die sechs Vorher/Nachher-Grafiken stehen schon auf Seite 1, eine
+erzeugte Zeichnung würde sie doppeln. Die sieben vietnamesischen Fassungen — auch die
+Fazit-Nachricht am Ende — stehen in `#viData` unter `k04beispiele`; über und unter dem
+Kanal führt ein Rückweg `← zurück zu #04-multivariate-daten`. Die Legende in
+`#willkommen-&-regeln` nennt die Ausnahme, die 108 Nachrichten der übrigen Kanäle behalten
 ihre drei Seiten.
 
 Die Freebuff-Vorschau (https://lernserver-108-tin-3-trang-4wz4jg-preview.freebuff.site,
