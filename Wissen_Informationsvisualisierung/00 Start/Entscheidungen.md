@@ -516,3 +516,27 @@ zeigen, Seite 3 eine Übersetzung ohne eigenen Nutzen); die Bilder in die besteh
 Kapitelnachricht einfügen (sprengt die Nachricht und vermischt Begriff und Anschauung);
 externe Bilddateien oder generierte Fotos (keine Belegstelle, größere Abhängigkeit, weniger
 präzise).
+
+## 2026-11-26 — Clutter-Beispiele: Unterkanal, zwei Seiten, Rückweg
+
+**Entscheidung.** `#04-clutter-beispiele` bleibt ein eigener Kanal, steht aber im Kanalbaum
+eingerückt unter `#04-multivariate-daten` (Klasse `chan sub`, `data-chapter="none"`). Jede
+der sechs Beispielnachrichten hat zwei wischbare Seiten — Deutsch und Tiếng Việt; die
+Vorher/Nachher-Grafik bleibt auf Seite 1, die automatisch erzeugte Seite 2 entfällt
+(`data-de-vi` statt `data-nopager`). Über dem Kanal und am Ende steht ein Rückweg
+`← zurück zu #04-multivariate-daten`. Die abschließende Ghi-chú-Nachricht bleibt einseitig.
+
+**Grund.** Der Kanal ist eine Ergänzung zu Kapitel 4, keine zehnte Vorlesung; auf derselben
+Ebene wie die Kapitel las er sich wie ein eigener Stoffblock. Er war außerdem der einzige
+Kanal ohne vietnamesische Seite und ohne Weg zurück ins Kapitel. Zwei statt drei Seiten,
+weil die handgezeichnete Vorher/Nachher-Grafik schon auf Seite 1 steht und eine erzeugte
+Seite 2 sie nur duplizieren würde.
+
+**Grenze.** Seite 3 ist eine Zusammenfassung der Bildunterschriften, keine neue Quelle; die
+Bilder bleiben schematisch. `data-chapter="none"` ist Absicht: der Unterkanal soll den
+Lesefortschritt von Kapitel 4 nicht doppelt setzen und die Zählung bei neun Kapiteln lassen.
+
+**Verworfen.** Drei Seiten je Nachricht wie in allen anderen Kanälen (Seite 2 hätte die
+vorhandene Grafik verdoppelt); den Kanal ganz in Kapitel 4 aufgehen lassen (die Galerie
+würde die Kapitelnachricht sprengen); `data-chapter="4"` am Unterkanal (hätte ihn als
+Kapitel gezählt und das grüne Lesehäkchen doppelt gesetzt).

@@ -5,6 +5,26 @@ Thema, damit die Liste nicht zerfasert. Die kurze Fassung steht im Lernserver im
 Kanal `#changelog`, die Entscheidungen und Gründe in
 `Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md`.
 
+## 2026-11-26 — 04-clutter-beispiele: Unterkanal, zwei Seiten, Rückweg
+
+**Thema:** Ergänzungskanal zu Kapitel 4, Einordnung und Lesbarkeit.
+
+- `Wissen_Informationsvisualisierung/00 Start/lernserver.html`
+  - `#04-clutter-beispiele` steht im Kanalbaum eingerückt unter
+    `#04-multivariate-daten` (Klasse `chan sub`), nicht mehr auf derselben Ebene wie die
+    Kapitel;
+  - jede der sechs Beispielnachrichten hat **zwei** Seiten statt einer — Deutsch und
+    Tiếng Việt; die Vorher/Nachher-Grafik bleibt auf Seite 1, deshalb entfällt die
+    erzeugte Seite 2 (Attribut `data-de-vi` statt `data-nopager`, `buildPagers()` baut
+    dafür zwei Registerkarten);
+  - die sechs vietnamesischen Fassungen stehen im JSON-Block `#viData` unter
+    `k04beispiele`; die abschließende Ghi-chú-Nachricht bleibt einseitig, weil sie schon
+    vietnamesisch ist;
+  - Rückweg über dem Kanal und am Ende: `← zurück zu #04-multivariate-daten`;
+  - Eintrag im Kanal `#changelog`, Zähler unverändert bei 19 Kanälen.
+- `Wissen_Informationsvisualisierung/00 Start/Entscheidungen.md`: Entscheidung vom 25.11.
+  zur Einseitigkeit fortgeschrieben (zwei Seiten statt drei, Einordnung als Unterkanal).
+
 ## 2026-11-25 — Clutter-Reduktion: Beispielgalerie und Verweise
 
 **Thema:** Kapitel 4, sechs Techniken der Clutter-Reduktion.

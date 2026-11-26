@@ -104,6 +104,10 @@ den Balken mit Basis 40, 2,20 für das flächenskalierte Piktogramm, Fassung C m
   Verweise von den sechs Punkten auf Beispiel und ausführlichere Stellen, Eintrag im
   bestehenden **#changelog** und `CHANGELOG.md`; der Galeriekanal ist bewusst einseitig,
   die bestehenden 108 Nachrichten behalten ihre drei Seiten ([[Entscheidungen]]).
+- 26.11.2026: **#04-clutter-beispiele** als Unterkanal eingeordnet: im Kanalbaum eingerückt
+  unter **#04-multivariate-daten**, jede der sechs Beispielnachrichten hat zwei Seiten
+  (Deutsch und Tiếng Việt) statt einer, und über und unter dem Kanal führt ein Rückweg
+  zurück ins Kapitel ([[Entscheidungen]]).
 - **Offen:** Termine der Übungsabgaben, Termin der eigenen Präsentation, Zeitpunkt der
   Gruppeneinteilung, Wahl der Aufgabe und der Variante ([[Offene Entscheidungen]]).
 
