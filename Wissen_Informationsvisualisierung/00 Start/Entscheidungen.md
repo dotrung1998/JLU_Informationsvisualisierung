@@ -633,8 +633,8 @@ Weg Kapitel → Unterseite sichtbar, der bisher nur in einzelnen Nachrichten als
 existierte; zusammen mit den Rückwegen ist der Weg symmetrisch.
 
 **Grenze.** Der Filter wirkt nur auf direkte `article.msg` einer Sektion, nicht auf
-verschachtelte Threads; er wird nicht gespeichert und überlebt keinen Neuladen. Die Vorschau
-zeigt immer die deutsche Seite, auch wenn die Nachricht auf Tiếng Việt steht; sie ist eine
+verschachtelte Threads; er wird nicht gespeichert und überlebt keinen Neuladen. Die Vorschau bleibt beim Scrollen im Popover offen; nur Scrollen außerhalb schließt sie.
+Sie zeigt immer die deutsche Seite, auch wenn die Nachricht auf Tiếng Việt steht; sie ist eine
 Leshilfe, kein Ersatz für den Kanal. Auf schmalen Bildschirmen ist die Mitgliederliste
 ausgeblendet (`max-width: 1180px`), der Filter ist dort nicht erreichbar. Die zwei neuen
 Unterseiten folgen dem Muster der sechs bestehenden: schematische Grafik, keine neuen

@@ -17,7 +17,7 @@ Kanal `#changelog`, die Entscheidungen und Gründe in
     ohne gespeicherten Zustand;
   - Links mit `data-anchor` zeigen beim Überfahren (und bei Tastaturfokus) eine Vorschau der
     Zielstelle: den deutschen Seitentext der Nachricht mit hervorgehobenem Abschnitt, ohne
-    den Kanal zu wechseln. Die Vorschau schließt mit Esc, Scrollen, Verlassen oder Klick;
+    den Kanal zu wechseln. Die Vorschau schließt mit Esc, Scrollen außerhalb, Verlassen oder Klick; Scrollen im Popover bleibt.
   - die Rückwege der Unterseiten zeigen jetzt auf die **genaue** Stelle im Kapitel
     (`data-anchor`) statt nur auf den Kanalanfang. Zusätzlich erzeugt `buildSubLinks()` in
     jeder Kapitelseite eine Reihe „Unterseiten“-Chips — der Weg funktioniert in beide
